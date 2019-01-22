@@ -1,0 +1,105 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    background-color: rgb(236, 236, 236);
+    font-family: 'Inconsolata', monospace;
+}
+
+::-webkit-input-placeholder {
+    font-family: 'Inconsolata', monospace; 
+}
+
+input.btn {
+    font-family: 'Inconsolata', monospace;
+}
+
+ion-icon {
+    color: white;
+    font-size: 180%;
+}
+
+.container {
+    text-align: center;
+}
+
+.banner {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 9%;
+    background-color: rgb(44, 130, 201);
+    text-align: center;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.banner-button {
+    height: 9%;
+    background-color: rgb(44, 130, 201); 
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.div-button {
+    height: 100%;
+    float: left;
+    width: 33.33%;
+}
+
+.text-icon {
+    display: block;
+    color: white;
+}
+
+.text-banner {
+    color: white;
+    font-size: 150%;
+}
+
+.btn {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    transition: background 0.8s;
+}
+
+.article-table {
+    width: 100%;
+}
+
+th {
+    border-right: 1px solid black;
+}
+
+.last-th {
+    border-right: none;
+}
+
+td {
+    padding: 5%;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.last-td {
+    border-right: none;
+}
+
+.div-cart {
+    margin-top: 9%;
+    overflow-y: scroll;
+}
+
+.btn:hover {
+    background: rgb(44, 130, 201) radial-gradient(circle, transparent 1%, rgb(44, 130, 201) 1%) center/15000%;
+}
+
+.btn:active {
+    background-color: rgb(3, 94, 160);
+    background-size: 100%;
+    transition: background 0s;
+}
