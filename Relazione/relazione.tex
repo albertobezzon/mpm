@@ -1,0 +1,76 @@
+\documentclass[12pt, a4paper, titlepage]{report}
+\usepackage[a4paper,top=2.5cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{capt-of}
+\usepackage{amsmath}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{algpseudocode}
+\usepackage{makecell}
+\usepackage[utf8]{inputenc}
+\usepackage{fixltx2e}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{makecell}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{siunitx}
+\usepackage{lipsum}
+
+\usepackage[swapnames]{frontespizio}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+%\pagestyle{fancy}
+%\fancyhf{}
+%\cfoot{Pagina \thepage\ di \pageref{LastPage}}
+
+\setcounter{tocdepth}{6}
+\setcounter{secnumdepth}{6}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\renewcommand{\thesection}{\arabic{section}}%
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{} \mbox{}}
+\newcommand{\tommaso}{Tommaso Carraro}
+\newcommand{\alberto}{Alberto Bezzon}
+	
+\begin{document}
+	
+	\begin{frontespizio}
+		\begin{Preambolo*}
+			\usepackage{fourier}
+		\end{Preambolo*}
+		\Universita{Padova}
+		\Dipartimento{Matematica}
+		\Scuola{Corso di Mobile Programming and Multimedia}
+		\Filigrana [height=7.5cm,before=0.28,after=1]{logo-unipd.png}
+		\Titolo{\vspace{8cm}\Huge{Relazione del progetto SmartOrder}}
+		\Relatore{Alberto Bezzon 1211016\\Tommaso Carraro }
+		\NRelatore{Studenti}{}
+		\Annoaccademico{2018-2019}
+	\end{frontespizio}
+	
+	%\maketitle
+	%\pagestyle{empty}
+	\setcounter{page}{2}
+	\tableofcontents
+	\newpage
+	\listoffigures
+	\newpage
+	\listoftables
+	\setcounter{table}{0}
+	\newpage	    
+	\renewcommand*{\arraystretch}{2}
+	\pagestyle{fancy}
+	\fancyhf{}
+	\rhead{Relazione del progetto SmartOrder}
+	\lhead{Corso di Mobile Programming and Multimedia \\ Università di Padova}
+	\cfoot{\thepage}
+	%\setlength{\headsep}{2cm}
+	
+	\section{Introduzione}
+	I bottoni in basso non vanno bene su android che hanno la barra dei pulsanti
+\end{document}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/article.css">
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+        <title>Aggiungi articolo</title>
+    </head>
+    <body>
+        <script src="https://unpkg.com/ionicons@4.5.1/dist/ionicons.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <div class="container">
+            <div class="banner">
+                <p>
+                    <span class="text-banner">Aggiungi articolo</span>
+                </p>
+            </div>
+
+            <div class="body-container">
+                <form method="post" action="">
+                    <div>
+                        <label for="nome">Nome: </label>
+                        <input type="text" name="nome" id="nome" placeholder="Inserisci il nome">
+                    </div>
+                    <div>
+                        <label for="quantita">Quantità: </label>
+                        <input type="text" name="quantita" id="quantita" value="1">
+                    </div>
+                </form>
+            </div>
+
+            <div class="banner-button">
+                <div class="div-button">
+                    <button id="btn-add" class="btn btn-add">
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                        <span class="text-icon">Aggiungi</span>
+                    </button>
+                </div>
+                <div class="div-button">
+                    <button id="btn-cancel" class="btn btn-cancel" ontap="gotoHomepage()">
+                        <ion-icon name="trash"></ion-icon>
+                        <span class="text-icon">Annulla</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

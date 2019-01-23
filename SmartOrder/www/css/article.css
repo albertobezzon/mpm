@@ -31,10 +31,6 @@ ion-icon {
     text-align: center;
 }
 
-.username {
-    font-weight: bold;
-}
-
 .banner-button {
     height: 9%;
     background-color: rgb(44, 130, 201); 
@@ -46,7 +42,7 @@ ion-icon {
 .div-button {
     height: 100%;
     float: left;
-    width: 33.33%;
+    width: 50%;
 }
 
 .text-icon {
@@ -67,34 +63,6 @@ ion-icon {
     transition: background 0.8s;
 }
 
-.article-table {
-    width: 100%;
-}
-
-th {
-    border-right: 1px solid black;
-}
-
-.last-th {
-    border-right: none;
-}
-
-td {
-    padding: 5%;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-}
-
-.last-td {
-    border-right: none;
-}
-
-.div-cart {
-    margin-top: 20%;
-    margin-bottom: 20%;
-    overflow-y: scroll;
-}
-
 .btn:hover {
     background: rgb(44, 130, 201) radial-gradient(circle, transparent 1%, rgb(44, 130, 201) 1%) center/15000%;
 }
@@ -105,33 +73,8 @@ td {
     transition: background 0s;
 }
 
-/* ARTICLE */
-.article {
-    text-align: left;
-    background-color: white;
-    margin-left: 3%;
-    margin-right: 3%;
-    padding: 0% 3% 0% 3%;
+.body-container {
+    margin-top: 20%;
+    margin-bottom: 20%;
+    overflow-y: scroll;
 }
-
-
-@media screen and (min-width: 768px) and (max-width: 1024px)  { /* iPad/iPad Pro */
-    ion-icon {
-        font-size: 250%;
-    }
-
-    .text-icon {
-        font-size: 150%;
-    }
-
-    .div-cart {
-        font-size: 150%;
-        margin-top: 15%;
-        margin-bottom: 15%;
-        overflow-y: scroll;
-    }
-}
-
-
-
-
