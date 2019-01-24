@@ -9,6 +9,10 @@ body {
     font-family: 'Inconsolata', monospace; 
 }
 
+::-webkit-scrollbar { 
+    display: none; 
+}
+
 input.btn {
     font-family: 'Inconsolata', monospace;
 }
@@ -46,7 +50,7 @@ input.btn {
 .div-button {
     height: 100%;
     float: left;
-    width: 50%;
+    width: 33.33%;
 }
 
 .text-icon {
@@ -132,16 +136,11 @@ input.btn {
     background-color: rgb(230, 27, 0);
 }
 
-#total-text {
-    text-align: left;
-}
-
 #total {
-    margin-left: 5%;
     height: 9%;
-    background-color: rgb(72, 175, 235); 
+    background-color: rgba(123, 239, 178, 1);
     position: fixed;
-    bottom: 10%;
+    bottom: 9%;
     width: 100%;
 }
 

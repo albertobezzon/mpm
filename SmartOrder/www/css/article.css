@@ -13,7 +13,7 @@ input.btn {
     font-family: 'Inconsolata', monospace;
 }
 
-ion-icon {
+.template-icon {
     color: white;
     font-size: 180%;
 }
