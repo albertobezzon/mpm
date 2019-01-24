@@ -19,43 +19,25 @@
 
             <div class="body-container">
                 <div class="order">
-                    <h4>Ordine</h4>
-                    <p>Codice</p>
-                    <p>Data</p>
-                </div>
-                <div class="order">
-                    <h4>Ordine</h4>
-                    <p>Codice</p>
-                    <p>Data</p>
-                </div>
-                <div class="order">
-                    <h4>Ordine</h4>
-                    <p>Codice</p>
-                    <p>Data</p>
-                </div>
-                <div class="order">
-                    <h4>Ordine</h4>
-                    <p>Codice</p>
-                    <p>Data</p>
-                </div>
-                <div class="order">
-                    <h4>Ordine</h4>
-                    <p>Codice</p>
-                    <p>Data</p>
-                </div>
-                <div class="order">
-                    <h4>Ordine</h4>
-                    <p>Codice</p>
-                    <p>Data</p>
+                    <div class="order-info">
+                        <span class="order-code">Codice:</span>
+                        <span class="order-data">Data:</span>
+                        <span class="order-data">Totale:</span>
+                    </div>
+                    <div class="order-button">
+                        <button class="btn-details">DETTAGLI</button>
+                    </div>
+                    <div class="after-div"></div>
                 </div>
             </div>
 
             <div class="banner-button">
-                <div class="div-button">
-                    <button id="btn-cancel" class="btn btn-cancel">
-                        <ion-icon name="trash"></ion-icon>
-                        <span class="text-icon">Cancella lista</span>
-                    </button>
+                <div id="sort-div">
+                    <span id="sort-label">Ordina per</span>
+                    <select id="sort">
+                        <option value="data" autofocus>Data</option>
+                        <option value="prezzo">Prezzo</option>
+                    </select>
                 </div>
             </div>
         </div>
