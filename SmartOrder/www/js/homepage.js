@@ -29,6 +29,24 @@ function editArticle(code) {
     }
 }
 
+function deleteAll() {
+    var ok = confirm("Sicuro che vuoi rimuovere tutto?");
+    var xhttp = new XMLHttpRequest();
+    if(ok) {
+        xhttp.open("POST",host+"/EliminazioneArticoli",true);
+        xhttp.onreadystatechange = function () {
+            if(this.readyState == 4 && this.status == 200){
+                var risp = JSON.parse(this.responseText);
+                if(risp.ok == "1"){
+                    location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
+                }
+            }
+        };
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+        xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda+"&codici=all");
+    }
+}
+
 function compute(xhttp) {
     var risp = JSON.parse(xhttp.responseText);
     document.getElementById("name").innerHTML = risp.nome;
