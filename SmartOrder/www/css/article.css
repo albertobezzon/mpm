@@ -80,14 +80,9 @@ input.btn {
 }
 
 .body-container {
-    margin-top: 20%;
+    margin-top: 25%;
     margin-left: 7%;
     margin-right: 7%;
-}
-
-.field-container {
-    margin-left: 15%;
-    width: 80%;
 }
 
 .label-field {
@@ -97,6 +92,8 @@ input.btn {
 
 #name {
     width: 100%;
+    padding: 2% 0% 2% 0%;
+    background-color: rgb(242, 120, 75);
 }
 
 #name h2 {
@@ -105,15 +102,26 @@ input.btn {
 }
 
 #field-container {
-    max-height: 50%;
+    background-color: rgb(135, 211, 124);
+}
+
+#quantity-container {
+    padding: 2% 0% 2% 0%;
+    background-color: rgb(135, 211, 124);
+}
+
+#quantity-container label {
+    text-align: center;
 }
 
 #description {
+    padding: 2% 2% 2% 2%;
     text-align: left;
     overflow-y: scroll;
 }
 
 #quantity {
+    margin: 3% 4% 3% 4%;
     text-align: center;
     width: 30%;
 }
