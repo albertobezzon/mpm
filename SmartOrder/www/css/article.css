@@ -78,3 +78,42 @@ input.btn {
     margin-bottom: 20%;
     overflow-y: scroll;
 }
+
+.body-container {
+    margin-top: 20%;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.field-container {
+    margin-left: 15%;
+    width: 80%;
+}
+
+.label-field {
+    display: block;
+    text-align: left;
+}
+
+#name {
+    width: 100%;
+}
+
+#name h2 {
+    margin: 0;
+    padding: 0;
+}
+
+#field-container {
+    max-height: 50%;
+}
+
+#description {
+    text-align: left;
+    overflow-y: scroll;
+}
+
+#quantity {
+    text-align: center;
+    width: 30%;
+}
