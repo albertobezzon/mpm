@@ -19,31 +19,17 @@
             <div class="div-cart">
                 <div>
                     <span>Benvenuto <span class="username" id="name"></span></span><br>
-                    <span id="code"></span>
+                    <span>Codice azienda: <span id="code"></span></span>
                     <hr>
                 </div>
 
 
                 <div id="articleList">
-                    <div class="article">
-                        <div class="info-article">
-                            <h4>Nome oggetto (Qta: x2)</h4>
-                            <span>P. parziale: </span><span id="price" class="price-article">10 €</span>
-                        </div>
-                        <div class="button-article">
-                            <button class="btn-edit">
-                                MODIFICA
-                            </button><br>
-                            <button class="btn-delete">
-                                ELIMINA
-                            </button>
-                        </div>
-                        <div style="clear:both;"></div>
-                    </div>
+
                 </div>
 
             <div id="total" class="total-article">
-                <h4 id="total-text">Totale: 100$</h4>
+                <h4>Totale: <span id="totale"></span> EUR</h4>
             </div>
 
             <div class="banner-button">
@@ -54,7 +40,7 @@
                     </button>
                 </div>
                 <div class="div-button">
-                        <button id="btn-remove" class="btn btn-remove">
+                        <button id="btn-remove" class="btn btn-remove" onclick="deleteAll()">
                             <ion-icon name="trash" class="template-icon"></ion-icon>
                             <span class="text-icon">Elimina</span>
                         </button>
