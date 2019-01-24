@@ -12,10 +12,10 @@
         <script type="text/javascript" src="cordova.js"></script>
         <div class="container">
             <div class="banner">
-                <p>
-                    <span class="text-banner">Il tuo carrello</span>
-                    <ion-icon name="cart"></ion-icon>
-                </p>
+                <div class="title">
+                    <h1 class="text-banner">Il tuo carrello</h1>
+                </div>
+                <!--<ion-icon name="cart" class="template-icon"></ion-icon>-->
             </div>
             <div class="div-cart">
                 <div>
@@ -25,35 +25,38 @@
                 </div>
 
                 <div>
-                    <div class="article first">
-                            <h4>Nome oggetto</h4>
-                            <p>Quantità</p>
-                            <p>000</p>
-                    </div>
                     <div class="article">
+                        <div class="info-article">
                             <h4>Nome oggetto</h4>
-                            <p>Quantità</p>
-                            <p>000</p>
+                            <span>Quantità</span><br>
+                            <span>000</span>
+                        </div>
+                        <div class="button-article">
+                            <button class="btn-edit">
+                                MODIFICA
+                            </button><br>
+                            <button class="btn-delete">
+                                ELIMINA
+                            </button>
+                        </div>
+                        <div style="clear:both;"></div>
                     </div>
+                    
                     <div class="article">
+                        <div class="info-article">
                             <h4>Nome oggetto</h4>
-                            <p>Quantità</p>
-                            <p>000</p>
-                    </div>
-                    <div class="article">
-                            <h4>Nome oggetto</h4>
-                            <p>Quantità</p>
-                            <p>000</p>
-                    </div>
-                    <div class="article">
-                            <h4>Nome oggetto</h4>
-                            <p>Quantità</p>
-                            <p>000</p>
-                    </div>
-                    <div class="article last">
-                            <h4>Nome oggetto</h4>
-                            <p>Quantità</p>
-                            <p>000</p>
+                            <span>Quantità</span><br>
+                            <span>000</span>
+                        </div>
+                        <div class="button-article">
+                            <button class="btn-edit">
+                                MODIFICA
+                            </button><br>
+                            <button class="btn-delete">
+                                ELIMINA
+                            </button>
+                        </div>
+                        <div style="clear:both;"></div>
                     </div>
                 </div>
                 
@@ -62,19 +65,13 @@
             <div class="banner-button">
                 <div class="div-button">
                     <button id="btn-add" class="btn btn-add">
-                        <ion-icon name="add-circle-outline"></ion-icon>
+                        <ion-icon name="add-circle-outline" class="template-icon"></ion-icon>
                         <span class="text-icon">Aggiungi</span>
                     </button>
                 </div>
                 <div class="div-button">
-                    <button id="btn-remove" class="btn btn-remove">
-                        <ion-icon name="trash"></ion-icon>
-                        <span class="text-icon">Elimina</span>
-                    </button>
-                </div>
-                <div class="div-button">
                     <button id="btn-send" class="btn btn-send">
-                        <ion-icon name="send"></ion-icon>
+                        <ion-icon name="send" class="template-icon"></ion-icon>
                         <span class="text-icon">Invia</span>
                     </button>
                 </div>
@@ -82,82 +79,3 @@
         </div>
     </body>
 </html>
-
-
-<!--
-
-    <table class="article-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Nome</th>
-                            <th>Quantità</th>
-                            <th class="last-th">Codice</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>Libro</td>
-                            <td>2</td>
-                            <td class="last-td">000</td>
-                        </tr>
-                        <tr>
-                                <td><input type="checkbox"></td>
-                                <td>Libro</td>
-                                <td>2</td>
-                                <td class="last-td">000</td>
-                            </tr>
-                            <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>Libro</td>
-                                    <td>2</td>
-                                    <td class="last-td">000</td>
-                                </tr>
-                                <tr>
-                                        <td><input type="checkbox"></td>
-                                        <td>Libro</td>
-                                        <td>2</td>
-                                        <td class="last-td">000</td>
-                                    </tr>
-                                    <tr>
-                                            <td><input type="checkbox"></td>
-                                            <td>Libro</td>
-                                            <td>2</td>
-                                            <td class="last-td">000</td>
-                                        </tr>
-                                        <tr>
-                                                <td><input type="checkbox"></td>
-                                                <td>Libro</td>
-                                                <td>2</td>
-                                                <td class="last-td">000</td>
-                                            </tr>
-                                            <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td>Libro</td>
-                                                    <td>2</td>
-                                                    <td class="last-td">000</td>
-                                                </tr>
-                                                <tr>
-                                                        <td><input type="checkbox"></td>
-                                                        <td>Libro</td>
-                                                        <td>2</td>
-                                                        <td class="last-td">000</td>
-                                                    </tr>
-                                                    <tr>
-                                                            <td><input type="checkbox"></td>
-                                                            <td>Libro</td>
-                                                            <td>2</td>
-                                                            <td class="last-td">000</td>
-                                                        </tr>
-                                                        <tr>
-                                                                <td><input type="checkbox"></td>
-                                                                <td>Libro</td>
-                                                                <td>2</td>
-                                                                <td class="last-td">000</td>
-                                                            </tr>
-
-                    </tbody>
-                </table>
-
--->

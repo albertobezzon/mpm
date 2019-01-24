@@ -13,7 +13,7 @@ input.btn {
     font-family: 'Inconsolata', monospace;
 }
 
-ion-icon {
+.template-icon {
     color: white;
     font-size: 180%;
 }
@@ -46,7 +46,7 @@ ion-icon {
 .div-button {
     height: 100%;
     float: left;
-    width: 33.33%;
+    width: 50%;
 }
 
 .text-icon {
@@ -67,28 +67,6 @@ ion-icon {
     transition: background 0.8s;
 }
 
-.article-table {
-    width: 100%;
-}
-
-th {
-    border-right: 1px solid black;
-}
-
-.last-th {
-    border-right: none;
-}
-
-td {
-    padding: 5%;
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-}
-
-.last-td {
-    border-right: none;
-}
-
 .div-cart {
     margin-top: 20%;
     margin-bottom: 20%;
@@ -107,16 +85,55 @@ td {
 
 /* ARTICLE */
 .article {
-    text-align: left;
     background-color: white;
-    margin-left: 3%;
-    margin-right: 3%;
-    padding: 0% 3% 0% 3%;
+    margin: 3%;
+    padding: 3%;
+    height: 100%;
 }
 
+.article h4 {
+    margin: 0;
+    margin-bottom: 5%;
+}
+
+.info-article {
+    text-align: left;
+    float: left;
+    width: 65%;
+    height: 100%;
+}
+
+.button-article {
+    text-align: right;
+    height: 100%;
+    float: right;
+    width: 30%;
+    margin-right: 3%;
+}
+
+.button-article .btn-edit {
+    padding: 2%;
+    width: 90%;
+    color: white;
+    font-size: 65%;
+    margin-bottom: 15%;
+    border-radius: 8%;
+    border: 1px solid rgb(255, 115, 0);
+    background-color: orange;
+}
+
+.button-article .btn-delete {
+    padding: 2%;
+    width: 90%;
+    color: white;
+    font-size: 65%;
+    border-radius: 8%;
+    border: 1px solid rgb(255, 0, 0);
+    background-color: rgb(230, 27, 0);
+}
 
 @media screen and (min-width: 768px) and (max-width: 1024px)  { /* iPad/iPad Pro */
-    ion-icon {
+    .template-icon {
         font-size: 250%;
     }
 
@@ -131,7 +148,3 @@ td {
         overflow-y: scroll;
     }
 }
-
-
-
-
