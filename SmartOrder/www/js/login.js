@@ -12,7 +12,7 @@ function tryLogin() {
                 var risp = JSON.parse(this.responseText);
                 if(risp.codice == "0"){
                     alert("Accesso avvenuto con successo!");
-                    location.replace("homepage.html?codAzienda="+risp.codiceAzienda+"&username="+
+                    location.replace("homepage.html?codiceAzienda="+risp.codiceAzienda+"&username="+
                         risp.username);
                 }else{
                     if(risp.codice == "1"){
