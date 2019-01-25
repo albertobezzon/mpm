@@ -30,14 +30,22 @@ input.btn {
     position: fixed;
     width: 100%;
     top: 0;
-    height: 10%;
+    height: 17%;
     background-color: #008b00;
     text-align: center;
 }
 
 .banner h1 {
+    margin-bottom: 5%;
     color: white;
     font-size: 150%;
+}
+
+.banner h2 {
+    color: white;
+    font-size: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .username {
@@ -85,7 +93,8 @@ input.btn {
 
 /* ARTICLE */
 .article {
-    background-color: white;
+    color: white;
+    background-color: #388E3C;
     margin: 3%;
     padding: 3%;
     height: 100%;
