@@ -8,27 +8,30 @@ var host = "http://localhost:8080/webService";
 var prezzo = 0.0;
 
 function confirmOperation() {
-    var query = "";
-    if(mode == "update"){
-        query = "update contenutoCarrelli set quantita="+document.getElementById("quantity").value+"where username='"+username+"'";
-    }else{
-        query = "insert into contenutoCarrelli(barCode,quantita,username) values('"+barCode+"',"+document.getElementById("quantity").value+",'"+username+"')";
-    }
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST",host+"/AggiuntaModificaArticolo",true);
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var resp = JSON.parse(this.responseText);
-            if (resp.ok == "1") {
-                alert("Operazione eseguita con successo");
-                location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
-            }else{
-                alert("Errore nell'esecuzione dell'operazione");
-            }
+    var ok = confirm("Sicuro di voler effettuare l'operazione?");
+    if(ok) {
+        var query = "";
+        if(mode == "update"){
+            query = "update contenutoCarrelli set quantita="+document.getElementById("quantity").value+"where username='"+username+"'";
+        }else{
+            query = "insert into contenutoCarrelli(barCode,quantita,username) values('"+barCode+"',"+document.getElementById("quantity").value+",'"+username+"')";
         }
-    };
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
-    xhttp.send("codiceAzienda="+codiceAzienda+"&query="+query);
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST",host+"/AggiuntaModificaArticolo",true);
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var resp = JSON.parse(this.responseText);
+                if (resp.ok == "1") {
+                    alert("Operazione eseguita con successo");
+                    location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
+                }else{
+                    alert("Errore nell'esecuzione dell'operazione");
+                }
+            }
+        };
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+        xhttp.send("codiceAzienda="+codiceAzienda+"&query="+query);
+    }
 }
 
 function deleteOperation() {
@@ -38,15 +41,17 @@ function deleteOperation() {
 function minusPressed() {
     var q = parseInt(document.getElementById("quantity").value,10);
     if(q > 0) {
-        document.getElementById("quantity").value = q - 1;
-        //document.getElementById("price").innerHTML = q*prezzo;
+        q = q - 1;
+        document.getElementById("quantity").value = q;
+        document.getElementById("price").innerHTML = q*prezzo;
     }
 }
 
 function plusPressed() {
     var q = parseInt(document.getElementById("quantity").value,10);
-    document.getElementById("quantity").value = q + 1;
-    //document.getElementById("price").innerHTML = q*prezzo;
+    q += 1;
+    document.getElementById("quantity").value = q;
+    document.getElementById("price").innerHTML = q*prezzo;
 }
 
 function loadArticleInfo() {
@@ -76,7 +81,7 @@ function loadArticleInfo() {
                                     if (resp.articoli[i]["codice"] == barCode) {
                                         quantita = resp.articoli[i]["quantita"];
                                         document.getElementById("quantity").value = quantita;
-                                        //document.getElementById("price").innerHTML = quantita*prezzo;
+                                        document.getElementById("price").innerHTML = quantita*prezzo;
                                     }
                                 }
                             }
@@ -87,7 +92,7 @@ function loadArticleInfo() {
                 }else{
                     document.getElementById("bannerTitle").innerHTML = "Aggiungi articolo";
                     document.getElementById("quantity").value = 0;
-                    //document.getElementById("price").innerHTML = 0;
+                    document.getElementById("price").innerHTML = 0.0;
                 }
             }
         }

@@ -7,37 +7,28 @@
         <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
         <title>Ordini</title>
     </head>
-    <body>
-        <script src="https://unpkg.com/ionicons@4.5.1/dist/ionicons.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
+    <body onload="loadOrders()">
         <div class="container">
             <div class="banner"> 
                 <h1 class="text-banner">Ordini</h1>
             </div>
 
-            <div class="body-container">
-                <div class="order">
-                    <div class="order-info">
-                        <span class="order-code">Codice:</span>
-                        <span class="order-data">Data:</span>
-                        <span class="order-data">Totale:</span>
-                    </div>
-                    <div class="order-button">
-                        <button class="btn-details">DETTAGLI</button>
-                    </div>
-                    <div class="after-div"></div>
-                </div>
+            <div class="body-container" id="orders">
+
             </div>
 
             <div class="banner-button">
                 <div id="sort-div">
                     <span id="sort-label">Ordina per</span>
-                    <select id="sort">
+                    <select id="sort" onchange="changeOrder()">
                         <option value="data" autofocus>Data</option>
                         <option value="prezzo">Prezzo</option>
                     </select>
                 </div>
             </div>
         </div>
+        <script src="https://unpkg.com/ionicons@4.5.1/dist/ionicons.js"></script>
+        <!-- <script type="text/javascript" src="cordova.js"></script> -->
+        <script src="js/order.js" type="text/javascript"></script>
     </body>
 </html>
