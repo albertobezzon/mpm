@@ -26,20 +26,20 @@ input.btn {
     position: fixed;
     width: 100%;
     top: 0;
-    height: 20%;
+    height: 17%;
     background-color: #008b00;
     text-align: center;
 }
 
 .banner h1 {
-    margin-bottom: 0;
+    margin-bottom: 5%;
     color: white;
     font-size: 150%;
 }
 
 .banner h2 {
-    margin-top: 10%;
     color: white;
+    font-size: 100%;
 }
 
 .body-container {
@@ -92,8 +92,11 @@ input.btn {
 }
 
 #price-container {
-    margin-left: 20%;
-    text-align: left;
+    height: 10%;
+    background-color: #66BB6A;
+    position: fixed;
+    bottom: 10%;
+    width: 100%;
 }
 
 #price {

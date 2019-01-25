@@ -119,3 +119,9 @@ input.btn {
 #sort {
     font-size: 110%;
 }
+
+/* MENU */
+
+#menubutton {
+    float: left;
+}
