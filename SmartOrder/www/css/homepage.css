@@ -65,7 +65,7 @@ input.btn {
 
 .btn {
     height: 100%;
-    width: 100%;
+    width: 35%;
     background-color: transparent;
     border: none;
     transition: background 0.8s;
