@@ -49,10 +49,11 @@ input.btn {
 }
 
 #search-button {
-    position: absolute;  
-    right: -50px;
-    width: 40px;
-    height: 15%;
+    position: absolute;
+    margin-top: 1%; 
+    right: 10%;
+    width: 10%;
+    height: 26%;
     border: 1px solid #1B5E20;
     background: #1B5E20;
     text-align: center;
@@ -60,4 +61,55 @@ input.btn {
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
-  }
+}
+
+#list-article {
+    margin-top: 40%;
+}
+
+.article {
+    color: white;
+    background-color: #388E3C;
+    margin: 3%;
+    padding: 3%;
+    height: 100%;
+    border-radius: 1%;
+}
+
+.info-article {
+    text-align: left;
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.button-article {
+    text-align: right;
+    height: 100%;
+    float: right;
+    width: 30%;
+    margin-right: 3%;
+}
+
+.article h4 {
+    margin: 0;
+}
+
+.after-div {
+    clear: both;
+}
+
+.btn {
+    padding: 5%;
+    width: 90%;
+    color: white;
+    font-size: 65%;
+    border-radius: 3%;
+    border: 1px solid rgb(255, 115, 0);
+    background-color: orange;
+}
+
+.btn:active {
+    background: rgb(255, 81, 0) radial-gradient(circle, transparent 1%, rgb(255, 81, 0) 1%) center/15000%;
+    transition: background 0s;
+}
