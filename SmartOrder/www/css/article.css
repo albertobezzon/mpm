@@ -1,7 +1,8 @@
 body {
     margin: 0%;
     padding: 0%;
-    background-color: rgb(236, 236, 236);
+    height: 100%;
+    background-color: white;
     font-family: 'Inconsolata', monospace;
 }
 
@@ -26,14 +27,72 @@ input.btn {
     position: fixed;
     width: 100%;
     top: 0;
-    height: 9%;
-    background-color: rgb(44, 130, 201);
+    height: 20%;
+    background-color: #008b00;
     text-align: center;
+}
+
+.banner h1 {
+    margin-bottom: 0;
+    color: white;
+    font-size: 150%;
+}
+
+.banner h2 {
+    margin-top: 10%;
+    color: white;
+}
+
+.body-container {
+    margin-top: 40%;
+}
+
+#description {
+    width: 90%;
+    color: white;
+    background: #388E3C;
+    resize: none;
+    border-radius: 3%;
+    border: none;
+    font-size: 110%;
+    text-align: left;
+}
+
+#quantity-container label {
+    text-align: center;
+    display: block;
+    margin-top: 8%;
+    margin-bottom: 4%;
+}
+
+#quantity {
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
+    width: 15%;
+    padding: 2%;
+    border-radius: 5px;
+    border-box
+}
+
+#quantity-container button {
+    width: 10%;
+    padding: 2%;
+    height: 20%;
+    font-size: 100%;
+    border-radius: 8%;
+    border: none;
+    background-color: #388E3C;
+    color: white;
+}
+
+#quantity-container button:active {
+    background-color: white;
 }
 
 .banner-button {
     height: 9%;
-    background-color: rgb(44, 130, 201); 
+    background-color: #008b00; 
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -48,11 +107,6 @@ input.btn {
 .text-icon {
     display: block;
     color: white;
-}
-
-.text-banner {
-    color: white;
-    font-size: 150%;
 }
 
 .btn {
@@ -70,70 +124,4 @@ input.btn {
     background-color: rgb(3, 94, 160);
     background-size: 100%;
     transition: background 0s;
-}
-
-.body-container {
-    margin-top: 20%;
-    margin-bottom: 20%;
-    overflow-y: scroll;
-}
-
-.body-container {
-    margin-top: 25%;
-    margin-left: 7%;
-    margin-right: 7%;
-}
-
-.label-field {
-    display: block;
-    text-align: left;
-}
-
-#name {
-    width: 100%;
-    padding: 2% 0% 2% 0%;
-    background-color: rgb(242, 120, 75);
-}
-
-#name h2 {
-    margin: 0;
-    padding: 0;
-}
-
-#field-container {
-    background-color: rgb(135, 211, 124);
-}
-
-#quantity-container {
-    padding: 2% 0% 2% 0%;
-    background-color: rgb(135, 211, 124);
-}
-
-#quantity-container label {
-    text-align: center;
-}
-
-#description {
-    padding: 2% 2% 2% 2%;
-    text-align: left;
-    overflow-y: scroll;
-}
-
-#quantity {
-    margin: 3% 4% 3% 4%;
-    text-align: center;
-    width: 30%;
-}
-
-#quantity-container button {
-    width: 12%;
-    padding: 2%;
-    font-size: 100%;
-    border-radius: 8%;
-    border: none;
-    background-color: rgb(211, 84, 0);
-}
-
-#quantity-container button:active {
-    background-color: white;
 }
