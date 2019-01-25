@@ -3,6 +3,80 @@ var url = new URL(urlString);
 var codiceAzienda = url.searchParams.get("codiceAzienda");
 var username = url.searchParams.get("username");
 var host = "http://localhost:8080/webService";
+var empty = false;
+
+//controlla se un articolo è presente nel carrello dell'utente
+function check(code) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST",host+"/PrelievoInfoArticoli",true);
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var resp = JSON.parse(this.responseText);
+            if(resp.articoli.length != 0){
+                for(var i = 0; i < resp.articoli.length; i ++){
+                    if(resp.articoli[i]["codice"] == code){
+                        return true;
+                    }
+                }
+            }else{
+                return false;
+            }
+        }
+        return false;
+    };
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+    xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda);
+}
+
+function scanner() {
+    cordova.plugins.barcodeScanner.scan(
+        function (result) {
+            if(result.cancelled == true) {
+                alert("Scansione cancellata.");
+                location.replace("homepage.html?username="+username+"&codiceAzienda="+codiceAzienda);
+            }else{
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("POST",host+"/PrelievoInfoArticolo",true);
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var resp = JSON.parse(this.responseText);
+                        if(resp.ok == "0"){
+                            alert("Scansione errata o codice a barre non corrispondente ad un articolo del fornitore.");
+                            location.replace("homepage.html?username="+username+"&codiceAzienda="+codiceAzienda);
+                        }else{
+                            if(!check(resp.barCode)){
+                                location.replace("article.html?username="+username+"&codiceAzienda="+
+                                    codiceAzienda+"&barCode="+resp.barCode+"&nome="+resp.nome+"&prezzo="+
+                                    resp.prezzo+"&descrizione="+resp.descrizione);
+                            }else {
+                                alert("Articolo già presente in carrello");
+                                location.replace("homepage.html?username="+username+"&codiceAzienda="+codiceAzienda);
+                            }
+                        }
+                    }
+                };
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+                xhttp.send("codice="+result.text+"&codiceAzienda="+codiceAzienda);
+            }
+        },
+        function (error) {
+            alert("Scanzione fallita: " + error);
+        },
+        {
+            preferFrontCamera : false, // iOS and Android
+            showFlipCameraButton : false, // iOS and Android
+            showTorchButton : true, // iOS and Android
+            torchOn: false, // Android, launch with the torch switched on (if available)
+            saveHistory: true, // Android, save scan history (default false)
+            prompt : "Centra il codice a barre o il QR dentro l'area di rilevamento.", // Android
+            resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+            formats : "all", // default: all but PDF_417 and RSS_EXPANDED
+            orientation : "portrait", // Android only (portrait|landscape), default unset so it rotates with the device
+            disableAnimations : true, // iOS
+            disableSuccessBeep: false // iOS and Android
+        }
+    );
+}
 
 function deleteArticle(code) {
     var xhttp = new XMLHttpRequest();
@@ -30,20 +104,50 @@ function editArticle(code) {
 }
 
 function deleteAll() {
-    var ok = confirm("Sicuro che vuoi rimuovere tutto?");
-    var xhttp = new XMLHttpRequest();
-    if(ok) {
-        xhttp.open("POST",host+"/EliminazioneArticoli",true);
-        xhttp.onreadystatechange = function () {
-            if(this.readyState == 4 && this.status == 200){
-                var risp = JSON.parse(this.responseText);
-                if(risp.ok == "1"){
-                    location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
+    if(!empty){
+        var ok = confirm("Sicuro che vuoi rimuovere tutto?");
+        var xhttp = new XMLHttpRequest();
+        if(ok) {
+            xhttp.open("POST",host+"/EliminazioneArticoli",true);
+            xhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 200){
+                    var risp = JSON.parse(this.responseText);
+                    if(risp.ok == "1"){
+                        location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
+                    }
                 }
-            }
-        };
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
-        xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda+"&codici=all");
+            };
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+            xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda+"&codici=all");
+        }
+    }else{
+        alert("Nessun articolo in carrello!");
+    }
+}
+
+function sendOrder() {
+    if(!empty){
+        var ok = confirm("Vuoi inviare?");
+        var xhttp = new XMLHttpRequest();
+        var totale = document.getElementById("totale").innerHTML;
+        if(ok) {
+            xhttp.open("POST",host+"/InvioOrdine",true);
+            xhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 200){
+                    var risp = JSON.parse(this.responseText);
+                    if(risp.ok == "1"){
+                        alert("Ordine inviato con successo");
+                        location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
+                    }else{
+                        alert("Problemi nell'invio dell'ordine");
+                    }
+                }
+            };
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+            xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda+"&totale="+totale);
+        }
+    }else{
+        alert("Nessun articolo in carrello!");
     }
 }
 
@@ -60,7 +164,9 @@ function compute(xhttp) {
         p.appendChild(text);
         div.appendChild(p);
         document.getElementById("totale").innerHTML = total;
+        empty = true;
     }else {
+        empty = false;
         var article = null;
         var descr = null;
         var buttons = null;
