@@ -1,7 +1,6 @@
 body {
     margin: 0%;
     padding: 0%;
-    height: 100%;
     background-color: white;
     font-family: 'Inconsolata', monospace;
 }
@@ -61,18 +60,18 @@ input.btn {
 #quantity-container label {
     text-align: center;
     display: block;
-    margin-top: 8%;
+    margin-top: 6%;
     margin-bottom: 4%;
 }
 
 #quantity {
     margin-left: 2%;
     margin-right: 2%;
+    margin-bottom: 2%;
     text-align: center;
     width: 15%;
     padding: 2%;
     border-radius: 5px;
-    border-box
 }
 
 #quantity-container button {
@@ -84,14 +83,25 @@ input.btn {
     border: none;
     background-color: #388E3C;
     color: white;
+    transition: background 0.1s;
 }
 
 #quantity-container button:active {
-    background-color: white;
+    background: #1B5E20 radial-gradient(circle, transparent 1%, #1B5E20 1%) center/15000%;
+    transition: background 0s;
+}
+
+#price-container {
+    margin-left: 20%;
+    text-align: left;
+}
+
+#price {
+    margin-left: 5%;
 }
 
 .banner-button {
-    height: 9%;
+    height: 10%;
     background-color: #008b00; 
     position: fixed;
     bottom: 0;
@@ -111,17 +121,14 @@ input.btn {
 
 .btn {
     height: 100%;
+    width: 50%;
+    border-radius: 30%;
     background-color: transparent;
     border: none;
-    transition: background 0.8s;
-}
-
-.btn:hover {
-    background: rgb(44, 130, 201) radial-gradient(circle, transparent 1%, rgb(44, 130, 201) 1%) center/15000%;
+    transition: background 0.2s;
 }
 
 .btn:active {
-    background-color: rgb(3, 94, 160);
-    background-size: 100%;
+    background: #1B5E20 radial-gradient(circle, transparent 1%, #1B5E20 1%) center/15000%;
     transition: background 0s;
 }

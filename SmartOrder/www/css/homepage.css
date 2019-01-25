@@ -1,7 +1,7 @@
 body {
     margin: 0%;
     padding: 0%;
-    background-color: rgb(236, 236, 236);
+    background-color: white;
     font-family: 'Inconsolata', monospace;
 }
 
@@ -30,9 +30,14 @@ input.btn {
     position: fixed;
     width: 100%;
     top: 0;
-    height: 9%;
-    background-color: rgb(44, 130, 201);
+    height: 10%;
+    background-color: #008b00;
     text-align: center;
+}
+
+.banner h1 {
+    color: white;
+    font-size: 150%;
 }
 
 .username {
@@ -40,8 +45,8 @@ input.btn {
 }
 
 .banner-button {
-    height: 9%;
-    background-color: rgb(44, 130, 201); 
+    height: 10%;
+    background-color: #008b00; 
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -58,17 +63,13 @@ input.btn {
     color: white;
 }
 
-.text-banner {
-    color: white;
-    font-size: 150%;
-}
-
 .btn {
     height: 100%;
-    width: 35%;
+    width: 60%;
+    border-radius: 30%;
     background-color: transparent;
     border: none;
-    transition: background 0.8s;
+    transition: background 0.2s;
 }
 
 .div-cart {
@@ -77,13 +78,8 @@ input.btn {
     overflow-y: scroll;
 }
 
-.btn:hover {
-    background: rgb(44, 130, 201) radial-gradient(circle, transparent 1%, rgb(44, 130, 201) 1%) center/15000%;
-}
-
 .btn:active {
-    background-color: rgb(3, 94, 160);
-    background-size: 100%;
+    background: #1B5E20 radial-gradient(circle, transparent 1%, #1B5E20 1%) center/15000%;
     transition: background 0s;
 }
 
@@ -124,6 +120,12 @@ input.btn {
     border-radius: 8%;
     border: 1px solid rgb(255, 115, 0);
     background-color: orange;
+    transition: background 0.2s;
+}
+
+.button-article .btn-edit:active {
+    background: #E65100 radial-gradient(circle, transparent 1%, #E65100 1%) center/15000%;
+    transition: background 0s;
 }
 
 .button-article .btn-delete {
@@ -134,13 +136,19 @@ input.btn {
     border-radius: 8%;
     border: 1px solid rgb(255, 0, 0);
     background-color: rgb(230, 27, 0);
+    transition: background 0.2s;
+}
+
+.button-article .btn-delete:active{
+    background: #DD2C00 radial-gradient(circle, transparent 1%, #DD2C00 1%) center/15000%;
+    transition: background 0s;
 }
 
 #total {
-    height: 9%;
-    background-color: rgba(123, 239, 178, 1);
+    height: 10%;
+    background-color: #66BB6A;
     position: fixed;
-    bottom: 9%;
+    bottom: 10%;
     width: 100%;
 }
 

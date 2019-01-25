@@ -1,7 +1,7 @@
 body {
     margin: 0%;
     padding: 0%;
-    background-color: rgb(236, 236, 236);
+    background-color: white;
     font-family: 'Inconsolata', monospace;
 }
 
@@ -26,14 +26,19 @@ input.btn {
     position: fixed;
     width: 100%;
     top: 0;
-    height: 9%;
-    background-color: rgb(44, 130, 201);
+    height: 10%;
+    background-color: #008b00;
     text-align: center;
 }
 
+.banner h1 {
+    color: white;
+    font-size: 150%;
+}
+
 .banner-button {
-    height: 9%;
-    background-color: rgb(44, 130, 201); 
+    height: 10%;
+    background-color: #008b00; 
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -44,11 +49,6 @@ input.btn {
     color: white;
 }
 
-.text-banner {
-    color: white;
-    font-size: 150%;
-}
-
 .body-container {
     margin-top: 20%;
     margin-bottom: 20%;
@@ -56,13 +56,15 @@ input.btn {
 }
 
 .order {
-    background-color: white;
+    background-color: #388E3C;
+    border-radius: 1%;
     margin: 3%;
     padding: 3%;
     height: 100%;
 }
 
 .order-info {
+    color: white;
     text-align: left;
     float: left;
     width: 65%;
@@ -96,7 +98,7 @@ input.btn {
     width: 90%;
     color: white;
     font-size: 65%;
-    border-radius: 8%;
+    border-radius: 3%;
     border: 1px solid rgb(255, 115, 0);
     background-color: orange;
 }
