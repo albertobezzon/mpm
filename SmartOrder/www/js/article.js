@@ -8,6 +8,14 @@ var host = "http://localhost:8080/webService";
 var prezzo = 0.0;
 var source = url.searchParams.get("source");
 
+function removeLoader() {
+    document.getElementById("loading").style.display = "none";
+}
+
+function placeLoader() {
+    document.getElementById("loading").style.display = "block";
+}
+
 function confirmOperation() {
     var ok = confirm("Sicuro di voler effettuare l'operazione?");
     if(ok) {
@@ -23,15 +31,18 @@ function confirmOperation() {
             if (this.readyState == 4 && this.status == 200) {
                 var resp = JSON.parse(this.responseText);
                 if (resp.ok == "1") {
+                    removeLoader();
                     alert("Operazione eseguita con successo");
                     location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
                 }else{
+                    removeLoader();
                     alert("Errore nell'esecuzione dell'operazione");
                 }
             }
         };
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
         xhttp.send("codiceAzienda="+codiceAzienda+"&query="+query);
+        placeLoader();
     }
 }
 
@@ -87,6 +98,7 @@ function loadArticleInfo() {
                                 }
                             }
                         }
+                        removeLoader();
                     };
                     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
                     xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda);
@@ -94,6 +106,7 @@ function loadArticleInfo() {
                     document.getElementById("bannerTitle").innerHTML = "Aggiungi articolo";
                     document.getElementById("quantity").value = 0;
                     document.getElementById("price").innerHTML = 0.0;
+                    removeLoader();
                 }
             }
         }

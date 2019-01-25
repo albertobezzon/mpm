@@ -5,6 +5,10 @@ var username = url.searchParams.get("username");
 var host = "http://localhost:8080/webService";
 var articoli = [];
 
+function removeLoader() {
+    document.getElementById("loading").style.display = "none";
+}
+
 function addArticle(code) {
     location.replace("article.html?codiceAzienda="+codiceAzienda+"&username="+username+"&codiceArticolo="+code+"&mode=add&source=inventory");
 }
@@ -71,6 +75,7 @@ function loadArticles() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             compute(this);
+            removeLoader();
         }
     };
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");

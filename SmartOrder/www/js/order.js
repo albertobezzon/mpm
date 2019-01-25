@@ -5,6 +5,10 @@ var username = url.searchParams.get("username");
 var host = "http://localhost:8080/webService";
 var ordini = [];
 
+function removeLoader() {
+    document.getElementById("loading").style.display = "none";
+}
+
 function openOrder(code,total) {
     location.replace("articles.html?codiceAzienda="+codiceAzienda+"&username="+username+"&codiceOrdine="+code+"&totale="+total);
 }
@@ -87,6 +91,7 @@ function loadOrders() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             compute(this);
+            removeLoader();
         }
     };
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
