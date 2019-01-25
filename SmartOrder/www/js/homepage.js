@@ -46,7 +46,7 @@ function scanner() {
                         }else{
                             if(!check(resp.barCode)){
                                 location.replace("article.html?username="+username+"&codiceAzienda="+
-                                    codiceAzienda+"&codiceArticolo="+resp.barCode+"&mode=add");
+                                    codiceAzienda+"&codiceArticolo="+resp.barCode+"&mode=add&source=homepage");
                             }else {
                                 alert("Articolo già presente in carrello");
                                 location.replace("homepage.html?username="+username+"&codiceAzienda="+codiceAzienda);
@@ -98,7 +98,7 @@ function deleteArticle(code) {
 function editArticle(code) {
     var ok = confirm("Vuoi modificare?");
     if(ok){
-        location.replace("article.html?codiceAzienda="+codiceAzienda+"&username="+username+"&codiceArticolo="+code+"&mode=update");
+        location.replace("article.html?codiceAzienda="+codiceAzienda+"&username="+username+"&codiceArticolo="+code+"&mode=update&source=homepage");
     }
 }
 

@@ -6,6 +6,7 @@ var barCode = url.searchParams.get("codiceArticolo");
 var mode = url.searchParams.get("mode");
 var host = "http://localhost:8080/webService";
 var prezzo = 0.0;
+var source = url.searchParams.get("source");
 
 function confirmOperation() {
     var ok = confirm("Sicuro di voler effettuare l'operazione?");
@@ -35,7 +36,7 @@ function confirmOperation() {
 }
 
 function deleteOperation() {
-    location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
+    location.replace(source+".html?codiceAzienda="+codiceAzienda+"&username="+username);
 }
 
 function minusPressed() {

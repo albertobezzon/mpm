@@ -7,16 +7,13 @@
         <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
         <title>Articoli nell'ordine</title>
     </head>
-    <body onload="loadCart()">
+    <body onload="loadArticles()">
         <div class="container">
             <div class="banner">
-                <h1 class="text-banner">Ordine #</h1>
+                <h1 class="text-banner">Ordine #<span id="orderNumber"></span></h1>
             </div>
             <div id="article-list">
-                <div class="article">
-                    <h4><span id="code">codice</span> - <span id="name">nome</span> (x<span id="quantity">quantità</span>)</h4>
-                    <h4><span id="price">prezzo</span> - <span id="partial price">pprice</span></h4>
-                </div>
+
             </div>
 
             <div id="total" class="total-article">

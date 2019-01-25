@@ -2,12 +2,11 @@ var urlString = window.location.href;
 var url = new URL(urlString);
 var codiceAzienda = url.searchParams.get("codiceAzienda");
 var username = url.searchParams.get("username");
-var mode = url.searchParams.get("mode");
 var host = "http://localhost:8080/webService";
 var ordini = [];
 
-function openOrder(code) {
-    location.replace("articles.html?codiceAzienda="+codiceAzienda+"&username="+username+"&codiceOrdine="+code);
+function openOrder(code,total) {
+    location.replace("articles.html?codiceAzienda="+codiceAzienda+"&username="+username+"&codiceOrdine="+code+"&totale="+total);
 }
 
 function changeOrder() {
@@ -56,7 +55,7 @@ function changeOrder() {
         detailsButton = document.createElement("button");
         detailsButton.setAttribute("class", "btn-details");
         detailsButton.innerHTML = "DETTAGLI";
-        detailsButton.setAttribute("onclick", "openOrder(" + ordini[i]["codice"] + ")");
+        detailsButton.setAttribute("onclick", "openOrder(" + ordini[i]["codice"] + ","+ordini[i]["totale"]+")");
         buttons.appendChild(detailsButton);
         order.appendChild(descr);
         order.appendChild(buttons);
@@ -70,6 +69,7 @@ function changeOrder() {
 function compute(xhttp) {
     var risp = JSON.parse(xhttp.responseText);
     if(risp.ok == "0"){
+        var container = document.getElementById("orders");
         var p = document.createElement("p");
         p.setAttribute("class","order-empty");
         var text = document.createTextNode("Nessun ordine effettuato");
