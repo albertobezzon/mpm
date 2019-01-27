@@ -1,3 +1,15 @@
+#name {
+    width: 90%;
+    color: white;
+    background: #388E3C;
+    resize: none;
+    border-radius: 4%;
+    border: none;
+    font-size: 110%;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
 #description {
     width: 90%;
     color: white;
