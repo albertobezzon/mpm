@@ -67,6 +67,32 @@ function plusPressed() {
 }
 
 function loadArticleInfo() {
+    var field = document.getElementById("field-container");
+    var textBox = document.createElement("input");
+    textBox.setAttribute("id","name");
+    textBox.setAttribute("type","text");
+    textBox.readOnly = true;
+    var textArea = document.createElement("textarea");
+    textArea.setAttribute("id","description");
+    textArea.setAttribute("rows","15");
+    textArea.readOnly = true;
+    var quantity = document.getElementById("quantity-container");
+    var label = document.createElement("label");
+    label.setAttribute("for","quantity");
+    label.setAttribute("class","label-field");
+    label.appendChild(document.createTextNode("Quantità"));
+    var button1 = document.createElement("button");
+    button1.setAttribute("class","button-minus");
+    button1.setAttribute("onclick","minusPressed()");
+    button1.appendChild(document.createTextNode("-"));
+    var button2 = document.createElement("button");
+    button2.setAttribute("id","button-plus");
+    button2.setAttribute("onclick","plusPressed()");
+    button2.appendChild(document.createTextNode("+"));
+    var input = document.createElement("input");
+    input.setAttribute("type","number");
+    input.setAttribute("name","quantita");
+    input.setAttribute("id","quantity");
     var nome = "";
     var quantita = 0;
     var descrizione = "";
@@ -79,7 +105,14 @@ function loadArticleInfo() {
                 nome = resp.nome;
                 descrizione = resp.descrizione;
                 prezzo = resp.prezzo;
-                document.getElementById("description").innerHTML = nome + "\n\n" + descrizione;
+                field.appendChild(textBox);
+                field.appendChild(textArea);
+                quantity.appendChild(label);
+                quantity.appendChild(button1);
+                quantity.appendChild(input);
+                quantity.appendChild(button2);
+                document.getElementById("name").value = nome;
+                document.getElementById("description").innerHTML = descrizione;
                 if(mode == "update"){
                     document.getElementById("bannerTitle").innerHTML = "Modifica";
                     var xhttp = new XMLHttpRequest();
