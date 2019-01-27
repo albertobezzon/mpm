@@ -1,21 +1,6 @@
-.banner {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    height: 10%;
-    background-color: #008b00;
-    text-align: center;
-}
-
-.banner h1 {
-    color: white;
-    font-size: 150%;
-}
-
-.container {
-    text-align: left;
-    margin-top: 20%;
-    overflow-y: scroll;
+.body-container {
+    bottom: 0%;
+    height: 90%;
 }
 
 .article {

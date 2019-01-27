@@ -42,7 +42,6 @@ a {
 
 .nav-fostrap {
     display: block;
-    margin-bottom: 15px 0;
     background: #008b00;
     -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -110,7 +109,6 @@ a {
         border-radius: 0;
         overflow-y: auto;
         overflow-x: hidden;
-        height: 100%;
     }
 
     .title-mobile {
@@ -137,7 +135,7 @@ a {
         display: inline-block;
         vertical-align: middle;
         width: 100%;
-        height: 50px;
+        height: 10%;
         margin: 0;
         position: absolute;
         top: 0px;
@@ -240,7 +238,17 @@ body {
     text-align: center;
 }
 
+.body-container {
+    top: 10%;
+    bottom: 10%;
+    position: fixed;
+    height: 80%;
+    width: 100%;
+    padding-top: 5%;
+}
+
 .banner-button {
+    z-index: -1;
     height: 10%;
     background-color: #008b00; 
     position: fixed;

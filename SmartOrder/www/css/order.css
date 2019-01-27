@@ -12,12 +12,6 @@
     font-size: 150%;
 }*/
 
-.body-container {
-    margin-top: 20%;
-    margin-bottom: 20%;
-    overflow-y: scroll;
-}
-
 .order {
     background-color: #388E3C;
     border-radius: 1%;

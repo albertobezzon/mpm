@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/icon.css">
         <link rel="stylesheet" type="text/css" href="css/general.css">
         <link rel="stylesheet" type="text/css" href="css/homepage.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -12,12 +13,19 @@
         <div id="loading"></div>
         <!-- <script type="text/javascript" src="cordova.js"></script> -->
         <div class="container">
-            <div class="banner">
-                <h1 class="text-banner">Il tuo carrello</h1>
-                <h2>Benvenuto <span class="username" id="name"></span></h2>
-                <h2>Codice azienda: <span id="code"></span></h2>
-            </div>
-            <div class="div-cart">
+            <nav>
+                <div class="nav-fostrap" id="mobile-menu">
+                    <ul>
+                        <li><a href="">Homepage</a></li>
+                        <li><a href="" >Blogger</a></li>
+                    </ul>
+                </div>
+                <div class="nav-bg-fostrap">
+                    <div class="navbar-fostrap" onclick="openMenu()"> <span></span> <span></span> <span></span> </div>
+                    <a class="title-mobile">Carrello</a>
+                </div>
+            </nav>
+            <div class="body-container">
                 <div id="articleList">
 
                 </div>
@@ -49,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <script src="https://unpkg.com/ionicons@4.5.1/dist/ionicons.js"></script>
+        <!--<script src="https://unpkg.com/ionicons@4.5.1/dist/ionicons.js"></script>-->
         <script src="js/homepage.js" type="text/javascript"></script>
     </body>
 </html>

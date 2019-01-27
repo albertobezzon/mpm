@@ -3,27 +3,38 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/inventory.css">
         <link rel="stylesheet" type="text/css" href="css/general.css">
+        <link rel="stylesheet" type="text/css" href="css/inventory.css">
         <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
         <title>Inventario</title>
     </head>
     <body onload="loadArticles()">
         <div id="loading"></div>
         <div class="container">
-            <div class="banner">
-                <h1 class="text-banner">Inventario</h1>
+            <nav>
+                <div class="nav-fostrap" id="mobile-menu">
+                    <ul>
+                        <li><a href="">Homepage</a></li>
+                        <li><a href="" >Blogger</a></li>
+                    </ul>
+                </div>
+                <div class="nav-bg-fostrap">
+                    <div class="navbar-fostrap" onclick="openMenu()"> <span></span> <span></span> <span></span> </div>
+                    <a class="title-mobile">Articoli</a>
+                </div>
+            </nav>
+            <div class="body-container">
                 <input type="search" placeholder="Cerca..." id="searchArticle" oninput="loadArticles()">
-            </div>
-            <div id="list-article">
-                <div class="article">
-                    <div class="info-article"><h4><span id="name">Nome</span> - <span id="price">150$</span></h4></div>
-                    <div class="button-article">
-                        <button class="btn btn-open">
-                            APRI
-                        </button>
+                <div id="list-article">
+                    <div class="article">
+                        <div class="info-article"><h4><span id="name">Nome</span> - <span id="price">150$</span></h4></div>
+                        <div class="button-article">
+                            <button class="btn btn-open">
+                                APRI
+                            </button>
+                        </div>
+                        <div class="after-div"></div>
                     </div>
-                    <div class="after-div"></div>
                 </div>
             </div>
         </div>

@@ -5,21 +5,32 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/general.css">
         <link rel="stylesheet" type="text/css" href="css/articles.css">
-        <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
         <title>Articoli nell'ordine</title>
     </head>
     <body onload="loadArticles()">
         <div id="loading"></div>
         <div class="container">
-            <div class="banner">
-                <h1 class="text-banner">Ordine #<span id="orderNumber"></span></h1>
-            </div>
-            <div id="article-list">
+            <nav>
+                <div class="nav-fostrap" id="mobile-menu">
+                    <ul>
+                        <li><a href="">Homepage</a></li>
+                        <li><a href="" >Blogger</a></li>
+                    </ul>
+                </div>
+                <div class="nav-bg-fostrap">
+                    <div class="navbar-fostrap" onclick="openMenu()"> <span></span> <span></span> <span></span> </div>
+                    <a class="title-mobile">Ordine #</a>
+                </div>
+            </nav>
+            <div class="body-container">
+                <div id="article-list">
 
-            </div>
+                </div>
 
-            <div id="total" class="total-article">
-                <h4>Totale: <span id="totale"></span> EUR</h4>
+                <div id="total" class="total-article">
+                    <h4>Totale: <span id="totale"></span> EUR</h4>
+                </div>
             </div>
         </div>
         <script src="https://unpkg.com/ionicons@4.5.1/dist/ionicons.js"></script>

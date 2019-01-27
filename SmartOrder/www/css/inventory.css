@@ -1,70 +1,19 @@
-body {
-    margin: 0%;
-    padding: 0%;
-    background-color: white;
-    font-family: 'Inconsolata', monospace;
+.body-container {
+    bottom: 0%;
+    height: 90%;
 }
 
-::-webkit-input-placeholder {
-    font-family: 'Inconsolata', monospace; 
-}
-
-input.btn {
-    font-family: 'Inconsolata', monospace;
-}
-
-.template-icon {
-    color: white;
-    font-size: 180%;
-}
-
-.container {
-    text-align: center;
-}
-
-.banner {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    height: 20%;
-    background-color: #008b00;
-    text-align: center;
-}
-
-.banner h1 {
-    color: white;
-    font-size: 150%;
-}
-
-.banner input[type=text] {
-    margin-left: 5%;
-    float: left;
+input[type=search] {
     width: 80%;
-    border: 3px solid #1B5E20;
-    padding: 5px;
-    height: 20px;
+    border: 2px solid #1B5E20;
+    height: 6%;
     border-radius: 5px;
     outline: none;
     color: #9DBFAF;
 }
 
-#search-button {
-    position: absolute;
-    margin-top: 1%; 
-    right: 10%;
-    width: 10%;
-    height: 26%;
-    border: 1px solid #1B5E20;
-    background: #1B5E20;
-    text-align: center;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
 #list-article {
-    margin-top: 40%;
+    margin-top: 10%;
 }
 
 .article {

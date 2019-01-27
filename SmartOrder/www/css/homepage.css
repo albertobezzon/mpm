@@ -39,12 +39,6 @@
     transition: background 0.2s;
 }
 
-.div-cart {
-    margin-top: 20%;
-    margin-bottom: 20%;
-    overflow-y: scroll;
-}
-
 .btn:active {
     background: #1B5E20 radial-gradient(circle, transparent 1%, #1B5E20 1%) center/15000%;
     transition: background 0s;
