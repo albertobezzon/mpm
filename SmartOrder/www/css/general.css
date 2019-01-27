@@ -64,13 +64,13 @@ a {
     padding: 0;
     display: inline-block;
     position: relative;
-    font-size: 14;
+    font-size: 100%;
     color: #def1f0;
 }
 
 .nav-fostrap li a {
     padding: 15px 20px;
-    font-size: 14;
+    font-size: 100%;
     color: #def1f0;
     display: inline-block;
     outline: 0;
@@ -93,7 +93,7 @@ a {
 
     .nav-fostrap {
         background: #fff;
-        width: 200px;
+        width: 45%;
         height: 100%;
         display: block;
         position: fixed;
@@ -173,7 +173,7 @@ a {
 
     .navbar-fostrap span:nth-child(3) { width: 20px; }
 
-    .nav-fostrap ul { padding-top: 50px; }
+    .nav-fostrap div { padding-top: 45%; }
 
     .nav-fostrap li { display: block; }
 
