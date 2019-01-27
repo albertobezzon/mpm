@@ -173,8 +173,6 @@ a {
 
     .navbar-fostrap span:nth-child(3) { width: 20px; }
 
-    .nav-fostrap div { padding-top: 45%; }
-
     .nav-fostrap li { display: block; }
 
     .nav-fostrap li a {
@@ -197,6 +195,37 @@ a {
         bottom: 0;
         left: 0;
         right: 0;
+    }
+}
+
+
+@media only screen and (max-height:850px) {
+    .nav-fostrap div {
+        padding-top: 52%;
+    }
+}
+
+@media only screen and (max-height:800px) {
+    .nav-fostrap div {
+        padding-top: 45%;
+    }
+}
+
+@media only screen and (max-height:700px) {
+    .nav-fostrap div {
+        padding-top: 45%;
+    }
+}
+
+@media only screen and (max-height:600px) {
+    .nav-fostrap div {
+        padding-top: 42%;
+    }
+}
+
+@media only screen and (max-height:500px) {
+    .nav-fostrap div {
+        padding-top: 40%;
     }
 }
 
