@@ -214,19 +214,23 @@ a {
 /* TEMPLATE */
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: white;
     margin: 0%;
     padding: 0%;
 }
 
-::-webkit-input-placeholder {
-    font-family: 'Roboto', sans-serif;
+input, textarea, select, button {
+    font-family: 'Montserrat', sans-serif;
 }
 
-.template-icon {
+::-webkit-input-placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.img-icon {
     color: white;
-    font-size: 180%;
+    width: 30%;
 }
 
 .text-icon {
@@ -246,6 +250,7 @@ body {
     width: 100%;
     padding-top: 5%;
     z-index: -1;
+    overflow-y: scroll;
 }
 
 .banner-button {

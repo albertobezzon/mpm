@@ -5,7 +5,7 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/general.css">
         <link rel="stylesheet" type="text/css" href="css/article.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <title>Aggiungi articolo</title>
     </head>
     <body onload="loadArticleInfo()">
@@ -34,7 +34,6 @@
 
             <div class="body-container">
                 <div id="field-container">
-                    <textarea id="name" rows="2" readonly></textarea>
                     <textarea id="description" rows="15" readonly></textarea>
                 </div>
                 <div id="quantity-container">
@@ -51,13 +50,13 @@
             <div class="banner-button">
                 <div class="div-button">
                     <button id="btn-add" class="btn btn-confirm" onclick="confirmOperation()">
-                        <img src="img/confirm.png">
+                        <img src="img/confirm.png" class="img-icon">
                         <span class="text-icon">Conferma</span>
                     </button>
                 </div>
                 <div class="div-button">
                     <button id="btn-cancel" class="btn btn-cancel" onclick="deleteOperation()">
-                        <img src="img/trashbin.png">
+                        <img src="img/trashbin.png" class="img-icon">
                         <span class="text-icon">Annulla</span>
                     </button>
                 </div>
