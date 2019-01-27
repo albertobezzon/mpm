@@ -5,26 +5,6 @@ var username = url.searchParams.get("username");
 var host = "http://localhost:8080/webService";
 var empty = false;
 
-function openMenu() {
-    var body = document.getElementsByTagName("BODY")[0].classList;
-    var menu = document.getElementById("mobile-menu").classList;
-    if(body.contains("cover-big") && menu.contains("visible")){
-        deleteMenu();
-    }else{
-        body.add("cover-big");
-        menu.add("visible");
-    }
-}
-
-function deleteMenu() {
-    var body = document.getElementsByTagName("BODY")[0].classList;
-    var menu = document.getElementById("mobile-menu").classList;
-    if(body.contains("cover-big") && menu.contains("visible")){
-        body.remove("cover-big");
-        menu.remove("visible");
-    }
-}
-
 function placeLoader() {
     document.getElementById("loading").style.display = "block";
 }
@@ -195,8 +175,6 @@ function sendOrder() {
 
 function compute(xhttp) {
     var risp = JSON.parse(xhttp.responseText);
-    document.getElementById("name").innerHTML = risp.nome;
-    document.getElementById("code").innerHTML = codiceAzienda;
     var div = document.getElementById("articleList");
     var total = 0.0;
     if(risp.articoli.length == 0){

@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
         <title>Ordini</title>
     </head>
-    <body>
+    <body onload="loadOrders()">
         <div id="loading"></div>
         <div class="container">
             <nav>
@@ -21,7 +21,7 @@
                     </ul>
                 </div>
                 <div class="nav-bg-fostrap">
-                    <div class="navbar-fostrap" onclick="openMenu()"> <span></span> <span></span> <span></span> </div>
+                    <div class="navbar-fostrap"> <span></span> <span></span> <span></span> </div>
                     <a class="title-mobile">Ordini</a>
                 </div>
             </nav>
@@ -30,7 +30,7 @@
             </div>
 
             <div class="banner-button">
-                <div id="sort-div" onclick="deleteMenu()">
+                <div id="sort-div">
                     <span id="sort-label">Ordina per</span>
                     <select id="sort" onchange="changeOrder()">
                         <option value="data" autofocus>Data</option>
@@ -40,7 +40,7 @@
             </div>
         </div>
         <script src="https://unpkg.com/ionicons@4.5.1/dist/ionicons.js"></script>
-        <!-- <script type="text/javascript" src="cordova.js"></script> -->
         <script src="js/order.js" type="text/javascript"></script>
+        <script src="js/general.js" type="text/javascript"></script>
     </body>
 </html>

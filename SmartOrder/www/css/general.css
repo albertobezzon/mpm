@@ -245,6 +245,7 @@ body {
     height: 80%;
     width: 100%;
     padding-top: 5%;
+    z-index: -1;
 }
 
 .banner-button {

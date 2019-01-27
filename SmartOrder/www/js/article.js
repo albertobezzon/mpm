@@ -8,26 +8,6 @@ var host = "http://localhost:8080/webService";
 var prezzo = 0.0;
 var source = url.searchParams.get("source");
 
-function openMenu() {
-    var body = document.getElementsByTagName("BODY")[0].classList;
-    var menu = document.getElementById("mobile-menu").classList;
-    if(body.contains("cover-big") && menu.contains("visible")){
-        deleteMenu();
-    }else{
-        body.add("cover-big");
-        menu.add("visible");
-    }
-}
-
-function deleteMenu() {
-    var body = document.getElementsByTagName("BODY")[0].classList;
-    var menu = document.getElementById("mobile-menu").classList;
-    if(body.contains("cover-big") && menu.contains("visible")){
-        body.remove("cover-big");
-        menu.remove("visible");
-    }
-}
-
 function removeLoader() {
     document.getElementById("loading").style.display = "none";
 }
@@ -99,10 +79,9 @@ function loadArticleInfo() {
                 nome = resp.nome;
                 descrizione = resp.descrizione;
                 prezzo = resp.prezzo;
-                document.getElementById("name").innerHTML = nome;
-                document.getElementById("description").innerHTML = descrizione;
+                document.getElementById("description").innerHTML = nome + "\n\n" + descrizione;
                 if(mode == "update"){
-                    document.getElementById("bannerTitle").innerHTML = "Modifica articolo";
+                    document.getElementById("bannerTitle").innerHTML = "Modifica";
                     var xhttp = new XMLHttpRequest();
                     xhttp.open("POST",host+"/PrelievoInfoArticoli",true);
                     xhttp.onreadystatechange = function() {
@@ -123,7 +102,7 @@ function loadArticleInfo() {
                     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
                     xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda);
                 }else{
-                    document.getElementById("bannerTitle").innerHTML = "Aggiungi articolo";
+                    document.getElementById("bannerTitle").innerHTML = "Aggiunta";
                     document.getElementById("quantity").value = 0;
                     document.getElementById("price").innerHTML = 0.0;
                     removeLoader();

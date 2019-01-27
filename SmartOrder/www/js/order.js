@@ -5,26 +5,6 @@ var username = url.searchParams.get("username");
 var host = "http://localhost:8080/webService";
 var ordini = [];
 
-function openMenu() {
-    var body = document.getElementsByTagName("BODY")[0].classList;
-    var menu = document.getElementById("mobile-menu").classList;
-    if(body.contains("cover-big") && menu.contains("visible")){
-        deleteMenu();
-    }else{
-        body.add("cover-big");
-        menu.add("visible");
-    }
-}
-
-function deleteMenu() {
-    var body = document.getElementsByTagName("BODY")[0].classList;
-    var menu = document.getElementById("mobile-menu").classList;
-    if(body.contains("cover-big") && menu.contains("visible")){
-        body.remove("cover-big");
-        menu.remove("visible");
-    }
-}
-
 function removeLoader() {
     document.getElementById("loading").style.display = "none";
 }
