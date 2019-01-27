@@ -1,31 +1,3 @@
-body {
-    margin: 0%;
-    padding: 0%;
-    background-color: white;
-    font-family: 'Inconsolata', monospace;
-}
-
-::-webkit-input-placeholder {
-    font-family: 'Inconsolata', monospace; 
-}
-
-::-webkit-scrollbar { 
-    display: none; 
-}
-
-input.btn {
-    font-family: 'Inconsolata', monospace;
-}
-
-.template-icon {
-    color: white;
-    font-size: 180%;
-}
-
-.container {
-    text-align: center;
-}
-
 .banner {
     position: fixed;
     width: 100%;
@@ -52,23 +24,10 @@ input.btn {
     font-weight: bold;
 }
 
-.banner-button {
-    height: 10%;
-    background-color: #008b00; 
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
 .div-button {
     height: 100%;
     float: left;
     width: 33.33%;
-}
-
-.text-icon {
-    display: block;
-    color: white;
 }
 
 .btn {

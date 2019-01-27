@@ -1,11 +1,11 @@
 body {
     background-color: #A5D6A7;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Roboto', sans-serif;
 }
 
 ::-webkit-input-placeholder {
     color: white;
-    font-family: 'Inconsolata', monospace; 
+    font-family: 'Roboto', sans-serif; 
 }
 
 .container {
