@@ -1,4 +1,4 @@
-var host = "http://localhost:8080/webService";
+var host = "http://18.225.31.222:8080/webService";
 
 function tryLogin() {
     var user = document.getElementById("input-user").value;

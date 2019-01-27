@@ -4,7 +4,7 @@ var codiceAzienda = url.searchParams.get("codiceAzienda");
 var username = url.searchParams.get("username");
 var codiceOrdine = url.searchParams.get("codiceOrdine");
 var totale = url.searchParams.get("totale")
-var host = "http://localhost:8080/webService";
+var host = "http://18.225.31.222:8080/webService";
 
 function removeLoader() {
     document.getElementById("loading").style.display = "none";

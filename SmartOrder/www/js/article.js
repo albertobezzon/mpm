@@ -4,7 +4,7 @@ var codiceAzienda = url.searchParams.get("codiceAzienda");
 var username = url.searchParams.get("username");
 var barCode = url.searchParams.get("codiceArticolo");
 var mode = url.searchParams.get("mode");
-var host = "http://localhost:8080/webService";
+var host = "http://18.225.31.222:8080/webService";
 var prezzo = 0.0;
 var source = url.searchParams.get("source");
 
