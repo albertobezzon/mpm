@@ -12,7 +12,7 @@ function tryLogin() {
                 var risp = JSON.parse(this.responseText);
                 if(risp.codice == "0"){
                     alert("Accesso avvenuto con successo!");
-                    if(document.getElementById("label-checkbox").checked == true){
+                    if(document.getElementById("login-box").checked == true){
                         window.localStorage["loggedIn"] = "true";
                     }
                     window.localStorage["username"] = risp.username;
