@@ -74,3 +74,13 @@
     background: url(../img/up-arrow.png) 96% / 15% no-repeat #eee;
 }
 
+#menu-info {
+    background: #388E3C;
+    margin-top: 0%;
+    padding-top: 8% !important;
+}
+
+#div-menu {
+    margin-top: 12%;
+}
+
