@@ -12,12 +12,6 @@
     border-radius: 2%;
 }
 
-.article h4 {
-    margin: 0;
-    padding: 0;
-    font-size: 80%;
-}
-
 #total {
     text-align: center;
     align-items: center;
@@ -28,4 +22,13 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+#total h4 {
+    width: 100%;
+    font-size: 120%;
+}
+
+#totale {
+    margin-left: 3%;
 }

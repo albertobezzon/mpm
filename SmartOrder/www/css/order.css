@@ -65,5 +65,12 @@
 
 #sort {
     font-size: 110%;
+    width: 25%;
+    border: 2px solid #1B5E20;
+    border-radius: 4%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../img/up-arrow.png) 96% / 15% no-repeat #eee;
 }
 
