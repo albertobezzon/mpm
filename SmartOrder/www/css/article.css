@@ -3,7 +3,7 @@
     color: white;
     background: #388E3C;
     resize: none;
-    border-radius: 4%;
+    border-radius: 2%;
     border: none;
     font-size: 110%;
     text-align: center;
@@ -40,26 +40,25 @@
 
 #quantity-container button {
     width: 10%;
-    padding: 2%;
     height: 20%;
     font-size: 100%;
     border-radius: 8%;
-    border: none;
     background-color: #388E3C;
-    color: white;
-    transition: background 0.1s;
-}
-
-#quantity-container button:active {
-    background: #1B5E20 radial-gradient(circle, transparent 1%, #1B5E20 1%) center/15000%;
-    transition: background 0s;
 }
 
 #price-container {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     height: 10%;
     background-color: #66BB6A;
     position: fixed;
     bottom: 10%;
+    width: 100%;
+}
+
+#price-container h4 {
     width: 100%;
 }
 
@@ -74,15 +73,5 @@
 }
 
 .btn {
-    height: 100%;
-    width: 50%;
-    border-radius: 30%;
-    background-color: transparent;
-    border: none;
-    transition: background 0.2s;
-}
-
-.btn:active {
-    background: #1B5E20 radial-gradient(circle, transparent 1%, #1B5E20 1%) center/15000%;
-    transition: background 0s;
+    width: 40%;
 }

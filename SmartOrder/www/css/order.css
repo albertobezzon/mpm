@@ -36,11 +36,9 @@
 }
 
 .order-button .btn-details {
-    padding: 10%;
     width: 90%;
-    color: white;
-    font-size: 65%;
-    border-radius: 3%;
+    font-size: 80%;
+    border-radius: 5%;
     border: 1px solid rgb(255, 115, 0);
     background-color: orange;
 }
@@ -51,11 +49,18 @@
 
 #sort-label {
     color: white;
+    margin-right: 2%;
     font-size: 120%;
 }
 
 #sort-div {
-    margin-top: 4.5%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 10%;
+    position: fixed;
+    width: 100%;
 }
 
 #sort {

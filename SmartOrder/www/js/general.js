@@ -14,6 +14,10 @@ if(url.href.includes("homepage")){
     document.getElementById("menu-cart").setAttribute("href","homepage.html?codiceAzienda="+codiceAzienda+"&username="+username)
     document.getElementById("menu-shop").setAttribute("href","inventory.html?codiceAzienda="+codiceAzienda+"&username="+username);
     document.getElementById("menu-order").addEventListener("click",deleteMenu);
+}else{
+    document.getElementById("menu-cart").setAttribute("href","homepage.html?codiceAzienda="+codiceAzienda+"&username="+username)
+    document.getElementById("menu-shop").setAttribute("href","inventory.html?codiceAzienda="+codiceAzienda+"&username="+username);
+    document.getElementById("menu-order").setAttribute("href","order.html?codiceAzienda="+codiceAzienda+"&username="+username);
 }
 var menuListener = document.getElementsByClassName("navbar-fostrap")[0];
 var containerListener = document.getElementsByClassName("body-container")[0];

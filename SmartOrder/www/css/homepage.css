@@ -1,25 +1,3 @@
-.banner {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    height: 17%;
-    background-color: #008b00;
-    text-align: center;
-}
-
-.banner h1 {
-    margin-bottom: 5%;
-    color: white;
-    font-size: 150%;
-}
-
-.banner h2 {
-    color: white;
-    font-size: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
 .username {
     font-weight: bold;
 }
@@ -31,17 +9,7 @@
 }
 
 .btn {
-    height: 100%;
     width: 60%;
-    border-radius: 30%;
-    background-color: transparent;
-    border: none;
-    transition: background 0.2s;
-}
-
-.btn:active {
-    background: #1B5E20 radial-gradient(circle, transparent 1%, #1B5E20 1%) center/15000%;
-    transition: background 0s;
 }
 
 /* ARTICLE */
@@ -73,40 +41,29 @@
     margin-right: 3%;
 }
 
-.button-article .btn-edit {
-    padding: 2%;
+.btn-edit {
     width: 90%;
-    color: white;
-    font-size: 65%;
+    font-size: 80%;
     margin-bottom: 15%;
-    border-radius: 8%;
     border: 1px solid rgb(255, 115, 0);
     background-color: orange;
-    transition: background 0.2s;
+    border-radius: 5%;
 }
 
-.button-article .btn-edit:active {
-    background: #E65100 radial-gradient(circle, transparent 1%, #E65100 1%) center/15000%;
-    transition: background 0s;
-}
-
-.button-article .btn-delete {
-    padding: 2%;
+.btn-delete {
     width: 90%;
-    color: white;
-    font-size: 65%;
-    border-radius: 8%;
+    font-size: 80%;
     border: 1px solid rgb(255, 0, 0);
     background-color: rgb(230, 27, 0);
-    transition: background 0.2s;
+    border-radius: 5%;
 }
 
-.button-article .btn-delete:active{
-    background: #DD2C00 radial-gradient(circle, transparent 1%, #DD2C00 1%) center/15000%;
-    transition: background 0s;
-}
 
 #total {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
     height: 10%;
     background-color: #66BB6A;
     position: fixed;
