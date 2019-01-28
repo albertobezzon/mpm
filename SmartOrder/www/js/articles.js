@@ -13,6 +13,7 @@ function removeLoader() {
 function compute(xhttp) {
     document.getElementById("orderNumber").innerHTML = codiceOrdine;
     var risp = JSON.parse(xhttp.responseText);
+    document.getElementById("h4price").innerHTML = "Totale: <span id='totale'></span> EUR";
     if(risp.ok == "0"){
         var container = document.getElementById("article-list");
         var p = document.createElement("p");

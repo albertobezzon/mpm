@@ -20,6 +20,7 @@
     border: none;
     font-size: 110%;
     text-align: left;
+    padding: 5%;
 }
 
 #quantity-container label {

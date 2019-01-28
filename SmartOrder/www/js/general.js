@@ -2,15 +2,15 @@ var urlString = window.location.href;
 var url = new URL(urlString);
 var codiceAzienda = url.searchParams.get("codiceAzienda");
 var username = url.searchParams.get("username");
-if(url.href.includes("homepage")){
+if(url.href.includes("homepage.html")){
     document.getElementById("menu-cart").addEventListener("click",deleteMenu);
     document.getElementById("menu-shop").setAttribute("href","inventory.html?codiceAzienda="+codiceAzienda+"&username="+username);
     document.getElementById("menu-order").setAttribute("href","order.html?codiceAzienda="+codiceAzienda+"&username="+username);
-}else if(url.href.includes("inventory")){
+}else if(url.href.includes("inventory.html")){
     document.getElementById("menu-cart").setAttribute("href","homepage.html?codiceAzienda="+codiceAzienda+"&username="+username)
     document.getElementById("menu-shop").addEventListener("click",deleteMenu);
     document.getElementById("menu-order").setAttribute("href","order.html?codiceAzienda="+codiceAzienda+"&username="+username);
-}else if(url.href.includes("order")){
+}else if(url.href.includes("order.html")){
     document.getElementById("menu-cart").setAttribute("href","homepage.html?codiceAzienda="+codiceAzienda+"&username="+username)
     document.getElementById("menu-shop").setAttribute("href","inventory.html?codiceAzienda="+codiceAzienda+"&username="+username);
     document.getElementById("menu-order").addEventListener("click",deleteMenu);

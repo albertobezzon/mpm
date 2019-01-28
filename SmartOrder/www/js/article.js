@@ -74,7 +74,7 @@ function loadArticleInfo() {
     textBox.readOnly = true;
     var textArea = document.createElement("textarea");
     textArea.setAttribute("id","description");
-    textArea.setAttribute("rows","15");
+    textArea.setAttribute("rows","10");
     textArea.readOnly = true;
     var quantity = document.getElementById("quantity-container");
     var label = document.createElement("label");
@@ -113,6 +113,7 @@ function loadArticleInfo() {
                 quantity.appendChild(button2);
                 document.getElementById("name").value = nome;
                 document.getElementById("description").innerHTML = descrizione;
+                document.getElementById("h4price").innerHTML = "Prezzo: <span id='price'></span> EUR";
                 if(mode == "update"){
                     document.getElementById("bannerTitle").innerHTML = "Modifica";
                     var xhttp = new XMLHttpRequest();
