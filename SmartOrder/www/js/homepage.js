@@ -13,38 +13,11 @@ function removeLoader() {
     document.getElementById("loading").style.display = "none";
 }
 
-//controlla se un articolo è presente nel carrello dell'utente
-function check(code) {
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST",host+"/PrelievoInfoArticoli",true);
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var resp = JSON.parse(this.responseText);
-            if(resp.articoli.length != 0){
-                for(var i = 0; i < resp.articoli.length; i ++){
-                    if(resp.articoli[i]["codice"] == code){
-                        removeLoader();
-                        return true;
-                    }
-                }
-            }else{
-                removeLoader();
-                return false;
-            }
-        }
-        removeLoader();
-        return false;
-    };
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
-    xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda);
-    placeLoader();
-}
-
 function scanner() {
     cordova.plugins.barcodeScanner.scan(
         function (result) {
             if(result.cancelled == true) {
-                alert("Scansione cancellata.");
+                alert("Scansione cancellata");
                 location.replace("homepage.html?username="+username+"&codiceAzienda="+codiceAzienda);
             }else{
                 var xhttp = new XMLHttpRequest();
@@ -57,21 +30,38 @@ function scanner() {
                             alert("Scansione errata o codice a barre non corrispondente ad un articolo del fornitore.");
                             location.replace("homepage.html?username="+username+"&codiceAzienda="+codiceAzienda);
                         }else{
-                            if(!check(resp.barCode)){
-                                removeLoader();
-                                location.replace("article.html?username="+username+"&codiceAzienda="+
-                                    codiceAzienda+"&codiceArticolo="+resp.barCode+"&mode=add&source=homepage");
-                            }else {
-                                removeLoader();
-                                alert("Articolo già presente in carrello");
-                                location.replace("homepage.html?username="+username+"&codiceAzienda="+codiceAzienda);
-                            }
+                            var xhttp1 = new XMLHttpRequest();
+                            xhttp1.open("POST",host+"/PrelievoInfoArticoli",true);
+                            xhttp1.onreadystatechange = function() {
+                                if (this.readyState == 4 && this.status == 200) {
+                                    var resp = JSON.parse(this.responseText);
+                                    var presente = false;
+                                    for(i = 0; i < resp.articoli.length; i++){
+                                        if(resp.articoli[i]["codice"] == result.text){
+                                            presente = true;
+                                        }
+                                    }
+                                    if(presente){
+                                        removeLoader();
+                                        var ok = confirm("Articolo già presente in carrello, vuoi modificare l'articolo?");
+                                        if(ok){
+                                            location.replace("article.html?username="+username+"&codiceAzienda="+
+                                                codiceAzienda+"&codiceArticolo="+result.text+"&mode=update&source=homepage");
+                                        }
+                                    }else{
+                                        removeLoader();
+                                        location.replace("article.html?username="+username+"&codiceAzienda="+
+                                            codiceAzienda+"&codiceArticolo="+result.text+"&mode=add&source=homepage");
+                                    }
+                                }
+                            };
+                            xhttp1.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+                            xhttp1.send("username="+username+"&codiceAzienda="+codiceAzienda);
                         }
                     }
                 };
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
                 xhttp.send("codice="+result.text+"&codiceAzienda="+codiceAzienda);
-                placeLoader();
             }
         },
         function (error) {
@@ -95,7 +85,7 @@ function scanner() {
 
 function deleteArticle(code) {
     var xhttp = new XMLHttpRequest();
-    var ok = confirm("Vuoi eliminare?");
+    var ok = confirm("Vuoi eliminare l'articolo selezionato?");
     if(ok){
         xhttp.open("POST",host+"/EliminazioneArticoli",true);
         xhttp.onreadystatechange = function () {
@@ -114,15 +104,15 @@ function deleteArticle(code) {
 }
 
 function editArticle(code) {
-    var ok = confirm("Vuoi modificare?");
-    if(ok){
-        location.replace("article.html?codiceAzienda="+codiceAzienda+"&username="+username+"&codiceArticolo="+code+"&mode=update&source=homepage");
+    var ok = confirm("Vuoi modificare l'articolo selezionato?");
+    if(ok) {
+        location.replace("article.html?codiceAzienda=" + codiceAzienda + "&username=" + username + "&codiceArticolo=" + code + "&mode=update&source=homepage");
     }
 }
 
 function deleteAll() {
     if(!empty){
-        var ok = confirm("Sicuro che vuoi rimuovere tutto?");
+        var ok = confirm("Sicuro di voler rimuovere tutti gli articoli?");
         var xhttp = new XMLHttpRequest();
         if(ok) {
             xhttp.open("POST",host+"/EliminazioneArticoli",true);
@@ -146,7 +136,7 @@ function deleteAll() {
 
 function sendOrder() {
     if(!empty){
-        var ok = confirm("Vuoi inviare?");
+        var ok = confirm("Vuoi inviare l'ordine?");
         var xhttp = new XMLHttpRequest();
         var totale = document.getElementById("totale").innerHTML;
         if(ok) {

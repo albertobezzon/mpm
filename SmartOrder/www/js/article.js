@@ -17,32 +17,36 @@ function placeLoader() {
 }
 
 function confirmOperation() {
-    var ok = confirm("Sicuro di voler effettuare l'operazione?");
-    if(ok) {
-        var query = "";
-        if(mode == "update"){
-            query = "update contenutoCarrelli set quantita="+document.getElementById("quantity").value+"where username='"+username+"'";
-        }else{
-            query = "insert into contenutoCarrelli(barCode,quantita,username) values('"+barCode+"',"+document.getElementById("quantity").value+",'"+username+"')";
-        }
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("POST",host+"/AggiuntaModificaArticolo",true);
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                var resp = JSON.parse(this.responseText);
-                if (resp.ok == "1") {
-                    removeLoader();
-                    alert("Operazione eseguita con successo");
-                    location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
-                }else{
-                    removeLoader();
-                    alert("Errore nell'esecuzione dell'operazione");
-                }
+    if(document.getElementById("quantity").value == "0"){
+        alert("Non è possibile inserire una quantità 0");
+    }else{
+        var ok = confirm("Sicuro di voler effettuare l'operazione?");
+        if(ok) {
+            var query = "";
+            if(mode == "update"){
+                query = "update contenutoCarrelli set quantita="+document.getElementById("quantity").value+"where username='"+username+"'";
+            }else{
+                query = "insert into contenutoCarrelli(barCode,quantita,username) values('"+barCode+"',"+document.getElementById("quantity").value+",'"+username+"')";
             }
-        };
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
-        xhttp.send("codiceAzienda="+codiceAzienda+"&query="+query);
-        placeLoader();
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST",host+"/AggiuntaModificaArticolo",true);
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var resp = JSON.parse(this.responseText);
+                    if (resp.ok == "1") {
+                        removeLoader();
+                        alert("Operazione eseguita con successo");
+                        location.replace(source+".html?codiceAzienda="+codiceAzienda+"&username="+username);
+                    }else{
+                        removeLoader();
+                        alert("Errore nell'esecuzione dell'operazione");
+                    }
+                }
+            };
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+            xhttp.send("codiceAzienda="+codiceAzienda+"&query="+query);
+            placeLoader();
+        }
     }
 }
 

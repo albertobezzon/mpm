@@ -4,13 +4,45 @@ var codiceAzienda = url.searchParams.get("codiceAzienda");
 var username = url.searchParams.get("username");
 var host = "http://18.225.31.222:8080/webService";
 var articoli = [];
+var carrello = [];
+
+function placeLoader() {
+    document.getElementById("loading").style.display = "block";
+}
 
 function removeLoader() {
     document.getElementById("loading").style.display = "none";
 }
 
 function addArticle(code) {
-    location.replace("article.html?codiceAzienda="+codiceAzienda+"&username="+username+"&codiceArticolo="+code+"&mode=add&source=inventory");
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST",host+"/PrelievoInfoArticoli",true);
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var resp = JSON.parse(this.responseText);
+            var presente = false;
+            for(i = 0; i < resp.articoli.length; i++){
+                if(resp.articoli[i]["codice"] == code){
+                    presente = true;
+                }
+            }
+            if(presente){
+                removeLoader();
+                var ok = confirm("Articolo già presente in carrello, vuoi modificare l'articolo?");
+                if(ok){
+                    location.replace("article.html?username="+username+"&codiceAzienda="+
+                        codiceAzienda+"&codiceArticolo="+code+"&mode=update&source=inventory");
+                }
+            }else{
+                removeLoader();
+                location.replace("article.html?username="+username+"&codiceAzienda="+
+                    codiceAzienda+"&codiceArticolo="+code+"&mode=add&source=inventory");
+            }
+        }
+    };
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+    xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda);
+    placeLoader();
 }
 
 function changeList() {

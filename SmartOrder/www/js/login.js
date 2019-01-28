@@ -12,14 +12,19 @@ function tryLogin() {
                 var risp = JSON.parse(this.responseText);
                 if(risp.codice == "0"){
                     alert("Accesso avvenuto con successo!");
+                    if(document.getElementById("label-checkbox").checked == true){
+                        window.localStorage["loggedIn"] = "true";
+                    }
+                    window.localStorage["username"] = risp.username;
+                    window.localStorage["codiceAzienda"] = risp.codiceAzienda;
                     location.replace("homepage.html?codiceAzienda="+risp.codiceAzienda+"&username="+
                         risp.username);
                 }else{
                     if(risp.codice == "1"){
-                        alert("hai sbagliato la password, reinserisci");
+                        alert("Password errata");
                         document.getElementById("input-password").value = "";
                     }else{
-                        alert("username insesistente");
+                        alert("Username insesistente");
                         document.getElementById("input-user").value = "";
                         document.getElementById("input-password").value = "";
                     }
