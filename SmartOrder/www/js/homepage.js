@@ -177,6 +177,7 @@ function compute(xhttp) {
     var risp = JSON.parse(xhttp.responseText);
     var div = document.getElementById("articleList");
     var total = 0.0;
+    document.getElementById("h4price").innerHTML = "Totale: <span id='totale'></span> EUR";
     if(risp.articoli.length == 0){
         var p = document.createElement("p");
         p.setAttribute("class","cart-empty");
