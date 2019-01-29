@@ -15,10 +15,26 @@ function tryLogin() {
                     if(document.getElementById("login-box").checked == true){
                         window.localStorage["loggedIn"] = "true";
                     }
+                    var trovato = false;
                     window.localStorage["username"] = risp.username;
                     window.localStorage["codiceAzienda"] = risp.codiceAzienda;
-                    location.replace("homepage.html?codiceAzienda="+risp.codiceAzienda+"&username="+
-                        risp.username);
+                    if(window.localStorage["users"] == null){
+                        window.localStorage["users"] = "{\"users\":[]}";
+                    }
+                    var users = JSON.parse(window.localStorage["users"]);
+                    for(i=0;i<users.users.length;i++){
+                        if(risp.username == users.users[i]){
+                            trovato = true;
+                        }
+                    }
+                    if(trovato){
+                        location.replace("homepage.html?codiceAzienda="+risp.codiceAzienda+"&username="+
+                            risp.username);
+                    }else{
+                        users.users.push(risp.username);
+                        window.localStorage["users"] = JSON.stringify(users);
+                        location.replace("newpage.html");
+                    }
                 }else{
                     if(risp.codice == "1"){
                         alert("Password errata");

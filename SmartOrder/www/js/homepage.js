@@ -5,6 +5,14 @@ var username = url.searchParams.get("username");
 var host = "http://18.225.31.222:8080/webService";
 var empty = false;
 
+function setHist(){
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+        window.close();
+    };
+}
+
 function placeLoader() {
     document.getElementById("loading").style.display = "block";
 }
@@ -227,6 +235,7 @@ function compute(xhttp) {
 }
 
 function loadCart() {
+    setHist();
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST",host+"/PrelievoInfoArticoli",true);
     xhttp.onreadystatechange = function() {
