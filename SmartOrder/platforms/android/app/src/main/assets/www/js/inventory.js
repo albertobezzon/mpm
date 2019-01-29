@@ -58,7 +58,7 @@ function changeList() {
     var enter = false;
     var container = document.getElementById("list-article");
     for (i = 0; i < tempList.length; i++) {
-        if(tempList[i]["nome"].toLowerCase().includes(choice) || tempList[i]["barCode"].includes(choice) || choice == ""){
+        if(tempList[i]["nome"].toLowerCase().includes(choice.toLowerCase()) || tempList[i]["barCode"].includes(choice.toLowerCase()) || choice == ""){
             enter = true;
             articolo = document.createElement("div");
             articolo.setAttribute("class", "article");
