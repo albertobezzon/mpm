@@ -97,17 +97,43 @@
 	Per poter utilizzare l'applicazione è necessario essere connessi ad Internet, in quanto l'applicazione scarica i dati da un server. Abbiamo notato che con la rete Eduroam e Studenti.math.unipd.it dell'università, l'applicazione non funziona. Inoltre la mail deve essere certificata da Amazon 
 	
 	\section{Mobile design}
-	In questa sezione vengono descritte tutte le scelte effettuate ai fini di una corretta progettazione dell'applicazione. Seguono varie sottosezioni, una per ogni elemento dell'app, in cui vengono spiegati gli elementi e le motivazioni relative alla loro progettazione.
+	In questa sezione vengono descritte le scelte implementative effettuate ai fini di una corretta progettazione dell'interfaccia dell'applicazione. Questa sezione è suddivisa in varie sottosezioni, dove ognuna descrive un'elemento dell'interfaccia e le motivazioni relative alla sua progettazione.
+	
+	Quasi tutte le pagine dell'applicazione sono progettate nel seguente modo:
+	\begin{itemize}
+		\item nella parte superiore è presente un banner che contiene il titolo della pagina e alla sinistra di quest'ultimo, il bottone del menu;
+		\item la parte centrale della pagina contiene le informazioni;
+		\item nella parte inferiore è presente un footer.
+	\end{itemize}
 	
 	\subsection{Bottoni}
-	Nelle pagine Carrello, Modifica o Aggiungi sono presenti dei bottoni nella parte bassa dello schermo. L'applicazione richiede una frequente modifica dei dati quindi i controlli sono stati posizionati in una zona semplice da raggiungere e seguendo la regola "Content always on top" si è preferito inserire questi bottoni in basso, infrangendo così la regola pratica che in Android i controlli devono essere posizionati nella parte alta dello schermo. Questi bottoni sono più grandi rispetto a quelli situati nella parte centrale in quanto si è rispettata l'immagine in Figura \ref{fig:dimvspos}.
+	\begin{figure}[H] 
+		\centering
+		\subfloat[Bottoni presenti nel footer della pagina carrello ]{\includegraphics[width=0.4\columnwidth]{img/buttons-cart}}
+		\hspace*{2cm}
+		\subfloat[Bottoni presenti nel footer delle apgine aggiungi e modifica articolo]{\includegraphics[width=0.4\columnwidth]{img/buttons-add}}
+		\caption{Bottoni nel footer}
+		\label{fig:buttons}
+	\end{figure}
+	Nelle pagine Carrello, Modifica o Aggiungi sono presenti dei bottoni nella parte bassa dello schermo (Figura \ref{fig:buttons}). L'applicazione richiede una frequente modifica dei dati quindi i controlli sono stati posizionati in una zona semplice da raggiungere e, seguendo la regola "Content always on top", si è preferito inserire questi bottoni in basso, infrangendo così la regola pratica che su Android i controlli devono essere posizionati nella parte alta dello schermo. 
+	\begin{figure}[H] 
+		\centering
+		\subfloat[Bottoni nella pagina Carrello ]{\includegraphics[width=0.3\columnwidth]{img/item-cart}}
+		\hspace*{1cm}
+		\subfloat[Bottoni nella pagina Ordini]{\includegraphics[width=0.3\columnwidth]{img/item-order}}
+		\hspace*{1cm}
+		\subfloat[Bottoni nella pagina Inventario]{\includegraphics[width=0.3\columnwidth]{img/item-inventory}}
+		\caption{Bottoni nella parte centrale delle pagine}
+		\label{fig:item-buttons}
+	\end{figure}
+	\noindent I bottoni presenti in Figura \ref{fig:item-buttons} sono quelli presenti nella parte centrale dello schermo; essendo disposti nella confort zone sono facilmente raggiungibili e più piccoli rispetto ai bottoni del footer, in quanto si è seguita l'immagine in Figura \ref{fig:dimvspos}.
 	\begin{figure}[H] 
 		\centering
 		\includegraphics[width=0.3\textwidth]{img/dimvspos}
 		\caption{Dimensione vs. posizione dei bottoni}
 		\label{fig:dimvspos}
 	\end{figure}
-	\noindent I bottoni al centro sono più piccoli ma sono comunque sufficientemente distanti da evitare il tap su un altro bottone.
+	\noindent Nonostante la dimensione ridotta, sono comunque sufficientemente distanti da evitare un tap errato su un altro bottone.
 	
 	\subsection{Menu}
 	\begin{figure}[H] 
@@ -116,10 +142,10 @@
 		\caption{Menu dell'applicazione}
 		\label{fig:menu}
 	\end{figure}
-	Il menu dell'applicazione è rappresentato in Figura \ref{fig:menu}. Per aprire il menu è presente il classico bottone del menu "hamburger" sulla barra in alto a sinistra. Il menu è suddiviso in due parti: 
+	Il menu dell'applicazione è rappresentato in Figura \ref{fig:menu}. Per aprirlo è presente il classico bottone del menu ad "hamburger" sulla barra in alto a sinistra. Il menu è suddiviso in due parti: 
 	\begin{itemize}
-		\item Informazioni relative all'utente che ha effettuato il login nell'applicazione, in particolare vengono visualizzati il nome dell'utente e il nome dell'azienda. Queste due informazioni non sono modificabili e pertanto sono nella parte alta del menu dato che non è possibile interagire con esse;
-		\item L'insieme di link che permettono di navigare tra le pagine dell'applicazione, in particolare sono disponibili i link al carrello, alla lista degli ordini, all'inventario. Inoltre, è disponibile un bottone "Logout" che permette di effettuare il logout dall'applicazione. Premendo su ognuno di questi viene cambiata l'interfaccia, pertanto essendo possibile interagire con essi, sono stati posizionati nella confort zone.
+		\item Informazioni relative all'utente che ha effettuato il login nell'applicazione, in particolare vengono visualizzati il nome dell'utente e il nome dell'azienda. Queste due informazioni non sono modificabili e pertanto sono disposte nella parte alta del menu dato che non è possibile interagire con esse;
+		\item L'insieme di link che permettono di navigare tra le pagine dell'applicazione, in particolare sono disponibili i link al carrello, alla lista degli ordini, all'inventario. Inoltre, è possibile effettuare il logout dall'applicazione e visionare nuovamente il tutorial. Dato che è possibile interagire con essi, sono stati posizionati nella parte centrale del menu; in questo modo quando il menu compare questi bottoni ricadono nella confort zone.
 	\end{itemize}
 
 	\subsection{Pagina ordini}
