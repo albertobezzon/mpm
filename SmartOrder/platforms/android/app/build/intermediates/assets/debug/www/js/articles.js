@@ -6,6 +6,12 @@ var codiceOrdine = url.searchParams.get("codiceOrdine");
 var totale = url.searchParams.get("totale")
 var host = "http://18.225.31.222:8080/webService";
 
+function setHist() {
+    window.onpopstate = function () {
+        location.replace("order.html");
+    };
+}
+
 function removeLoader() {
     document.getElementById("loading").style.display = "none";
 }
@@ -43,6 +49,7 @@ function compute(xhttp) {
 
 
 function loadArticles() {
+    setHist();
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST",host+"/PrelevaDatiOrdine",true);
     xhttp.onreadystatechange = function() {

@@ -23,6 +23,14 @@ module.exports = [
     "clobbers": [
       "cordova.plugins.barcodeScanner"
     ]
+  },
+  {
+    "id": "cordova-plugin-appminimize.AppMinimize",
+    "file": "plugins/cordova-plugin-appminimize/www/AppMinimize.js",
+    "pluginId": "cordova-plugin-appminimize",
+    "clobbers": [
+      "cordova.plugins.appMinimize"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -30,7 +38,8 @@ module.exports.metadata =
 {
   "cordova-plugin-dialogs": "2.0.1",
   "phonegap-plugin-barcodescanner": "8.0.1",
-  "cordova-plugin-whitelist": "1.3.3"
+  "cordova-plugin-whitelist": "1.3.3",
+  "cordova-plugin-appminimize": "1.0.1"
 };
 // BOTTOM OF METADATA
 });
