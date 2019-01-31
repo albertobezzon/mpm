@@ -61,9 +61,9 @@
 	\tableofcontents
 	\newpage
 	\listoffigures
-	\newpage
-	\listoftables
-	\setcounter{table}{0}
+%	\newpage
+%	\listoftables
+%	\setcounter{table}{0}
 	\newpage	    
 	\renewcommand*{\arraystretch}{2}
 	\pagestyle{fancy}
@@ -77,8 +77,7 @@
 	Il progetto consiste nello sviluppo di un'applicazione, chiamata SmartOrder, per effettuare ordini dal proprio fornitore. L'applicazione è stata sviluppata per smartphone utilizzando il framework cross-platform PhoneGap.
 	
 	\section{Il framework cross-platform adottato}
-	Il framework cross-platform scelto per lo sviluppo dell'applicazione è PhoneGap. La scelta è ricaduta su questo framework perché un'applicazione sviluppata con PhoneGap è un'applicazione web a cui si aggiunge il motore di rendering webkit. Inoltre, per un'applicazione semplice come SmartOrder permette di ottenere delle buone performance.
-	Poiché è un'applicazione web, i linguaggi sono HTML, CSS e Javascript. Questi linguaggi sono a noi noti e questo ci ha permesso di sviluppare un'applicazione evitando di imparare un nuovo linguaggio.
+	Il framework cross-platform scelto per lo sviluppo dell'applicazione è PhoneGap. La scelta è ricaduta su questo framework perché un membro del gruppo aveva già familiarità con questo framework e, inoltre, per realizzare un'applicazione con PhoneGap è richiesta la conoscenza di HTML, CSS e Javascript; in questi linguaggi la nostra competenza è già ottima, questo ha facilitato di molto il lavoro rispetto ad imparare un nuovo linguaggio.
 	
 	\section{Tutorial}
 	Le pagine realizzate sono le seguenti:
@@ -92,6 +91,33 @@
 		\item inventory.html;
 	\end{itemize}
 	Ad ognuna di queste pagine è associato un foglio di stile e un file Javascript; inoltre sono presenti un file CSS e un file Javascript generali.
+	
+	\subsection{Login e tutorial}
+	
+	L'applicazione, una volta installata, è utilizzabile. All'avvio viene mostrata la pagina di login per accedere al servizio. Qui è necessario inserire le credenziali concesse dal proprio fornitore; inoltre, è presente una checkbox "Resta collegato" per evitare che ad ogni apertura dell'applicazione venga richiesto il login. In seguito al login, soltanto al primo avvio, viene mostrato un breve tutorial sul funzionamento dell'applicazione. In fondo al tutorial è presente un bottone che permette di iniziare ad utilizzare l'app. Il tutorial non è obbligatorio ed è disponibile nel menu dell'applicazione, nel caso in cui un utente si trovasse in difficoltà. Completato il tutorial si viene reindirizzati al \textit{Carrello}.
+	
+	\subsection{Carrello}
+	La pagina Carrello è la pagina principale dell'applicazione, essa ad ogni nuovo ordine sarà vuota e visualizzerà ogni articolo che si deciderà di acquistare, con la relativa quantità, prezzo e prezzo parziale (prezzo unitario x quantità). Ad ogni articolo di questa pagina sono associati due bottoni: 
+	\begin{itemize}
+		\item \textbf{MODIFICA:} è il bottone che permette di modificare la quantità di un articolo. Una volta effettuata la modifica è necessario confermarla per apportarla definitivamente, premendo sul bottone "Conferma", oppure annullarla, tramite il bottone "Annulla";
+		\item \textbf{ELIMINA:} è il bottone che rimuove l'articolo dal carrello. Se tale bottone viene premuto, verrà chiesta conferma prima di effettuare l'operazione. (La spiegazione del perché viene rimandata al capitolo sul mobile design).
+	\end{itemize}
+	In questa pagina, è presente il prezzo totale di tutti gli articoli inseriti nel carrello.
+	Una volta inseriti nel carrello tutti gli articoli che si desidera acquistare, è possibile completare l'ordine, premendo sul bottone "Invia" in basso. Altrimenti è possibile svuotare il Carrello, cioè eliminare tutti gli articoli presenti in esso.
+	
+	\subsubsection{Aggiungere un articolo al carrello}
+	E' possibile aggiungere un articolo al carrello in due modi: 
+	\begin{enumerate}
+		\item Tramite scansione del codice a barre mediante il bottone "Scan" nella pagina Carrello;
+		\item Dalla pagine Inventario, selezionando l'articolo che si desidera aggiungere e inserendo la quantità. Una volta immessa la quantità desiderata, è necessario premere su "Conferma" affinché l'articolo venga inserito nel carrello oppure premere "Annulla" per annullare l'inserimento del nuovo articolo. Nella pagina Inventario è possibile ricercare un'articolo digitando la chiave di ricerca nella textbox in alto.
+	\end{enumerate}
+	In entrambi i casi, una volta selezionato l'articolo vengono visualizzate le sue informazioni (nome e descrizione) e nel riquadro in basso è presente il prezzo di quell'articolo per la quantità inserita.
+	\\ \textbf{Attenzione:} nel caso in cui un articolo si cercasse di aggiungere al carrello un articolo già presente, il sistema mostrerà un messaggio nel quale chiederà se si vuole modificare la quantità relativa all'articolo.
+	
+	\subsection{Ordini}
+	Dal menu dell'applicazione è possibile accedere alla lista di tutti gli ordini effettuati tramite la voce di menu "Ordini". Premendo su tale voce si verrà reindirizzati alla pagina Ordini, dove per ogni ordine, vengono mostrate le informazioni più importanti. E' possibile consultare tutti gli articoli acquistati in un determinato ordine, tramite il bottone "DETTAGLI".
+	\noindent In questa pagina è presente la possibilità di modificare la visualizzazione degli ordini, ordinandoli per data, dal più recente al meno recente, oppure per prezzo, dall'ordine con prezzo più basso all'ordine con prezzo più alto. Per selezionare il tipo di ordinamento è presente una select in fondo alla pagina.
+
 	
 	\subsection{Informazioni utili all'utilizzo}
 	Per poter utilizzare l'applicazione è necessario essere connessi ad Internet, in quanto l'applicazione scarica i dati da un server. Abbiamo notato che con la rete Eduroam e Studenti.math.unipd.it dell'università, l'applicazione non funziona. Inoltre la mail deve essere certificata da Amazon 
@@ -169,6 +195,13 @@
 	Riteniamo che l'applicazione soddisfi i primi tre livelli della piramide di Maslow rimappata sui bisogni degli utenti, ovvero sia funzionale, affidabile e usabile.
 	
 	\section{Backend}
+	Per il backend abbiamo deciso di appoggiarci ad AWS, dove sono ospitati i nostri server. In particolare, abbiamo utilizzato:
+	\begin{itemize}
+		\item Un server azure;
+		\item un server contenente il database, per cui abbiamo utilizzato SQLserver;
+	\end{itemize}
 	
 	\section{Conclusioni}
+	Siamo soddisfatti dell'applicazione realizzata. Siamo consapevoli che la grafica può essere resa più accattivante per lo scopo dell'applicazione. La grafica poteva essere più semplice da realizzare se utilizzavamo un altro framework, come ad esempio React. 
+	Il framework cross-platform scelto è bastato per realizzare un'applicazione funzionale e decente. Inoltre, per un'applicazione semplice come SmartOrder permette di ottenere delle buone performance.
 \end{document}
