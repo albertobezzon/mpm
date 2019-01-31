@@ -12,6 +12,10 @@
     width: 60%;
 }
 
+.body-container {
+    padding-bottom: 25%;
+}
+
 /* ARTICLE */
 .article {
     color: white;

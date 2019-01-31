@@ -8,6 +8,10 @@ var host = "http://18.225.31.222:8080/webService";
 var prezzo = 0.0;
 var source = url.searchParams.get("source");
 
+function onBackKeyDown() {
+    location.replace(source+".html?codiceAzienda="+codiceAzienda+"&username="+username);
+}
+
 function removeLoader() {
     document.getElementById("loading").style.display = "none";
 }
@@ -67,6 +71,7 @@ function plusPressed() {
 }
 
 function loadArticleInfo() {
+    document.addEventListener("backbutton", onBackKeyDown, false);
     var field = document.getElementById("field-container");
     var textBox = document.createElement("input");
     textBox.setAttribute("id","name");

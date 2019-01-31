@@ -5,12 +5,17 @@ var username = url.searchParams.get("username");
 var host = "http://18.225.31.222:8080/webService";
 var empty = false;
 
+function onBackKeyDown() {
+    window.plugins.appMinimize.minimize();
+}
+
 function setHist(){
-    history.pushState(null, null, location.href);
-    window.onpopstate = function () {
-        history.go(1);
-        window.plugins.appMinimize.minimize();
-    };
+    document.addEventListener("backbutton", onBackKeyDown, false);
+    /*window.onpopstate = function () {
+        history.pushState(null, null, location.href);
+        history.go(-1);
+        //window.plugins.appMinimize.minimize();
+    };*/
 }
 
 function placeLoader() {
