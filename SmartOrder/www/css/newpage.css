@@ -65,6 +65,7 @@ html, body {
     border-radius: 6px;
     position: relative;
     overflow: hidden;
+    outline: none;
 }
 
 #body-container button:after {

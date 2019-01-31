@@ -71,7 +71,6 @@ function plusPressed() {
 }
 
 function loadArticleInfo() {
-    Keyboard.shrinkView(true);
     document.addEventListener("backbutton", onBackKeyDown, false);
     var field = document.getElementById("field-container");
     var textBox = document.createElement("input");
@@ -80,7 +79,6 @@ function loadArticleInfo() {
     textBox.readOnly = true;
     var textArea = document.createElement("textarea");
     textArea.setAttribute("id","description");
-    textArea.setAttribute("rows","10");
     textArea.readOnly = true;
     var quantity = document.getElementById("quantity-container");
     var label = document.createElement("label");
@@ -120,6 +118,11 @@ function loadArticleInfo() {
                 document.getElementById("name").value = nome;
                 document.getElementById("description").innerHTML = descrizione;
                 document.getElementById("h4price").innerHTML = "Prezzo: <span id='price'></span> EUR";
+                document.getElementById("quantity").addEventListener("keypress", function () {
+                    if (event.keyCode === 13) {
+                        confirmOperation();
+                    }
+                });
                 if(mode == "update"){
                     document.getElementById("bannerTitle").innerHTML = "Modifica";
                     var xhttp = new XMLHttpRequest();

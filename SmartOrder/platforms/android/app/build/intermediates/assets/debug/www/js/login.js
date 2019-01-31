@@ -1,4 +1,15 @@
 var host = "http://18.225.31.222:8080/webService";
+document.getElementById("input-user").addEventListener("keypress", function () {
+    if (event.keyCode === 13) {
+        document.getElementById("input-password").focus();
+    }
+});
+
+document.getElementById("input-password").addEventListener("keypress", function () {
+    if (event.keyCode === 13) {
+        tryLogin();
+    }
+});
 
 function tryLogin() {
     var user = document.getElementById("input-user").value;
@@ -42,6 +53,7 @@ function tryLogin() {
                         alert("Username insesistente");
                         document.getElementById("input-user").value = "";
                         document.getElementById("input-password").value = "";
+                        document.getElementById("input-user").focus();
                     }
                 }
             }

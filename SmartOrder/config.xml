@@ -9,6 +9,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <preference name="fullscreen" value="false" />
     <plugin name="cordova-plugin-dialogs" spec="~2.0.1" />
     <plugin name="phonegap-plugin-barcodescanner" spec="~8.0.1" />
     <engine name="android" spec="~7.0.0" />

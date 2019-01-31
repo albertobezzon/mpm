@@ -37,6 +37,7 @@ body {
     box-sizing: border-box;
     caret-color: white;
     color: white;
+    outline: none;
 }
 
 #div-checkbox {
@@ -70,6 +71,7 @@ body {
     border-radius: 6px;
     position: relative;
     overflow: hidden;
+    outline: none;
 }
 
 .div-submit {
