@@ -31,6 +31,14 @@ module.exports = [
     "clobbers": [
       "cordova.plugins.appMinimize"
     ]
+  },
+  {
+    "id": "cordova-plugin-keyboard.keyboard",
+    "file": "plugins/cordova-plugin-keyboard/www/keyboard.js",
+    "pluginId": "cordova-plugin-keyboard",
+    "clobbers": [
+      "window.Keyboard"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -39,7 +47,8 @@ module.exports.metadata =
   "cordova-plugin-dialogs": "2.0.1",
   "phonegap-plugin-barcodescanner": "8.0.1",
   "cordova-plugin-whitelist": "1.3.3",
-  "cordova-plugin-appminimize": "1.0.1"
+  "cordova-plugin-appminimize": "1.0.1",
+  "cordova-plugin-keyboard": "1.2.0"
 };
 // BOTTOM OF METADATA
 });

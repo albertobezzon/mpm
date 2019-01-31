@@ -71,6 +71,7 @@ function plusPressed() {
 }
 
 function loadArticleInfo() {
+    Keyboard.shrinkView(true);
     document.addEventListener("backbutton", onBackKeyDown, false);
     var field = document.getElementById("field-container");
     var textBox = document.createElement("input");

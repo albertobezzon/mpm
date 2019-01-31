@@ -251,6 +251,7 @@ body {
 
 input, textarea, select, button {
     font-family: 'Montserrat', sans-serif;
+    outline: none;
 }
 
 ::-webkit-input-placeholder {
