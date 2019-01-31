@@ -58,13 +58,13 @@ ADDED from C:\Users\tomma\Desktop\frontend\mpm\SmartOrder\platforms\android\app\
 MERGED from [:barcodescanner-release-2.1.5:] C:\Users\tomma\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\5c22a368e7b82f0b4c4e21b3c417733b\AndroidManifest.xml:11:5-12:19
 MERGED from [:barcodescanner-release-2.1.5:] C:\Users\tomma\.gradle\caches\transforms-1\files-1.1\barcodescanner-release-2.1.5.aar\5c22a368e7b82f0b4c4e21b3c417733b\AndroidManifest.xml:11:5-12:19
 	android:supportsRtl
-		ADDED from C:\Users\tomma\Desktop\frontend\mpm\SmartOrder\platforms\android\app\src\main\AndroidManifest.xml:5:114-140
+		ADDED from C:\Users\tomma\Desktop\frontend\mpm\SmartOrder\platforms\android\app\src\main\AndroidManifest.xml:5:120-146
 	android:label
-		ADDED from C:\Users\tomma\Desktop\frontend\mpm\SmartOrder\platforms\android\app\src\main\AndroidManifest.xml:5:81-113
+		ADDED from C:\Users\tomma\Desktop\frontend\mpm\SmartOrder\platforms\android\app\src\main\AndroidManifest.xml:5:87-119
 	android:hardwareAccelerated
 		ADDED from C:\Users\tomma\Desktop\frontend\mpm\SmartOrder\platforms\android\app\src\main\AndroidManifest.xml:5:18-52
 	android:icon
-		ADDED from C:\Users\tomma\Desktop\frontend\mpm\SmartOrder\platforms\android\app\src\main\AndroidManifest.xml:5:53-80
+		ADDED from C:\Users\tomma\Desktop\frontend\mpm\SmartOrder\platforms\android\app\src\main\AndroidManifest.xml:5:53-86
 activity#com.phonegap.helloworld.MainActivity
 ADDED from C:\Users\tomma\Desktop\frontend\mpm\SmartOrder\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
 	android:screenOrientation

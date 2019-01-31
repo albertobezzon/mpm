@@ -18,19 +18,19 @@ public final class R {
     public static final class color {
         public static final int contents_text = 0x7f040000;
         public static final int encode_view = 0x7f040001;
-        public static final int possible_result_points = 0x7f040005;
-        public static final int primary_text_default_material_dark = 0x7f040006;
-        public static final int result_minor_text = 0x7f040007;
-        public static final int result_points = 0x7f040008;
-        public static final int result_text = 0x7f040009;
-        public static final int result_view = 0x7f04000a;
-        public static final int ripple_material_light = 0x7f04000b;
-        public static final int secondary_text_default_material_dark = 0x7f04000c;
-        public static final int secondary_text_default_material_light = 0x7f04000d;
-        public static final int status_text = 0x7f04000e;
-        public static final int transparent = 0x7f04000f;
-        public static final int viewfinder_laser = 0x7f040010;
-        public static final int viewfinder_mask = 0x7f040011;
+        public static final int possible_result_points = 0x7f040006;
+        public static final int primary_text_default_material_dark = 0x7f040007;
+        public static final int result_minor_text = 0x7f040008;
+        public static final int result_points = 0x7f040009;
+        public static final int result_text = 0x7f04000a;
+        public static final int result_view = 0x7f04000b;
+        public static final int ripple_material_light = 0x7f04000c;
+        public static final int secondary_text_default_material_dark = 0x7f04000d;
+        public static final int secondary_text_default_material_light = 0x7f04000e;
+        public static final int status_text = 0x7f04000f;
+        public static final int transparent = 0x7f040010;
+        public static final int viewfinder_laser = 0x7f040011;
+        public static final int viewfinder_mask = 0x7f040012;
     }
     public static final class dimen {
         public static final int half_padding = 0x7f050005;

@@ -189,22 +189,23 @@ public final class R {
   public static final class color {
     public static final int contents_text=0x7f040000;
     public static final int encode_view=0x7f040001;
-    public static final int notification_action_color_filter=0x7f040002;
-    public static final int notification_icon_bg_color=0x7f040003;
-    public static final int notification_material_background_media_default_color=0x7f040004;
-    public static final int possible_result_points=0x7f040005;
-    public static final int primary_text_default_material_dark=0x7f040006;
-    public static final int result_minor_text=0x7f040007;
-    public static final int result_points=0x7f040008;
-    public static final int result_text=0x7f040009;
-    public static final int result_view=0x7f04000a;
-    public static final int ripple_material_light=0x7f04000b;
-    public static final int secondary_text_default_material_dark=0x7f04000c;
-    public static final int secondary_text_default_material_light=0x7f04000d;
-    public static final int status_text=0x7f04000e;
-    public static final int transparent=0x7f04000f;
-    public static final int viewfinder_laser=0x7f040010;
-    public static final int viewfinder_mask=0x7f040011;
+    public static final int ic_launcher_background=0x7f040002;
+    public static final int notification_action_color_filter=0x7f040003;
+    public static final int notification_icon_bg_color=0x7f040004;
+    public static final int notification_material_background_media_default_color=0x7f040005;
+    public static final int possible_result_points=0x7f040006;
+    public static final int primary_text_default_material_dark=0x7f040007;
+    public static final int result_minor_text=0x7f040008;
+    public static final int result_points=0x7f040009;
+    public static final int result_text=0x7f04000a;
+    public static final int result_view=0x7f04000b;
+    public static final int ripple_material_light=0x7f04000c;
+    public static final int secondary_text_default_material_dark=0x7f04000d;
+    public static final int secondary_text_default_material_light=0x7f04000e;
+    public static final int status_text=0x7f04000f;
+    public static final int transparent=0x7f040010;
+    public static final int viewfinder_laser=0x7f040011;
+    public static final int viewfinder_mask=0x7f040012;
   }
   public static final class dimen {
     public static final int compat_button_inset_horizontal_material=0x7f050000;
@@ -382,7 +383,10 @@ public final class R {
     public static final int history=0x7f0a0002;
   }
   public static final class mipmap {
-    public static final int icon=0x7f0b0000;
+    public static final int ic_launcher_foreground=0x7f0b0000;
+    public static final int icon=0x7f0b0001;
+    public static final int smartorder=0x7f0b0002;
+    public static final int smartorder_round=0x7f0b0003;
   }
   public static final class raw {
     public static final int beep=0x7f0c0000;
