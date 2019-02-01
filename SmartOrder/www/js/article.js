@@ -72,9 +72,8 @@ function loadArticleInfo() {
     textBox.setAttribute("id","name");
     textBox.setAttribute("type","text");
     textBox.readOnly = true;
-    var textArea = document.createElement("textarea");
+    var textArea = document.createElement("div");
     textArea.setAttribute("id","description");
-    textArea.readOnly = true;
     var quantity = document.getElementById("quantity-container");
     var label = document.createElement("label");
     label.setAttribute("for","quantity");

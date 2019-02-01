@@ -15,13 +15,13 @@
     width: 90%;
     color: white;
     background: #388E3C;
-    resize: none;
     border-radius: 3%;
     border: none;
     font-size: 110%;
     text-align: left;
     padding: 5%;
-    height: 8em;
+    height: 70%;
+    margin: auto;
 }
 
 #quantity-container label {
@@ -47,6 +47,14 @@
     font-size: 100%;
     border-radius: 8%;
     background-color: #388E3C;
+}
+
+#quantity-container {
+    margin-top: 10%;
+}
+
+#field-container {
+    height: 30%;
 }
 
 #price-container {

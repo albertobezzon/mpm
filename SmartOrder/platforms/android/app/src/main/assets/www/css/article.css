@@ -15,17 +15,25 @@
     margin-bottom: 3%;
 }
 
+#quantity-container {
+    margin-top: 10%;
+}
+
+#field-container {
+    height: 30%;
+}
+
 #description {
     width: 90%;
     color: white;
     background: #388E3C;
-    resize: none;
     border-radius: 3%;
     border: none;
     font-size: 110%;
     text-align: left;
     padding: 5%;
-    height: 8pm;
+    height: 70%;
+    margin: auto;
 }
 
 #quantity-container label {
