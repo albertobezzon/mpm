@@ -1,4 +1,13 @@
 var host = "http://18.225.31.222:8080/webService";
+
+function onBackKeyDown() {
+    window.plugins.appMinimize.minimize();
+}
+
+function charge() {
+    document.addEventListener("backbutton", onBackKeyDown, false);
+}
+
 document.getElementById("input-user").addEventListener("keypress", function () {
     if (event.keyCode === 13) {
         document.getElementById("input-password").focus();
@@ -38,19 +47,25 @@ function tryLogin() {
                         }
                     }
                     if(trovato){
-                        location.replace("homepage.html?codiceAzienda="+risp.codiceAzienda+"&username="+
-                            risp.username);
+                        window.plugins.nativepagetransitions.slide({
+                            "href" : "homepage.html?codiceAzienda="+risp.codiceAzienda+"&username="+risp.username
+                        });
+                        //location.replace("homepage.html?codiceAzienda="+risp.codiceAzienda+"&username="+
+                        //    risp.username);
                     }else{
                         users.users.push(risp.username);
                         window.localStorage["users"] = JSON.stringify(users);
-                        location.replace("newpage.html?codiceAzienda="+risp.codiceAzienda+"&username="+risp.username);
+                        window.plugins.nativepagetransitions.slide({
+                            "href" : "newpage.html?codiceAzienda="+risp.codiceAzienda+"&username="+risp.username
+                        });
+                        //location.replace("newpage.html?codiceAzienda="+risp.codiceAzienda+"&username="+risp.username);
                     }
                 }else{
                     if(risp.codice == "1"){
-                        alert("Password errata");
+                        navigator.notification.alert("Password errata", alert, "Attenzione", "OK");
                         document.getElementById("input-password").value = "";
                     }else{
-                        alert("Username insesistente");
+                        navigator.notification.alert("Username insesistente", alert, "Attenzione", "OK");
                         document.getElementById("input-user").value = "";
                         document.getElementById("input-password").value = "";
                         document.getElementById("input-user").focus();
@@ -61,6 +76,10 @@ function tryLogin() {
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
         xhttp.send("username="+user+"&password="+password);
     }else{
-        alert("Inserire username e password");
+        navigator.notification.alert("Inserire username e password",alert,"Attenzione","OK");
     }
+}
+
+function alert() {
+
 }

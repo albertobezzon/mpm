@@ -33,11 +33,11 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-keyboard.keyboard",
-    "file": "plugins/cordova-plugin-keyboard/www/keyboard.js",
-    "pluginId": "cordova-plugin-keyboard",
+    "id": "com.telerik.plugins.nativepagetransitions.NativePageTransitions",
+    "file": "plugins/com.telerik.plugins.nativepagetransitions/www/NativePageTransitions.js",
+    "pluginId": "com.telerik.plugins.nativepagetransitions",
     "clobbers": [
-      "window.Keyboard"
+      "window.plugins.nativepagetransitions"
     ]
   }
 ];
@@ -48,7 +48,7 @@ module.exports.metadata =
   "phonegap-plugin-barcodescanner": "8.0.1",
   "cordova-plugin-whitelist": "1.3.3",
   "cordova-plugin-appminimize": "1.0.1",
-  "cordova-plugin-keyboard": "1.2.0"
+  "com.telerik.plugins.nativepagetransitions": "0.6.5"
 };
 // BOTTOM OF METADATA
 });

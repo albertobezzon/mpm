@@ -7,7 +7,11 @@ var totale = url.searchParams.get("totale")
 var host = "http://18.225.31.222:8080/webService";
 
 function onBackKeyDown() {
-    location.replace("order.html?codiceAzienda="+codiceAzienda+"&username="+username);
+    window.plugins.nativepagetransitions.slide({
+        "direction" : "right",
+        "href" : "order.html?codiceAzienda="+codiceAzienda+"&username="+username
+    });
+    //location.replace("order.html?codiceAzienda="+codiceAzienda+"&username="+username);
 }
 
 function removeLoader() {

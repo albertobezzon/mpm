@@ -5,12 +5,22 @@ var username = url.searchParams.get("username");
 var host = "http://18.225.31.222:8080/webService";
 var ordini = [];
 
+function onBackKeyDown() {
+    window.plugins.nativepagetransitions.slide({
+        "direction" : "right",
+        "href" : "homepage.html?codiceAzienda="+codiceAzienda+"&username="+username
+    });
+}
+
 function removeLoader() {
     document.getElementById("loading").style.display = "none";
 }
 
 function openOrder(code,total) {
-    location.replace("articles.html?codiceAzienda="+codiceAzienda+"&username="+username+"&codiceOrdine="+code+"&totale="+total);
+    window.plugins.nativepagetransitions.slide({
+        "href" : "articles.html?codiceAzienda="+codiceAzienda+"&username="+username+"&codiceOrdine="+code+"&totale="+total
+    });
+    //location.replace("articles.html?codiceAzienda="+codiceAzienda+"&username="+username+"&codiceOrdine="+code+"&totale="+total);
 }
 
 function changeOrder() {
@@ -86,6 +96,7 @@ function compute(xhttp) {
 }
 
 function loadOrders() {
+    document.addEventListener("backbutton", onBackKeyDown, false);
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST",host+"/PrelevaOrdini",true);
     xhttp.onreadystatechange = function() {

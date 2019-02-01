@@ -15,4 +15,5 @@
     <engine name="android" spec="~7.0.0" />
     <plugin name="cordova-plugin-whitelist" spec="~1.3.3" />
     <plugin name="cordova-plugin-appminimize" spec="~1.0.1" />
+    <plugin name="com.telerik.plugins.nativepagetransitions" spec="https://github.com/Telerik-Verified-Plugins/NativePageTransitions" />
 </widget>

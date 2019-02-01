@@ -6,6 +6,13 @@ var host = "http://18.225.31.222:8080/webService";
 var articoli = [];
 var carrello = [];
 
+function onBackKeyDown() {
+    window.plugins.nativepagetransitions.slide({
+        "direction" : "right",
+        "href" : "homepage.html?codiceAzienda="+codiceAzienda+"&username="+username
+    });
+}
+
 function placeLoader() {
     document.getElementById("loading").style.display = "block";
 }
@@ -28,15 +35,21 @@ function addArticle(code) {
             }
             if(presente){
                 removeLoader();
-                var ok = confirm("Articolo già presente in carrello, vuoi modificare l'articolo?");
-                if(ok){
-                    location.replace("article.html?username="+username+"&codiceAzienda="+
-                        codiceAzienda+"&codiceArticolo="+code+"&mode=update&source=inventory");
-                }
+                navigator.notification.confirm("Articolo già presente in carrello, vuoi modificare l'articolo?", function() {
+                    window.plugins.nativepagetransitions.slide({
+                        "href" : "article.html?username="+username+"&codiceAzienda="+codiceAzienda+"&codiceArticolo="+code+"&mode=update&source=inventory"
+                    });
+                    //location.replace("article.html?username="+username+"&codiceAzienda="+
+                    //    codiceAzienda+"&codiceArticolo="+code+"&mode=update&source=inventory");
+                },
+                "Conferma", ["OK", "Annulla"]);
             }else{
                 removeLoader();
-                location.replace("article.html?username="+username+"&codiceAzienda="+
-                    codiceAzienda+"&codiceArticolo="+code+"&mode=add&source=inventory");
+                window.plugins.nativepagetransitions.slide({
+                    "href" : "article.html?username="+username+"&codiceAzienda="+codiceAzienda+"&codiceArticolo="+code+"&mode=add&source=inventory"
+                });
+                //location.replace("article.html?username="+username+"&codiceAzienda="+
+                //    codiceAzienda+"&codiceArticolo="+code+"&mode=add&source=inventory");
             }
         }
     };
@@ -94,7 +107,7 @@ function changeList() {
 function compute(xhttp) {
     var risp = JSON.parse(xhttp.responseText);
     if(risp.ok == "0"){
-        alert("Errore di sistema");
+        navigator.notification.alert("Errore di sistema", alert, "Attenzione", "OK");
     }else {
         articoli = risp.articoli;
         changeList();
@@ -102,6 +115,7 @@ function compute(xhttp) {
 }
 
 function loadArticles() {
+    document.addEventListener("backbutton", onBackKeyDown, false);
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST",host+"/PrelevaArticoliAzienda",true);
     xhttp.onreadystatechange = function() {
@@ -112,4 +126,8 @@ function loadArticles() {
     };
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
     xhttp.send("codiceAzienda="+codiceAzienda);
+}
+
+function alert() {
+
 }

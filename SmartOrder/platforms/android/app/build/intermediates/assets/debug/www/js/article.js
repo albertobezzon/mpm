@@ -9,7 +9,11 @@ var prezzo = 0.0;
 var source = url.searchParams.get("source");
 
 function onBackKeyDown() {
-    location.replace(source+".html?codiceAzienda="+codiceAzienda+"&username="+username);
+    window.plugins.nativepagetransitions.slide({
+        "direction" : "right",
+        "href" : source+".html?codiceAzienda="+codiceAzienda+"&username="+username
+    });
+    //location.replace(source+".html?codiceAzienda="+codiceAzienda+"&username="+username);
 }
 
 function removeLoader() {
@@ -22,7 +26,7 @@ function placeLoader() {
 
 function confirmOperation() {
     if(document.getElementById("quantity").value == "0"){
-        alert("Non è possibile inserire una quantità 0");
+        navigator.notification.alert("Non è possibile inserire una quantità 0", alert, "Attenzione", "OK");
     }else{
         var query = "";
         if(mode == "update"){
@@ -37,10 +41,14 @@ function confirmOperation() {
                 var resp = JSON.parse(this.responseText);
                 if (resp.ok == "1") {
                     removeLoader();
-                    location.replace(source+".html?codiceAzienda="+codiceAzienda+"&username="+username);
+                    window.plugins.nativepagetransitions.slide({
+                        "direction" : "right",
+                        "href" : source+".html?codiceAzienda="+codiceAzienda+"&username="+username
+                    });
+                    //location.replace(source+".html?codiceAzienda="+codiceAzienda+"&username="+username);
                 }else{
                     removeLoader();
-                    alert("Errore nell'esecuzione dell'operazione");
+                    navigator.notification.alert("Errore nell'esecuzione dell'operazione", alert, "Attenzione", "OK");
                 }
             }
         };
@@ -51,7 +59,11 @@ function confirmOperation() {
 }
 
 function deleteOperation() {
-    location.replace(source+".html?codiceAzienda="+codiceAzienda+"&username="+username);
+    window.plugins.nativepagetransitions.slide({
+        "direction" : "right",
+        "href" : source+".html?codiceAzienda="+codiceAzienda+"&username="+username
+    });
+    //location.replace(source+".html?codiceAzienda="+codiceAzienda+"&username="+username);
 }
 
 function minusPressed() {
@@ -154,4 +166,8 @@ function loadArticleInfo() {
     };
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
     xhttp.send("codice="+barCode+"&codiceAzienda="+codiceAzienda);
+}
+
+function alert() {
+
 }

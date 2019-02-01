@@ -74,12 +74,16 @@
 	%\setlength{\headsep}{2cm}
 	
 	\section{Introduzione}
-	Il progetto consiste nello sviluppo di un'applicazione, chiamata SmartOrder, per effettuare ordini dal proprio fornitore. L'applicazione è stata sviluppata per smartphone utilizzando il framework cross-platform PhoneGap.
+	dire che è per ios e android, spiegare il contesto dell'applicazione, fare un esempio e una breve descrizione delle funzionalità offerte.
+	Il progetto consiste nello sviluppo di un'applicazione mobile, chiamata SmartOrder, progettata per effettuare ordini online presso il proprio fornitore. L'applicazione è stata sviluppata esclusivamente per smartphone, utilizzando il framework cross-platform PhoneGap.
 	
 	\section{Il framework cross-platform adottato}
 	Il framework cross-platform scelto per lo sviluppo dell'applicazione è PhoneGap. La scelta è ricaduta su questo framework perché un membro del gruppo aveva già familiarità con questo framework e, inoltre, per realizzare un'applicazione con PhoneGap è richiesta la conoscenza di HTML, CSS e Javascript; in questi linguaggi la nostra competenza è già ottima, questo ha facilitato di molto il lavoro rispetto ad imparare un nuovo linguaggio.
 	
-	\section{Tutorial}
+	\section{Accorgimenti tecnologie web}
+	
+	\section{Progettazione frontend}
+	Il frontend è stato realizzato mediante utilizzo di tecnologie web
 	Le pagine realizzate sono le seguenti:
 	\begin{itemize}
 		\item login.html;
@@ -90,7 +94,7 @@
 		\item newpage.html;
 		\item inventory.html;
 	\end{itemize}
-	Ad ognuna di queste pagine è associato un foglio di stile e un file Javascript; inoltre sono presenti un file CSS e un file Javascript generali.
+	Ad ognuna di queste pagine è associato un foglio di stile e un file Javascript; inoltre sono presenti un file CSS e un file Javascript generali. Nelle prossime sezioni vengono descritte le varie pagine di SmartOrder.
 	
 	\subsection{Login e tutorial}
 	
@@ -195,11 +199,38 @@
 	Riteniamo che l'applicazione soddisfi i primi tre livelli della piramide di Maslow rimappata sui bisogni degli utenti, ovvero sia funzionale, affidabile e usabile.
 	
 	\section{Backend}
-	Per il backend abbiamo deciso di appoggiarci ad AWS, dove sono ospitati i nostri server. In particolare, abbiamo utilizzato:
+	Per l'implementazione del backend si è deciso di appoggiarsi ad Amazon AWS, in quanto tramite l'account universitario è possibile usufruire dei servizi offerti gratuitamente.
+	\subsection{Architettura}
+	Il backend della piattaforma presenta la seguente architettura:
 	\begin{itemize}
-		\item Un server azure;
-		\item un server contenente il database, per cui abbiamo utilizzato SQLserver;
+		\item un server cloud Amazon AWS EC2 con installato Windows Server 2017;
+		\item un'instanza Amazon AWS RDS contenente un database Microsoft SQL Server.
 	\end{itemize}
+
+	All'interno dell'istanza AWS EC2 sono stati installati:
+	\begin{itemize}
+		\item un server web Apache Tomcat: esso permette di eseguire un web service scritto in linguaggio Java, il quale si occupa di captare le richieste HTTP che provengono dall'applicazione, di elaborarle e di inviare delle risposte costruite sulla base di query effettuate su un database;
+		\item il linguaggio Java: necessario per il funzionamento di Apache Tomcat e per l'esecuzione del web service.
+	\end{itemize}
+
+	\subsection{Web service}
+	
+	Per lo sviluppo del web service si sono utilizzati gli oggetti servlet Java. Essi permettono di captare richieste HTTP e di rispondere ad esse tramite stringhe in formato JSON. Il servizio web è costituito dai seguenti package:
+	\begin{itemize}
+		\item dbConnection: package contenente una classe che espone un'interfaccia per connettersi ed effettuare query su un database SQL Server;
+		\item servlet: package contenente le classi servlet del servizio web;
+		\item utility: package contenente le classi utilità del servizio web
+	\end{itemize}
+
+	\subsubsection{Servlet}
+	
+	\subsubsection{Utility}
+	
+	\subsection{Database}
+	
+	\subsubsection{Database per l'autenticazione}
+	
+	\subsubsection{Database aziendale}
 	
 	\section{Conclusioni}
 	Siamo soddisfatti dell'applicazione realizzata. Siamo consapevoli che la grafica può essere resa più accattivante per lo scopo dell'applicazione. La grafica poteva essere più semplice da realizzare se utilizzavamo un altro framework, come ad esempio React. 
