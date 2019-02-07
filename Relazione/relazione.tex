@@ -46,11 +46,12 @@
 			\usepackage{fourier}
 		\end{Preambolo*}
 		\Universita{Padova}
+		\Logo{logo-unipd.png}
 		\Dipartimento{Matematica}
 		\Scuola{Corso di Mobile Programming and Multimedia}
-		\Filigrana [height=7.5cm,before=0.28,after=1]{logo-unipd.png}
+		\Filigrana [height=7.5cm,before=0.58,after=1.5]{img/delivery-package.png}
 		\Titolo{\vspace{8cm}\Huge{Relazione del progetto SmartOrder}}
-		\Relatore{Alberto Bezzon 1211016\\Tommaso Carraro }
+		\Relatore{Alberto Bezzon 1211016\\Tommaso Carraro 1210937}
 		\NRelatore{Studenti}{}
 		\Annoaccademico{2018-2019}
 	\end{frontespizio}
@@ -75,19 +76,19 @@
 	
 	\section{Introduzione}
 	
-	Il progetto consiste nello sviluppo di un'applicazione mobile, chiamata SmartOrder, progettata per permettere agli utenti registrati di effettuare ordini presso il proprio fornitore. L'applicazione è stata sviluppata esclusivamente per smartphone, al momento soltanto per l'ambiente Android, utilizzando il framework cross-platform PhoneGap. Per l'ambiente iOS è stato realizzato il progetto per XCode ma non essendo il gruppo in possesso di un Mac, non è stato possibile realizzare la versione iOS di SmartOrder. L'applicazione non prevede una registrazione esplicita, infatti le aziende che intendono acquistare il servizio devono comunicarlo al team di SmartOrder. Al momento della richiesta devono essere fornite le anagrafiche degli utenti che il fornitore intende registrare e in questo modo verranno creati gli account per tutti gli utenti, compresi di credenziali. Inoltre devono essere forniti i dati relativi a tutti gli articoli che il fornitore desidera rendere disponibili per gli utenti tramite il servizio. Una volta ricevute le credenziali, via mail, gli utenti possono iniziare ad usufruire del servizio. Il tutto sarà perfettamente configurato per fare in modo che ogni utente veda solamente gli articoli venduti dal proprio fornitore. Tramite l'applicazione sarà possibile:
+	Il progetto consiste nello sviluppo di un'applicazione mobile, chiamata SmartOrder, progettata per permettere agli utenti registrati di effettuare ordini presso il proprio fornitore. L'applicazione è stata sviluppata esclusivamente per smartphone, al momento soltanto per l'ambiente Android, utilizzando il framework cross-platform PhoneGap. Per l'ambiente iOS non è stato possibile realizzare l'applicazione, non essendo il gruppo in possesso di un Mac. L'applicazione non prevede una registrazione esplicita, infatti le aziende che intendono acquistare il servizio devono comunicarlo al team di SmartOrder. Al momento della richiesta devono essere fornite le anagrafiche degli utenti che il fornitore intende registrare e, in questo modo verranno creati gli account per tutti gli utenti, compresi di credenziali. Inoltre devono essere forniti i dati relativi a tutti gli articoli che il fornitore desidera rendere disponibili per gli utenti. Una volta ricevute le credenziali via e-mail, gli utenti possono iniziare ad usufruire del servizio. Il tutto sarà perfettamente configurato per fare in modo che ogni utente possa visionare solamente gli articoli venduti dal proprio fornitore. Tramite l'applicazione sarà possibile:
 	\begin{itemize}
 		\item ricercare prodotti e aggiungerli al carrello;
 		\item scansionare il codice a barre di un prodotto che si ha già acquistato per aggiungerlo al carrello più velocemente;
-		\item modificare o eliminare i prodotti in carrello;
+		\item modificare o eliminare i prodotti nel carrello;
 		\item inviare un ordine presso il proprio fornitore;
 		\item visualizzare le informazioni relative a tutti gli ordini effettuati presso il proprio fornitore.
 	\end{itemize}
-	L'idea è nata per cercare di soddisfare un bisogno reale che proviene dallo zio di uno dei membri del gruppo. È stato richiesto se fosse possibile velocizzare il processo di rifornimento di libri di una libreria una volta terminati. L'idea è che è possibile velocizzare questo processo scansionando il codice a barre di un libro quando si è a conoscenza del fatto che sta per terminare. La possibiltà di aggiungere gli articoli dall'inventario è stata implementata per permettere all'applicazione di essere robusta rispetto all'aggiunta di nuovi clienti, in quanto essi non avendo ancora acquistato prodotti non hanno la possibilità di scansionare il codice a barre per ordinare i prodotti.
+	L'idea è nata per cercare di soddisfare un bisogno reale. È stato richiesto se fosse possibile velocizzare il processo di rifornimento di libri di una libreria una volta terminati. L'idea è fornire la possibilità di ordinare un libro scansionandone il codice a barre quando esso sta per terminare. La possibilità di aggiungere gli articoli dall'inventario è stata implementata per permettere all'applicazione di essere robusta rispetto all'aggiunta di nuovi clienti, in quanto essi non avendo ancora acquistato prodotti non hanno la possibilità di scansionare il codice a barre per ordinarli.
 	
-	\section{La scelta del framework cross-platform}
+	\section{La scelta del framework}
 	
-	Il framework cross-platform scelto per lo sviluppo dell'applicazione è PhoneGap. La scelta è ricaduta su questo framework in quanto un membro del gruppo aveva già familiarità con le tecnologie offerte dallo stesso. Inoltre il framework non avrebbe richiesto l'apprendimento di nuove tecnologie per l'implementazione dell'applicazione, in quanto è possibile utilizzare le tecnologie web. Altre considerazioni sulla scelta del framwork sono state inserite nelle conclusioni di questa relazione.
+	Per lo sviluppo del progetto si è scelto il framework cross-platform PhoneGap, in quanto un membro del gruppo aveva già familiarità con le tecnologie offerte dallo stesso e il suo utilizzo non avrebbe richiesto l'apprendimento di nuove tecnologie. Altre considerazioni sulla scelta del framwork sono state inserite nelle conclusioni di questa relazione.
 	
 	\section{Accorgimenti sulle tecnologie web}
 	
@@ -96,16 +97,19 @@
 		\item \textbf{eventi \textit{touch}}: mentre i meccanismi di input nei PC consistono per lo più nella tastiera e nel mouse, nei dispositivi mobili quasi tutto passa per il \textit{touch screen}, e avere funzionalità comode per gestire questo strumento consente un'interazione più ricca e senza limitazioni per l'utente. Le gestualità da attuare su un \textit{display}, nel mondo \textit{mobile}, costituiscono un vero e proprio linguaggio fondamentale nella \textit{user experience};
 		\item \textbf{controllo batteria}: considerata l'importanza rivestita dalle risorse energetiche, l'esistenza stessa di questa libreria nel linguaggio dimostra come il suo impiego sia particolarmente mirato al panorama \textit{mobile}.
 	\end{itemize}
-	
 	Ciò che ha favorito la scelta di \textit{CSS3} sono state le \textit{media queries}. Esse permettono di definire regole stilistiche in base alla tipologia del mezzo di visualizzazione, delle sue dimensioni e della sua attuale disposizione (\textit{portrait} o \textit{landscape}). Ciò influisce non solo sull'aspetto esteriore degli elementi ma anche sul loro posizionamento e quindi sulla struttura stessa dell'interfaccia.
+	\medskip
 	
-	Per quanto riguarda il linguaggio \textit{JavaScript} si è utilizzato \textit{JavaScript} puro, senza l'utilizzo di \textit{framework} o \textit{JQuery}. Una particolarità del linguaggio, detta \textit{AJAX}, ha reso possibile eseguire chiamate all'\textit{API} del servizio \textit{web} di \textit{SmartOrder}. \textit{AJAX}, acronimo di \textit{\textit{Asynchronous JavaScript and XML}}, è una tecnica di sviluppo \textit{software} per la realizzazione di applicazioni \textit{web} interattive (\textit{Rich Internet Application}). Lo sviluppo di applicazioni \textit{HTML} con \textit{AJAX} si basa su uno scambio di dati in \textit{background} fra \textit{web browser} e \textit{server}, che consente l'aggiornamento dinamico di una pagina \textit{web} senza esplicito ricaricamento da parte dell'utente.
+	
+	\noindent Per quanto riguarda il linguaggio \textit{JavaScript} si è utilizzato \textit{JavaScript} puro, senza l'utilizzo di \textit{framework} o \textit{JQuery}. Una particolarità del linguaggio, detta \textit{AJAX}, ha reso possibile eseguire chiamate all'\textit{API} del servizio \textit{web} di \textit{SmartOrder}. \textit{AJAX}, acronimo di \textit{\textit{Asynchronous JavaScript and XML}}, è una tecnica di sviluppo \textit{software} per la realizzazione di applicazioni \textit{web} interattive (\textit{Rich Internet Application}). Lo sviluppo di applicazioni \textit{HTML} con \textit{AJAX} si basa su uno scambio di dati in \textit{background} fra \textit{web browser} e \textit{server}, che consente l'aggiornamento dinamico di una pagina \textit{web} senza esplicito ricaricamento da parte dell'utente.
 	
 	\section{Informazioni utili all'utilizzo dell'applicazione}
 	
-	Per poter utilizzare l'applicazione è necessario essere connessi ad Internet, in quanto l'applicazione scarica i dati da un server. Si fa presente che la connessione viene bloccata dalla rete Eduroam e Studenti.math.unipd.it dell'Università, quindi si consiglia di utilizzare altre reti per usufruire dell'applicazione. Per ricevere le e-mail al momento dell'invio dell'ordine è necessario che la propria mail sia certificata Amazon. Questo è un limite di Amazon AWS che può essere aggirato inviando una semplice richiesta ad AWS. Poiché non sarà possibile quindi ricevere la mail, viene di seguito fornito uno screen della stessa. La mail presenta due versioni, a seconda che debba essere inviata all'azienda o all'utente che ha effettuato l'ordine.
+	Per poter utilizzare l'applicazione è necessario essere connessi ad Internet, in quanto l'applicazione scarica i dati da un server. Si fa presente che la connessione viene bloccata dalla rete Eduroam e Studenti.math.unipd.it dell'Università, quindi si consiglia di utilizzare altre reti per usufruire dell'applicazione. Per ricevere le e-mail al momento dell'invio dell'ordine è necessario che la propria mail sia certificata Amazon\footnote{Mail certificata per utilizzare SMTP}. Questo è un limite di Amazon AWS che può essere aggirato inviando una semplice richiesta ad AWS. Poiché non sarà possibile quindi ricevere l'e-mail, viene di seguito fornito uno screen della stessa. L'e-mail presenta due versioni, a seconda che debba essere inviata all'azienda o all'utente che ha effettuato l'ordine.
+	\medskip
 	
-	Infine si fa notare che il loader dell'applicazione indica che SmartOrder è in fase di scaricamento dati dal server e sta momentaneamente attendendo una rispsota per la costruzione della pagina. Il loader è stato implementato proprio per fare in modo che l'utente non interagisca con l'applicazione prima della visualizzazione della pagina. Quindi, se si premesse qualche bottone prima dell'avvenuto caricamento, potrebbero accadere problemi di rendering.
+	
+	\noindent Infine si fa notare che il loader dell'applicazione indica che SmartOrder è in fase di scaricamento dati dal server e sta momentaneamente attendendo una risposta per la costruzione della pagina. Il loader è stato implementato proprio per fare in modo che l'utente non interagisca con l'applicazione prima della visualizzazione della pagina. Quindi, se si premesse qualche bottone prima dell'avvenuto caricamento, potrebbero accadere problemi di rendering.
 	
 	\section{Progettazione frontend}
 	
@@ -125,22 +129,22 @@
 	
 	\subsection{Login e tutorial}
 	
-	L'applicazione, una volta installata, è utilizzabile. All'avvio della stessa viene mostrata la pagina di login per accedere al servizio. In questa schermata devono essere inserite le credenziali fornite dal proprio fornitore in fase di registrazione. La pagina presenta una checkbox "Resta collegato" per evitare che ad ogni apertura dell'applicazione venga richiesto il login. In seguito al login, soltanto al primo avvio, viene mostrato un breve tutorial sul funzionamento dell'applicazione. In fondo al tutorial è presente un bottone che permette di iniziare ad utilizzare l'app. Nel caso in cui un utente si trovasse in difficoltà durante l'utilizzo dell'applicazione, è possibile trovare il tutorial nel menu della stessa. Completato il tutorial si viene reindirizzati al \textit{Carrello}.
+	L'applicazione, una volta installata, è utilizzabile. All'avvio della stessa viene mostrata la pagina di login per accedere al servizio. In questa schermata devono essere inserite le credenziali fornite dal proprio fornitore in fase di registrazione. La pagina presenta una checkbox ``Resta collegato'' per evitare che ad ogni apertura dell'applicazione venga richiesto il login. In seguito al login, soltanto al primo avvio, viene mostrato un breve tutorial sul funzionamento dell'applicazione. In fondo al tutorial è presente un bottone che permette di iniziare ad utilizzare l'app. Nel caso in cui un utente si trovasse in difficoltà durante l'utilizzo dell'applicazione, è possibile trovare il tutorial nel menu della stessa. Completato il tutorial si viene reindirizzati al \textit{Carrello}.
 	
 	\subsection{Carrello}
-	La pagina \textit{Carrello} è la pagina principale dell'applicazione e visualizza per ogni articolo in carrello la quantità decisa dall'utente, il prezzo e il prezzo parziale (prezzo unitario x quantità). Ogni articolo in carrello presenta due bottoni: 
+	La pagina \textit{Carrello} è la pagina principale dell'applicazione e visualizza per ogni articolo in carrello la quantità decisa dall'utente, il prezzo e il prezzo parziale (prezzo unitario di un articolo x quantità dell'articolo stesso). Ogni articolo in carrello presenta due bottoni: 
 	\begin{itemize}
-		\item \textbf{MODIFICA}: permette di modificare l'articolo. Alla sua pressione si viene reindirizzati alla pagina per la modifica dell'articolo, dove è possibile modificarne la quantità. Una volta effettuata la modifica è necessario confermarla per apportarla definitivamente, premendo sul bottone "Conferma", oppure annullarla, tramite il bottone "Annulla";
+		\item \textbf{MODIFICA}: permette di modificare l'articolo. Alla sua pressione si viene reindirizzati alla pagina per la modifica dell'articolo, dove è possibile modificarne la quantità. Una volta effettuata la modifica è necessario confermarla per apportarla definitivamente, premendo sul bottone ``Conferma'', oppure annullarla, tramite il bottone ``Annulla'';
 		\item \textbf{ELIMINA}: permette di rimuovere l'articolo dal carrello. Se tale bottone viene premuto, verrà chiesta conferma prima di effettuare l'operazione. (La spiegazione del perché viene rimandata al capitolo sul mobile design).
 	\end{itemize}
-	In questa pagina è presente inoltre un footer contenente:
+	Inoltre, in questa pagina è presente un footer contenente:
 	\begin{itemize}
 		\item il prezzo totale di tutti gli articoli inseriti nel carrello;
 		\item un pannello di bottoni utilizzabili per la gestione del carrello:
 		\begin{itemize}
 			\item bottone \textit{Scan}: la spiegazione di questo pulsante è presente nella sezione successiva;
 			\item bottone \textit{Elimina}: permette di svuotare il carrello. In seguito alla pressione viene chiesta conferma dell'azione;
-			\item bottone \textit{Invia}: permette di inviare un ordine composto dagli articoli nel carrello. In seguito all'ordine si riceverà una mail di conferma contenente le informazioni relative all'ordine effettuato.
+			\item bottone \textit{Invia}: permette di inviare un ordine composto dagli articoli nel carrello. In seguito all'ordine si riceverà un'e-mail di conferma contenente le informazioni relative a quest'ultimo.
 		\end{itemize}
 	\end{itemize} 
 	
@@ -148,7 +152,7 @@
 	È possibile aggiungere un articolo al carrello in due modi: 
 	\begin{enumerate}
 		\item tramite scansione del codice a barre in seguito alla pressione del bottone \textit{Scan} nella pagina \textit{Carrello}, accedibile dal menu dell'applicazione;
-		\item dalla pagina \textit{Inventario}, accedibile tramite il menu dell'applicazione, selezionando l'articolo che si desidera aggiungere e inserendone la quantità nella pagina di aggiunta dell'articolo. Una volta immessa la quantità desiderata, è necessario premere su "Conferma" affinché l'articolo venga inserito nel carrello, oppure su "Annulla" per annullare l'inserimento del nuovo articolo. Nella pagina \textit{Inventario} è inoltre possibile ricercare un'articolo, per nome o per codice, digitando la chiave di ricerca nella textbox in alto.
+		\item dalla pagina \textit{Inventario}, accedibile tramite il menu dell'applicazione, selezionando l'articolo che si desidera aggiungere e inserendone la quantità nella pagina di aggiunta dell'articolo. Una volta immessa la quantità desiderata, è necessario premere su ``Conferma'' affinché l'articolo venga inserito nel carrello, oppure su ``Annulla'' per annullare l'inserimento del nuovo articolo. Nella pagina \textit{Inventario} è inoltre possibile ricercare un'articolo, per nome o per codice, digitando la chiave di ricerca nella textbox in alto.
 	\end{enumerate}
 	La pagina per l'aggiunta di un articolo, che presenta la stessa interfaccia grafica della pagina per la modifica di un articolo, contiene le seguenti informazioni:
 	\begin{itemize}
@@ -157,7 +161,7 @@
 		\item pannello per l'inserimento della quantità: le modalità di interazione con questo pannello sono spiegate nella sezione dedicata al mobile design;
 		\item prezzo dell'articolo: visualizzato alla fine della pagina. Si tratta di un campo dinamico in quanto varia a seconda della quantità inserita.
 	\end{itemize}
-	\\ \textbf{Attenzione}: nel caso in cui si cercasse di aggiungere al carrello un articolo già presente in esso, il sistema mostrerà un messaggio nel quale chiederà se si vuole modificare la quantità dello stesso.
+	\textbf{Attenzione}: nel caso in cui si cercasse di aggiungere al carrello un articolo già presente in esso, il sistema mostrerà un messaggio nel quale chiederà se si vuole modificare la quantità dello stesso.
 	
 	\subsection{Visualizzazione ordini}
 	Dal menu dell'applicazione è possibile accedere alla lista di tutti gli ordini effettuati premendo sulla voce \textit{Ordini}. Alla sua pressione si verrà reindirizzati alla pagina \textit{Ordini}, dove per ogni ordine, vengono mostrate le seguenti informazioni:
@@ -165,8 +169,8 @@
 		\item codice: è il codice che identifica univocamente l'ordine;
 		\item data: è la data in cui è stato effettuato l'ordine;
 		\item totale: è il totale in euro dell'ordine.
-	\end{itemize}. 
-	E' possibile consultare la lista degli articoli acquistati in un determinato ordine, tramite il bottone "DETTAGLI", situato sulla destra di ogni ordine. Alla sua pressione si verrà reindirizzati alla pagina contenente le informazioni degli articoli ordinati:
+	\end{itemize} 
+	\'E possibile consultare la lista degli articoli acquistati in un determinato ordine, tramite il bottone ``DETTAGLI'', situato sulla destra di ogni ordine. Alla sua pressione si verrà reindirizzati alla pagina contenente le informazioni degli articoli ordinati:
 	\begin{itemize}
 		\item nome;
 		\item quantità;
@@ -178,8 +182,9 @@
 	\section{Mobile design}
 	
 	In questa sezione vengono descritte le scelte implementative effettuate ai fini di una corretta progettazione dell'interfaccia dell'applicazione. Questa sezione è suddivisa in varie sottosezioni e ognuna di esse descrive un'elemento dell'interfaccia e le motivazioni alla base della sua progettazione.
+	\medskip
 	
-	La maggior parte delle pagine dell'applicazione sono progettate nel seguente modo:
+	\noindent La maggior parte delle pagine dell'applicazione sono progettate nel seguente modo:
 	\begin{itemize}
 		\item la parte superiore presenta il pulsante menu sulla sinistra e il titolo della pagina al centro;
 		\item la parte centrale presenta il contenuto informativo;
@@ -196,7 +201,7 @@
 		\caption{Bottoni nel footer}
 		\label{fig:buttons}
 	\end{figure}
-	Nelle pagine \textit{Carrello}, \textit{Modifica} e \textit{Aggiungi} sono presenti dei bottoni nella parte bassa dello schermo (Figura \ref{fig:buttons}). L'applicazione richiede una frequente modifica dei dati quindi i controlli sono stati posizionati in una zona semplice da raggiungere e, seguendo la regola "Content always on top", si è preferito inserire questi bottoni in basso, infrangendo così la convenzione che su Android i controlli devono essere posizionati nella parte alta dello schermo. 
+	Nelle pagine \textit{Carrello}, \textit{Modifica} e \textit{Aggiungi} sono presenti dei bottoni nella parte bassa dello schermo (Figura \ref{fig:buttons}). L'applicazione richiede una frequente modifica dei dati quindi i controlli sono stati posizionati in una zona semplice da raggiungere e, seguendo la regola ``Content always on top'', si è preferito inserire questi bottoni in basso, infrangendo così la convenzione che su Android i controlli devono essere posizionati nella parte alta dello schermo. 
 	\begin{figure}[H] 
 		\centering
 		\subfloat[Bottoni nella pagina Carrello ]{\includegraphics[width=0.3\columnwidth]{img/item-cart}}
@@ -223,7 +228,7 @@
 		\caption{Menu dell'applicazione}
 		\label{fig:menu}
 	\end{figure}
-	Il menu dell'applicazione è rappresentato in Figura \ref{fig:menu}. Per accederci è presente il classico bottone "hamburger" in alto a sinistra di ogni pagina. Il menu è suddiviso in due parti: 
+	Il menu dell'applicazione è rappresentato in Figura \ref{fig:menu}. Per accederci è presente il classico bottone ``hamburger'' in alto a sinistra di ogni pagina. Il menu è suddiviso in due parti: 
 	\begin{itemize}
 		\item informazioni relative all'utente che ha effettuato il login nell'applicazione. In particolare vengono visualizzati il nome dell'utente e il codice azienda del fornitore dello stesso. Queste informazioni non sono modificabili e pertanto sono state disposte nella parte alta del menu;
 		\item insieme di link che permettono di navigare tra le pagine dell'applicazione. In particolare sono disponibili i link al carrello, alla lista degli ordini e all'inventario. Inoltre è possibile effettuare il logout dall'applicazione o visionare nuovamente il tutorial. Questi bottoni sono stati posizionati nella parte centrale del menu (comfort zone), in modo da essere facilmente accessibili quando il menu risulta aperto.
@@ -267,14 +272,13 @@
 	Si ritiene che l'applicazione soddisfi i primi tre livelli della piramide di Maslow rimappata sui bisogni degli utenti, ovvero che sia funzionale, affidabile e usabile.
 	
 	\section{Backend}
-	Per l'implementazione del backend si è deciso di appoggiarsi ad Amazon AWS, in quanto tramite l'account universitario è possibile usufruire dei servizi offerti gratuitamente.
+	Per l'implementazione del backend si è deciso di appoggiarsi ad Amazon Web Services (AWS), in quanto tramite l'account universitario è possibile usufruire dei servizi offerti gratuitamente.
 	\subsection{Architettura}
 	Il backend della piattaforma presenta la seguente architettura:
 	\begin{itemize}
 		\item un server cloud Amazon AWS EC2 con installato Windows Server 2017;
 		\item un'instanza Amazon AWS RDS contenente un database Microsoft SQL Server.
 	\end{itemize}
-
 	All'interno dell'istanza AWS EC2 sono stati installati:
 	\begin{itemize}
 		\item un server web Apache Tomcat: esso permette di eseguire un web service scritto in linguaggio Java, il quale si occupa di captare le richieste HTTP che provengono dall'applicazione, di elaborarle e di inviare delle risposte costruite sulla base di query effettuate su un database;
@@ -319,7 +323,7 @@
 				\item username: è la username che l'utente ha inserito in fase di login;
 				\item password: è la password che l'utente ha inserito in fase di login.
 			\end{itemize}
-			\item \textbf{Funzionalità}: il servlet si connette al database ideato per la gestione dell'autenticazione e cerca all'interno di esso le credenziali fornite. Se le credenziali vengono identificate viene resituita una stringa JSON contenente codice 0, altrimenti ci possono essere le seguenti possibilità:
+			\item \textbf{Funzionalità}: il servlet si connette al database ideato per la gestione dell'autenticazione e cerca all'interno di esso le credenziali fornite. Se le credenziali vengono identificate viene restituita una stringa JSON contenente codice 0, altrimenti ci possono essere le seguenti possibilità:
 			\begin{itemize}
 				\item codice 1: la password inserita dall'utente non è quella corretta;
 				\item codice 2: la username inserita dall'utente è inesistente.
@@ -347,7 +351,7 @@
 				\item codice azienda: è il codice che identifica univocamente il database del fornitore corrispondente all'utente loggato;
 				\item totale: è il totale dell'ordine che l'utente ha deciso di inviare.
 			\end{itemize}
-			\item \textbf{Funzionalità}: il servlet si connette al database identificato dal codice azienda fornito e crea in database un nuovo ordine contenente gli articoli presenti nel carrello dell'utente identificato dalla username fornita. Infine invia una mail di notifica dell'ordine sia all'utente identificato dalla username fornito che all'azienda identificata dal codice azienda fornito.
+			\item \textbf{Funzionalità}: il servlet si connette al database identificato dal codice azienda fornito e crea in database un nuovo ordine contenente gli articoli presenti nel carrello dell'utente identificato dalla username fornita. Infine invia un'e-mail di notifica dell'ordine sia all'utente identificato dalla username fornito che all'azienda identificata dal codice azienda fornito.
 		\end{itemize}
 	
 		\item \textbf{PrelevaArticoliAzienda.java}
@@ -485,6 +489,6 @@
 	\end{itemize}
 	
 	\section{Conclusioni}
-	Vi è la consapevolezza che l'interfaccia grafica poteva essere resa più accattivante per lo scopo dell'applicazione. L'implementazione della stessa poteva risultare più semplice tramite l'utilizzo di un altro framework, come ad esempio React Native. 
-	Il framework scelto ha comunque permesso di realizzare una buona interfaccia grafica in tempi ristretti. Vi è la consapevolezza che un framework ibrido non dovrebbe essere la prima scelta nel caso si utilizzino i sensori del dispositivo (fotocamera in questo caso). Per giustificare la scelta di PhoneGap si ritiene che il tempo necessario per l'apprendimento delle tecnologie richieste dagli altri framework sia di gran lunga superiore e non avrebbe permesso al gruppo di consegnare il progetto alla consegna pianificata. Infatti erano stati presi in considerazione i framework \textit{Xamarin} e \textit{React Native}, i quali richiedevono l'apprendimento di \textit{C#} e \textit{React}, rispettivamente, linguaggi totalmente sconosciuti dai membri del gruppo. Nonostante questo problema il gruppo ritiene di aver realizzato una buona applicazione, che potrebbe risultare utile ad aziende ed utenti nel contesto per cui è stata progettata e implementata.
+	Vi è la consapevolezza che l'interfaccia grafica possa essere resa più accattivante per lo scopo dell'applicazione. L'implementazione della stessa poteva risultare più semplice tramite l'utilizzo di un altro framework, come ad esempio React Native. 
+	Il framework scelto ha comunque permesso di realizzare una buona interfaccia grafica in tempi ristretti. Vi è la consapevolezza che un framework ibrido non dovrebbe essere la prima scelta nel caso si utilizzino i sensori del dispositivo (fotocamera in questo caso). Per giustificare la scelta di PhoneGap si ritiene che il tempo necessario per l'apprendimento delle tecnologie richieste dagli altri framework sia di gran lunga superiore. Infatti erano stati presi in considerazione i framework \textit{Xamarin} e \textit{React Native}, i quali richiedevono l'apprendimento di \textit{C\#} e \textit{JSX}, rispettivamente, linguaggi totalmente sconosciuti dai membri del gruppo. Nonostante questo problema il gruppo ritiene di aver realizzato una buona applicazione, che potrebbe risultare utile ad aziende ed utenti nel contesto per cui è stata progettata e implementata.
 \end{document}
