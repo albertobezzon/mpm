@@ -6,7 +6,14 @@ var host = "http://18.225.31.222:8080/webService";
 var empty = false;
 
 function onBackKeyDown() {
-    window.plugins.appMinimize.minimize();
+    if(window.localStorage["notScan"] == null){
+        window.localStorage["notScan"] = "true";
+    }
+    if(window.localStorage["notScan"] == "false"){
+        window.localStorage["notScan"] = "true";
+    }else{
+        window.plugins.appMinimize.minimize();
+    }
 }
 
 function placeLoader() {
@@ -18,14 +25,13 @@ function removeLoader() {
 }
 
 function scanner() {
+    notScan = false;
     cordova.plugins.barcodeScanner.scan(
         function (result) {
             if(result.cancelled == true) {
+                window.localStorage["notScan"] = "false";
                 navigator.notification.alert("Scansione cancellata", alert, "Informazione", "OK");
-                window.plugins.nativepagetransitions.slide({
-                    "href" : "homepage.html?username="+username+"&codiceAzienda="+codiceAzienda
-                });
-                //location.replace("homepage.html?username="+username+"&codiceAzienda="+codiceAzienda);
+                location.replace("homepage.html?username="+username+"&codiceAzienda="+codiceAzienda);
             }else{
                 var xhttp = new XMLHttpRequest();
                 xhttp.open("POST",host+"/PrelievoInfoArticolo",true);
@@ -53,12 +59,14 @@ function scanner() {
                                     }
                                     if(presente){
                                         removeLoader();
-                                        navigator.notification.confirm("Articolo già presente in carrello, vuoi modificare l'articolo?", function () {
-                                            window.plugins.nativepagetransitions.slide({
-                                                "href" : "article.html?username="+username+"&codiceAzienda="+codiceAzienda+"&codiceArticolo="+result.text+"&mode=update&source=homepage"
-                                            });
-                                            //location.replace("article.html?username="+username+"&codiceAzienda="+
-                                            //    codiceAzienda+"&codiceArticolo="+result.text+"&mode=update&source=homepage");
+                                        navigator.notification.confirm("Articolo già presente in carrello, vuoi modificare l'articolo?", function (index) {
+                                            if(index == 1){
+                                                window.plugins.nativepagetransitions.slide({
+                                                    "href" : "article.html?username="+username+"&codiceAzienda="+codiceAzienda+"&codiceArticolo="+result.text+"&mode=update&source=homepage"
+                                                });
+                                                //location.replace("article.html?username="+username+"&codiceAzienda="+
+                                                //    codiceAzienda+"&codiceArticolo="+result.text+"&mode=update&source=homepage");
+                                            }
                                         },
                                         "Conferma",["OK","Annulla"]);
                                     }else{
@@ -101,23 +109,22 @@ function scanner() {
 
 function deleteArticle(code) {
     var xhttp = new XMLHttpRequest();
-    navigator.notification.confirm("Vuoi eliminare l'articolo selezionato?",function () {
-        xhttp.open("POST",host+"/EliminazioneArticoli",true);
-        xhttp.onreadystatechange = function () {
-            if(this.readyState == 4 && this.status == 200){
-                var risp = JSON.parse(this.responseText);
-                if(risp.ok == "1"){
-                    window.plugins.nativepagetransitions.slide({
-                        "href" : "homepage.html?codiceAzienda="+codiceAzienda+"&username="+username
-                    });
-                    //location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
+    navigator.notification.confirm("Vuoi eliminare l'articolo selezionato?",function (index) {
+        if(index == 1){
+            xhttp.open("POST",host+"/EliminazioneArticoli",true);
+            xhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 200){
+                    var risp = JSON.parse(xhttp.responseText);
+                    if(risp.ok == "1"){
+                        location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
+                    }
+                    removeLoader();
                 }
-                removeLoader();
-            }
-        };
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
-        xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda+"&codici="+code);
-        placeLoader();
+            };
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+            xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda+"&codici="+code);
+            placeLoader();
+        }
     },
     "Conferma",["OK","Annulla"]);
 }
@@ -131,24 +138,23 @@ function editArticle(code) {
 
 function deleteAll() {
     if(!empty){
-        navigator.notification.confirm("Sicuro di voler rimuovere tutti gli articoli?",function () {
-            var xhttp = new XMLHttpRequest();
-            xhttp.open("POST",host+"/EliminazioneArticoli",true);
-            xhttp.onreadystatechange = function () {
-                if(this.readyState == 4 && this.status == 200){
-                    var risp = JSON.parse(this.responseText);
-                    if(risp.ok == "1"){
-                        window.plugins.nativepagetransitions.slide({
-                            "href" : "homepage.html?codiceAzienda="+codiceAzienda+"&username="+username
-                        });
-                        //location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
+        navigator.notification.confirm("Sicuro di voler rimuovere tutti gli articoli?",function (index) {
+            if(index == 1){
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("POST",host+"/EliminazioneArticoli",true);
+                xhttp.onreadystatechange = function () {
+                    if(this.readyState == 4 && this.status == 200){
+                        var risp = JSON.parse(this.responseText);
+                        if(risp.ok == "1"){
+                            location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
+                        }
+                        removeLoader();
                     }
-                    removeLoader();
-                }
-            };
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
-            xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda+"&codici=all");
-            placeLoader();
+                };
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+                xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda+"&codici=all");
+                placeLoader();
+            }
         },
         "Conferma",["OK","Annulla"]);
     }else{
@@ -158,29 +164,28 @@ function deleteAll() {
 
 function sendOrder() {
     if(!empty){
-        navigator.notification.confirm("Vuoi inviare l'ordine?", function (){
-            var xhttp = new XMLHttpRequest();
-            var totale = document.getElementById("totale").innerHTML;
-            xhttp.open("POST",host+"/InvioOrdine",true);
-            xhttp.onreadystatechange = function () {
-                if(this.readyState == 4 && this.status == 200){
-                    var risp = JSON.parse(this.responseText);
-                    if(risp.ok == "1"){
-                        removeLoader();
-                        navigator.notification.alert("Ordine inviato con successo", alert, "Informazione", "OK");
-                        window.plugins.nativepagetransitions.slide({
-                            "href" : "homepage.html?codiceAzienda="+codiceAzienda+"&username="+username
-                        });
-                        //location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
-                    }else{
-                        removeLoader();
-                        navigator.notification.alert("Problemi nell'invio dell'ordine", alert, "Attenzione", "OK");
+        navigator.notification.confirm("Vuoi inviare l'ordine?", function (index){
+            if(index == 1){
+                var xhttp = new XMLHttpRequest();
+                var totale = document.getElementById("totale").innerHTML;
+                xhttp.open("POST",host+"/InvioOrdine",true);
+                xhttp.onreadystatechange = function () {
+                    if(this.readyState == 4 && this.status == 200){
+                        var risp = JSON.parse(this.responseText);
+                        if(risp.ok == "1"){
+                            removeLoader();
+                            navigator.notification.alert("Ordine inviato con successo", alert, "Informazione", "OK");
+                            location.replace("homepage.html?codiceAzienda="+codiceAzienda+"&username="+username);
+                        }else{
+                            removeLoader();
+                            navigator.notification.alert("Problemi nell'invio dell'ordine", alert, "Attenzione", "OK");
+                        }
                     }
-                }
-            };
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
-            xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda+"&totale="+totale);
-            placeLoader();
+                };
+                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
+                xhttp.send("username="+username+"&codiceAzienda="+codiceAzienda+"&totale="+totale);
+                placeLoader();
+            }
         },
         "Conferma",["OK","Annulla"]);
     }else{
@@ -192,7 +197,7 @@ function compute(xhttp) {
     var risp = JSON.parse(xhttp.responseText);
     var div = document.getElementById("articleList");
     var total = 0.0;
-    document.getElementById("h4price").innerHTML = "Totale: <span id='totale'></span> EUR";
+    document.getElementById("h4price").innerHTML = "Totale: <span id='totale'></span> €";
     if(risp.articoli.length == 0){
         var p = document.createElement("p");
         p.setAttribute("class","cart-empty");
@@ -237,7 +242,7 @@ function compute(xhttp) {
             textH4 = document.createTextNode(risp.articoli[i]["nome"] + " (Qta: x" + risp.articoli[i]["quantita"] + ")");
             h4.appendChild(textH4);
             prezzo = document.createElement("span");
-            textPrezzo = document.createTextNode("P. parziale: " + (risp.articoli[i]["prezzo"] * risp.articoli[i]["quantita"]) + "EUR");
+            textPrezzo = document.createTextNode("P. parziale: " + (risp.articoli[i]["prezzo"] * risp.articoli[i]["quantita"]) + "€");
             total += risp.articoli[i]["prezzo"] * risp.articoli[i]["quantita"];
             prezzo.appendChild(textPrezzo);
             both = document.createElement("div");

@@ -71,7 +71,7 @@ function minusPressed() {
     if(q > 0) {
         q = q - 1;
         document.getElementById("quantity").value = q;
-        document.getElementById("price").innerHTML = q*prezzo;
+        document.getElementById("price").innerHTML = Number((q*prezzo).toFixed(2));
     }
 }
 
@@ -79,7 +79,7 @@ function plusPressed() {
     var q = parseInt(document.getElementById("quantity").value,10);
     q += 1;
     document.getElementById("quantity").value = q;
-    document.getElementById("price").innerHTML = q*prezzo;
+    document.getElementById("price").innerHTML = Number((q*prezzo).toFixed(2));
 }
 
 function loadArticleInfo() {
@@ -128,7 +128,7 @@ function loadArticleInfo() {
                 quantity.appendChild(button2);
                 document.getElementById("name").value = nome;
                 document.getElementById("description").innerHTML = descrizione;
-                document.getElementById("h4price").innerHTML = "Prezzo: <span id='price'></span> EUR";
+                document.getElementById("h4price").innerHTML = "Prezzo: <span id='price'></span> €";
                 document.getElementById("quantity").addEventListener("keypress", function () {
                     if (event.keyCode === 13) {
                         confirmOperation();
@@ -158,7 +158,7 @@ function loadArticleInfo() {
                 }else{
                     document.getElementById("bannerTitle").innerHTML = "Aggiunta";
                     document.getElementById("quantity").value = 1;
-                    document.getElementById("price").innerHTML = 0.0;
+                    document.getElementById("price").innerHTML = resp.prezzo;
                     removeLoader();
                 }
             }

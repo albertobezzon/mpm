@@ -57,7 +57,7 @@ function changeOrder() {
         totale = document.createElement("span");
         codice.appendChild(document.createTextNode("Codice: "+ordini[i]["codice"]));
         data.appendChild(document.createTextNode("Data: "+ordini[i]["data"]));
-        totale.appendChild(document.createTextNode("Totale: "+ordini[i]["totale"]+" EUR"));
+        totale.appendChild(document.createTextNode("Totale: "+ordini[i]["totale"]+" €"));
         codice.setAttribute("class","order-code");
         data.setAttribute("class","order-data");
         totale.setAttribute("class","order-data");

@@ -21,7 +21,7 @@ function removeLoader() {
 function compute(xhttp) {
     document.getElementById("orderNumber").innerHTML = codiceOrdine;
     var risp = JSON.parse(xhttp.responseText);
-    document.getElementById("h4price").innerHTML = "Totale: <span id='totale'></span> EUR";
+    document.getElementById("h4price").innerHTML = "Totale: <span id='totale'></span> €";
     if(risp.ok == "0"){
         var container = document.getElementById("article-list");
         var p = document.createElement("p");
@@ -40,7 +40,7 @@ function compute(xhttp) {
             h42 = document.createElement("h4");
             articolo.setAttribute("class", "article");
             h41.appendChild(document.createTextNode(risp.articoli[i]["barCode"]+" - "+risp.articoli[i]["nome"]+"(x"+risp.articoli[i]["quantita"]+")"));
-            h42.appendChild(document.createTextNode(risp.articoli[i]["prezzo"]+" EUR - "+risp.articoli[i]["parziale"] + " EUR"))
+            h42.appendChild(document.createTextNode(risp.articoli[i]["prezzo"]+" € - "+risp.articoli[i]["parziale"] + " €"))
             articolo.appendChild(h41);
             articolo.appendChild(h42);
             container.appendChild(articolo);
