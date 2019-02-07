@@ -80,7 +80,7 @@ function changeList() {
             descr = document.createElement("div");
             descr.setAttribute("class", "info-article");
             h4 = document.createElement("h4");
-            h4.appendChild(document.createTextNode(tempList[i]["barCode"] + " - " + tempList[i]["nome"] + " - " + tempList[i]["prezzo"] + "€"));
+            h4.appendChild(document.createTextNode(tempList[i]["barCode"] + " - " + tempList[i]["nome"] + " - " + tempList[i]["prezzo"] + " €"));
             descr.appendChild(h4);
             buttons = document.createElement("div");
             buttons.setAttribute("class", "button-article");
