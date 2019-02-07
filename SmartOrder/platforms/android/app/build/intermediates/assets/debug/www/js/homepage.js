@@ -5,6 +5,17 @@ var username = url.searchParams.get("username");
 var host = "http://18.225.31.222:8080/webService";
 var empty = false;
 
+document.addEventListener("deviceready",checkConnection,false);
+
+function checkConnection(){ //funzione di verifica connettività
+	if(navigator.connection.type == Connection.NONE) { //caso assenza connettività
+		navigator.notification.alert("Non sei connesso ad Internet. L'applicazione è inutilizzabile.",
+			function(){
+		    	navigator.app.exitApp(); //chiusura applicazione
+			},"Errore");
+	}
+}
+
 function onBackKeyDown() {
     if(window.localStorage["notScan"] == null){
         window.localStorage["notScan"] = "true";

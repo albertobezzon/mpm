@@ -1,5 +1,16 @@
 var host = "http://18.225.31.222:8080/webService";
 
+document.addEventListener("deviceready",checkConnection,false);
+
+function checkConnection(){ //funzione di verifica connettività
+	if(navigator.connection.type == Connection.NONE) { //caso assenza connettività
+		navigator.notification.alert("Non sei connesso ad Internet. L'applicazione è inutilizzabile.",
+			function(){
+		    	navigator.app.exitApp(); //chiusura applicazione
+			},"Errore");
+	}
+}
+
 function onBackKeyDown() {
     window.plugins.appMinimize.minimize();
 }

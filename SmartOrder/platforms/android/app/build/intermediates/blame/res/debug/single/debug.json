@@ -32,12 +32,12 @@
         "source": "C:\\Users\\tomma\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e33ad01385de459324ef96c44930c254\\res\\layout\\notification_action.xml"
     },
     {
-        "merged": "C:\\Users\\tomma\\Desktop\\frontend\\mpm\\SmartOrder\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "C:\\Users\\tomma\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e33ad01385de459324ef96c44930c254\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
-    },
-    {
         "merged": "C:\\Users\\tomma\\Desktop\\frontend\\mpm\\SmartOrder\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "C:\\Users\\tomma\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e33ad01385de459324ef96c44930c254\\res\\drawable-hdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\tomma\\Desktop\\frontend\\mpm\\SmartOrder\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "C:\\Users\\tomma\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e33ad01385de459324ef96c44930c254\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
         "merged": "C:\\Users\\tomma\\Desktop\\frontend\\mpm\\SmartOrder\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_history_list_item.xml.flat",
@@ -72,12 +72,12 @@
         "source": "C:\\Users\\tomma\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e33ad01385de459324ef96c44930c254\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
-        "merged": "C:\\Users\\tomma\\Desktop\\frontend\\mpm\\SmartOrder\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_share.xml.flat",
-        "source": "C:\\Users\\tomma\\.gradle\\caches\\transforms-1\\files-1.1\\barcodescanner-release-2.1.5.aar\\5c22a368e7b82f0b4c4e21b3c417733b\\res\\layout\\share.xml"
-    },
-    {
         "merged": "C:\\Users\\tomma\\Desktop\\frontend\\mpm\\SmartOrder\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\tomma\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e33ad01385de459324ef96c44930c254\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\tomma\\Desktop\\frontend\\mpm\\SmartOrder\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_share.xml.flat",
+        "source": "C:\\Users\\tomma\\.gradle\\caches\\transforms-1\\files-1.1\\barcodescanner-release-2.1.5.aar\\5c22a368e7b82f0b4c4e21b3c417733b\\res\\layout\\share.xml"
     },
     {
         "merged": "C:\\Users\\tomma\\Desktop\\frontend\\mpm\\SmartOrder\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_time.xml.flat",

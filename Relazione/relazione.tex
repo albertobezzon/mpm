@@ -86,28 +86,46 @@
 	\end{itemize}
 	L'idea è nata per cercare di soddisfare un bisogno reale. È stato richiesto se fosse possibile velocizzare il processo di rifornimento di libri di una libreria una volta terminati. L'idea è fornire la possibilità di ordinare un libro scansionandone il codice a barre quando esso sta per terminare. La possibilità di aggiungere gli articoli dall'inventario è stata implementata per permettere all'applicazione di essere robusta rispetto all'aggiunta di nuovi clienti, in quanto essi non avendo ancora acquistato prodotti non hanno la possibilità di scansionare il codice a barre per ordinarli.
 	
+	L'applicazione realizzata non presenta la gestione dei pagamenti, in quanto si assume che l'utente abbia un contratto con il proprio fornitore, quindi il denaro viene estratto dal conto corrente al momento dell'ordine.
+	
 	\section{La scelta del framework}
 	
-	Per lo sviluppo del progetto si è scelto il framework cross-platform PhoneGap, in quanto un membro del gruppo aveva già familiarità con le tecnologie offerte dallo stesso e il suo utilizzo non avrebbe richiesto l'apprendimento di nuove tecnologie. Altre considerazioni sulla scelta del framwork sono state inserite nelle conclusioni di questa relazione.
-	
-	\section{Accorgimenti sulle tecnologie web}
-	
-	Siccome è stato scelto il \textit{framework PhoneGap}, il gruppo ha utilizzato i linguaggi \textit{HTML5}, \textit{CSS3} e \textit{JavaScript}. In particolare, \textit{HTML5} è stato scelto perché include un insieme di funzionalità che permettono di valorizzare le interfacce \textit{mobile}. Alcune di queste evidenziano come \textit{HTML5} sia già per sua natura orientato al \textit{mobile}. In particolare \textit{HTML5} fornisce \textit{API} per:
+	Per lo sviluppo del progetto si è scelto il framework cross-platform PhoneGap, in quanto un membro del gruppo aveva già familiarità con le tecnologie offerte dallo stesso e il suo utilizzo non avrebbe richiesto l'apprendimento di nuove tecnologie. Altri framwork presi in considerazione, come \textit{Xamarin} e \textit{React Native}, avrebbero richiesto l'apprendimento di \textit{C\#} e \textit{JSX}, rispettivamente, linguaggi poco conosciuti da entrambi membri del gruppo e il quale apprendimento non avrebbe permesso di concentrarsi maggiormente sulle funzionalità offerte dall'applicazione. Il framework scelto ha permesso inoltre di:
 	\begin{itemize}
-		\item \textbf{eventi \textit{touch}}: mentre i meccanismi di input nei PC consistono per lo più nella tastiera e nel mouse, nei dispositivi mobili quasi tutto passa per il \textit{touch screen}, e avere funzionalità comode per gestire questo strumento consente un'interazione più ricca e senza limitazioni per l'utente. Le gestualità da attuare su un \textit{display}, nel mondo \textit{mobile}, costituiscono un vero e proprio linguaggio fondamentale nella \textit{user experience};
-		\item \textbf{controllo batteria}: considerata l'importanza rivestita dalle risorse energetiche, l'esistenza stessa di questa libreria nel linguaggio dimostra come il suo impiego sia particolarmente mirato al panorama \textit{mobile}.
+		\item implementare l'interfaccia grafica dell'applicazione una sola volta;
+		\item accedere ad alcune funzionalità native del dispositivo.
 	\end{itemize}
+	
+	\section{Scelta delle tecnologie web}
+	
+	Siccome è stato scelto il \textit{framework PhoneGap}, il gruppo ha utilizzato i linguaggi \textit{HTML5}, \textit{CSS3} e \textit{JavaScript}. In particolare, \textit{HTML5} è stato scelto perché include un insieme di funzionalità che permettono di valorizzare le interfacce \textit{mobile}. Alcune di queste evidenziano come \textit{HTML5} sia già per sua natura orientato al \textit{mobile}. In particolare \textit{HTML5} fornisce \textit{API} per la gestione degli eventi touch. Mentre i meccanismi di input nei PC consistono per lo più nella tastiera e nel mouse, nei dispositivi mobili quasi tutto passa per il \textit{touch screen}, e avere funzionalità comode per gestire questo strumento consente un'interazione più ricca e senza limitazioni per l'utente. Le gestualità da attuare su un \textit{display}, nel mondo \textit{mobile}, costituiscono un vero e proprio linguaggio fondamentale nella \textit{user experience}.
+	
 	Ciò che ha favorito la scelta di \textit{CSS3} sono state le \textit{media queries}. Esse permettono di definire regole stilistiche in base alla tipologia del mezzo di visualizzazione, delle sue dimensioni e della sua attuale disposizione (\textit{portrait} o \textit{landscape}). Ciò influisce non solo sull'aspetto esteriore degli elementi ma anche sul loro posizionamento e quindi sulla struttura stessa dell'interfaccia.
 	\medskip
-	
 	
 	\noindent Per quanto riguarda il linguaggio \textit{JavaScript} si è utilizzato \textit{JavaScript} puro, senza l'utilizzo di \textit{framework} o \textit{JQuery}. Una particolarità del linguaggio, detta \textit{AJAX}, ha reso possibile eseguire chiamate all'\textit{API} del servizio \textit{web} di \textit{SmartOrder}. \textit{AJAX}, acronimo di \textit{\textit{Asynchronous JavaScript and XML}}, è una tecnica di sviluppo \textit{software} per la realizzazione di applicazioni \textit{web} interattive (\textit{Rich Internet Application}). Lo sviluppo di applicazioni \textit{HTML} con \textit{AJAX} si basa su uno scambio di dati in \textit{background} fra \textit{web browser} e \textit{server}, che consente l'aggiornamento dinamico di una pagina \textit{web} senza esplicito ricaricamento da parte dell'utente.
 	
 	\section{Informazioni utili all'utilizzo dell'applicazione}
 	
-	Per poter utilizzare l'applicazione è necessario essere connessi ad Internet, in quanto l'applicazione scarica i dati da un server. Si fa presente che la connessione viene bloccata dalla rete Eduroam e Studenti.math.unipd.it dell'Università, quindi si consiglia di utilizzare altre reti per usufruire dell'applicazione. Per ricevere le e-mail al momento dell'invio dell'ordine è necessario che la propria mail sia certificata Amazon\footnote{Mail certificata per utilizzare SMTP}. Questo è un limite di Amazon AWS che può essere aggirato inviando una semplice richiesta ad AWS. Poiché non sarà possibile quindi ricevere l'e-mail, viene di seguito fornito uno screen della stessa. L'e-mail presenta due versioni, a seconda che debba essere inviata all'azienda o all'utente che ha effettuato l'ordine.
-	\medskip
+	Per poter utilizzare l'applicazione è necessario essere connessi ad Internet, in quanto essa scarica dati da un server. Si fa presente che la connessione viene bloccata dalla rete Eduroam e Studenti.math.unipd.it dell'Università, quindi si consiglia di utilizzare altre reti. Nel caso in cui l'applicazione venisse aperta in assenza di connessione, verrà visualizzato un messaggio d'errore ed essa verrà successivamente chiusa. Per ricevere le e-mail al momento dell'invio dell'ordine è necessario che la propria mail sia certificata Amazon\footnote{certificazione Amazon: i server SMTP di Amazon permettono la spedizione gratuita di e-mail ai soli indirizzi certificati. Per poter inviare e-mail a tutti gli indirizzi è necessario effettuare l'upgrade dell'account}. Poiché non sarà possibile quindi ricevere l'e-mail, viene di seguito fornito uno screenshot della stessa. L'e-mail presenta due versioni, a seconda che debba essere inviata all'azienda o all'utente che ha effettuato l'ordine, e contiene un riepilogo dell'ordine effettuato.
 	
+	\begin{figure}[H] 
+		\centering
+		\subfloat[Mail ricevuta dall'utente]{\includegraphics[width=0.4\columnwidth]{img/mail-utente}}
+		\hspace*{2cm}
+		\subfloat[Mail ricevuta dall'azienda]{\includegraphics[width=0.4\columnwidth]{img/mail-azienda}}
+		\caption{Tipologia di e-mail inviate dall'applicazione}
+		\label{fig:mail}
+	\end{figure}
+	
+	\noindent Per testare lo scanner di codici a barre si consiglia di scansionare il seguente codice a barre. Tentando di scansionare altri codici si visualizzerà un messaggio d'errore, in quanto ogni nuovo barcode deve essere registrato all'interno del database.
+	
+	\begin{figure}[H] 
+		\centering
+		\includegraphics[width=0.8\columnwidth]{img/barcode}
+		\caption{Barcode per il test dello scanner}
+		\label{fig:code}
+	\end{figure}
 	
 	\noindent Infine si fa notare che il loader dell'applicazione indica che SmartOrder è in fase di scaricamento dati dal server e sta momentaneamente attendendo una risposta per la costruzione della pagina. Il loader è stato implementato proprio per fare in modo che l'utente non interagisca con l'applicazione prima della visualizzazione della pagina. Quindi, se si premesse qualche bottone prima dell'avvenuto caricamento, potrebbero accadere problemi di rendering.
 	
@@ -135,7 +153,7 @@
 	La pagina \textit{Carrello} è la pagina principale dell'applicazione e visualizza per ogni articolo in carrello la quantità decisa dall'utente, il prezzo e il prezzo parziale (prezzo unitario di un articolo x quantità dell'articolo stesso). Ogni articolo in carrello presenta due bottoni: 
 	\begin{itemize}
 		\item \textbf{MODIFICA}: permette di modificare l'articolo. Alla sua pressione si viene reindirizzati alla pagina per la modifica dell'articolo, dove è possibile modificarne la quantità. Una volta effettuata la modifica è necessario confermarla per apportarla definitivamente, premendo sul bottone ``Conferma'', oppure annullarla, tramite il bottone ``Annulla'';
-		\item \textbf{ELIMINA}: permette di rimuovere l'articolo dal carrello. Se tale bottone viene premuto, verrà chiesta conferma prima di effettuare l'operazione. (La spiegazione del perché viene rimandata al capitolo sul mobile design).
+		\item \textbf{ELIMINA}: permette di rimuovere l'articolo dal carrello. Se tale bottone viene premuto, verrà chiesta conferma prima di effettuare l'operazione. I motivi di questa scelta sono spiegati in sezione §\ref{butt}).
 	\end{itemize}
 	Inoltre, in questa pagina è presente un footer contenente:
 	\begin{itemize}
@@ -143,8 +161,8 @@
 		\item un pannello di bottoni utilizzabili per la gestione del carrello:
 		\begin{itemize}
 			\item bottone \textit{Scan}: la spiegazione di questo pulsante è presente nella sezione successiva;
-			\item bottone \textit{Elimina}: permette di svuotare il carrello. In seguito alla pressione viene chiesta conferma dell'azione;
-			\item bottone \textit{Invia}: permette di inviare un ordine composto dagli articoli nel carrello. In seguito all'ordine si riceverà un'e-mail di conferma contenente le informazioni relative a quest'ultimo.
+			\item bottone \textit{Svuota}: permette di svuotare il carrello. In seguito alla pressione viene chiesta conferma dell'azione;
+			\item bottone \textit{Invia}: permette di inviare un ordine composto dagli articoli nel carrello. In seguito alla pressione viene chiesta conferma dell'azione. Dopo aver confermato si riceverà un'e-mail contenente le informazioni relative all'ordine effettuato.
 		\end{itemize}
 	\end{itemize} 
 	
@@ -152,13 +170,13 @@
 	È possibile aggiungere un articolo al carrello in due modi: 
 	\begin{enumerate}
 		\item tramite scansione del codice a barre in seguito alla pressione del bottone \textit{Scan} nella pagina \textit{Carrello}, accedibile dal menu dell'applicazione;
-		\item dalla pagina \textit{Inventario}, accedibile tramite il menu dell'applicazione, selezionando l'articolo che si desidera aggiungere e inserendone la quantità nella pagina di aggiunta dell'articolo. Una volta immessa la quantità desiderata, è necessario premere su ``Conferma'' affinché l'articolo venga inserito nel carrello, oppure su ``Annulla'' per annullare l'inserimento del nuovo articolo. Nella pagina \textit{Inventario} è inoltre possibile ricercare un'articolo, per nome o per codice, digitando la chiave di ricerca nella textbox in alto.
+		\item dalla pagina \textit{Inventario}, accedibile tramite il menu dell'applicazione, selezionando l'articolo che si desidera aggiungere e inserendone la quantità nella pagina di aggiunta dell'articolo. Una volta immessa la quantità desiderata, è necessario premere su ``Conferma'' affinché l'articolo venga inserito nel carrello, oppure su ``Annulla'' per annullare l'inserimento del nuovo articolo. Nella pagina \textit{Inventario} è inoltre possibile ricercare un'articolo, per nome o per codice, digitando la chiave di ricerca nella textbox disposta in alto.
 	\end{enumerate}
 	La pagina per l'aggiunta di un articolo, che presenta la stessa interfaccia grafica della pagina per la modifica di un articolo, contiene le seguenti informazioni:
 	\begin{itemize}
 		\item nome dell'articolo: visualizzato in alto alla pagina;
 		\item descrizione dell'articolo: visualizzata subito dopo il nome;
-		\item pannello per l'inserimento della quantità: le modalità di interazione con questo pannello sono spiegate nella sezione dedicata al mobile design;
+		\item pannello per l'inserimento della quantità: le modalità di interazione con questo pannello sono spiegate in sezione §\ref{tast};
 		\item prezzo dell'articolo: visualizzato alla fine della pagina. Si tratta di un campo dinamico in quanto varia a seconda della quantità inserita.
 	\end{itemize}
 	\textbf{Attenzione}: nel caso in cui si cercasse di aggiungere al carrello un articolo già presente in esso, il sistema mostrerà un messaggio nel quale chiederà se si vuole modificare la quantità dello stesso.
@@ -170,38 +188,38 @@
 		\item data: è la data in cui è stato effettuato l'ordine;
 		\item totale: è il totale in euro dell'ordine.
 	\end{itemize} 
-	\'E possibile consultare la lista degli articoli acquistati in un determinato ordine, tramite il bottone ``DETTAGLI'', situato sulla destra di ogni ordine. Alla sua pressione si verrà reindirizzati alla pagina contenente le informazioni degli articoli ordinati:
+	La pagina permette di modificare la visualizzazione degli ordini, ordinandoli per data, dal più recente al meno recente, oppure per prezzo crescente. Per selezionare la tipologia di ordinamento è presente una select in fondo alla pagina.
+	Tramite il bottone ``DETTAGLI'', situato sulla destra di ogni ordine, è possibile consultare la lista degli articoli acquistati in quell'ordine. Alla sua pressione si verrà reindirizzati ad una pagina contenente le seguenti informazioni per ogni articolo acquistato:
 	\begin{itemize}
 		\item nome;
 		\item quantità;
 		\item prezzo;
 		\item prezzo parziale.
 	\end{itemize}
-	\noindent In questa pagina è possibile inoltre modificare la visualizzazione degli ordini, ordinandoli per data, dal più recente al meno recente, oppure per prezzo crescente. Per selezionare la tipologia di ordinamento è presente una select in fondo alla pagina.
 	
 	\section{Mobile design}
 	
-	In questa sezione vengono descritte le scelte implementative effettuate ai fini di una corretta progettazione dell'interfaccia dell'applicazione. Questa sezione è suddivisa in varie sottosezioni e ognuna di esse descrive un'elemento dell'interfaccia e le motivazioni alla base della sua progettazione.
+	In questa sezione vengono descritte le scelte implementative effettuate ai fini di una corretta progettazione dell'interfaccia grafica. Questa sezione è suddivisa in varie sottosezioni e ognuna di esse descrive un'elemento dell'interfaccia e le motivazioni alla base della sua progettazione.
 	\medskip
 	
 	\noindent La maggior parte delle pagine dell'applicazione sono progettate nel seguente modo:
 	\begin{itemize}
 		\item la parte superiore presenta il pulsante menu sulla sinistra e il titolo della pagina al centro;
 		\item la parte centrale presenta il contenuto informativo;
-		\item la parte inferiore presenta un footer che varia a seconda della pagina.
+		\item la parte inferiore presenta un footer che varia a seconda della pagina visualizzata.
 	\end{itemize}
 	
-	\subsection{Bottoni}
+	\subsection{Bottoni} \label{butt}
 	
 	\begin{figure}[H] 
 		\centering
 		\subfloat[Bottoni presenti nel footer della pagina carrello ]{\includegraphics[width=0.4\columnwidth]{img/buttons-cart}}
 		\hspace*{2cm}
-		\subfloat[Bottoni presenti nel footer delle apgine aggiungi e modifica articolo]{\includegraphics[width=0.4\columnwidth]{img/buttons-add}}
+		\subfloat[Bottoni presenti nel footer delle pagine aggiungi e modifica articolo]{\includegraphics[width=0.4\columnwidth]{img/buttons-add}}
 		\caption{Bottoni nel footer}
 		\label{fig:buttons}
 	\end{figure}
-	Nelle pagine \textit{Carrello}, \textit{Modifica} e \textit{Aggiungi} sono presenti dei bottoni nella parte bassa dello schermo (Figura \ref{fig:buttons}). L'applicazione richiede una frequente modifica dei dati quindi i controlli sono stati posizionati in una zona semplice da raggiungere e, seguendo la regola ``Content always on top'', si è preferito inserire questi bottoni in basso, infrangendo così la convenzione che su Android i controlli devono essere posizionati nella parte alta dello schermo. 
+	Nelle pagine \textit{Carrello}, \textit{Modifica} e \textit{Aggiungi} sono presenti dei bottoni nella parte bassa dello schermo (Figura \ref{fig:buttons}). L'applicazione richiede una frequente modifica dei dati, quindi i controlli sono stati posizionati in una zona semplice da raggiungere e, seguendo la regola ``Content always on top'', si è preferito inserire questi bottoni in basso, infrangendo così la convenzione che su Android i controlli devono essere posizionati nella parte alta dello schermo. 
 	\begin{figure}[H] 
 		\centering
 		\subfloat[Bottoni nella pagina Carrello ]{\includegraphics[width=0.3\columnwidth]{img/item-cart}}
@@ -212,13 +230,24 @@
 		\caption{Bottoni nella parte centrale delle pagine}
 		\label{fig:item-buttons}
 	\end{figure}
-	\noindent I bottoni presenti in Figura \ref{fig:item-buttons} sono situati nella parte centrale dello schermo. Essendo disposti nella comfort zone sono facilmente raggiungibili e più piccoli rispetto ai bottoni del footer, in quanto si è seguita l'immagine in Figura \ref{fig:dimvspos}. La dimensione è stata opportunamente scelta per fare in modo che l'utente non prema accidentalmente su di essi, in quanto possono cambiare lo stato del carrello oppure dare luogo all'apertura di nuove pagine. Nonostante la dimensione ridotta, sono comunque sufficientemente distanti da evitare un tap accidentali sui bottoni vicini. Infine, in caso si premesse sul bottone ELIMINA affianco ad un articolo nella pagina Carrello viene chiesta prima la conferma. Si tratta di un modo per rendere l'operazione reversibile.
+	\noindent I bottoni presenti in Figura \ref{fig:item-buttons} sono situati nella parte centrale dello schermo. Essendo disposti nella comfort zone, risultano facilmente raggiungibili e più piccoli rispetto ai bottoni del footer, in quanto si è seguita l'immagine in Figura \ref{fig:dimvspos}. La dimensione è stata opportunamente scelta per fare in modo che l'utente non prema accidentalmente su di essi, in quanto possono cambiare lo stato del carrello oppure dare luogo all'apertura di nuove pagine. Nonostante la dimensione ridotta, sono comunque sufficientemente distanti da evitare tap accidentali sui bottoni vicini. Infine, in caso si premesse sul bottone ``ELIMINA'' affianco ad un articolo nella pagina \textit{Carrello}, viene chiesta la conferma di eliminazione. Si tratta di un modo per rendere l'operazione reversibile.
 	\begin{figure}[H] 
 		\centering
 		\includegraphics[width=0.3\textwidth]{img/dimvspos}
 		\caption{Dimensione vs. posizione dei bottoni}
 		\label{fig:dimvspos}
 	\end{figure}
+
+	\subsubsection{Bottone indietro}
+	
+	Poiché negli smartphone Apple non è presente il tasto indietro, si è dovuto aggiungere lo stesso nella versione iOS di SmartOrder. La visualizzazione del bottone viene mostrata nell'immagine sottostante. Per lo stile del bottone e la sua posizione, il gruppo ha preso ispirazione dall'app mobile Amazon per iOS.
+	
+	\begin{figure}[H] 
+		\centering
+		\includegraphics[width=0.4\textwidth]{img/back-button}
+		\caption{Bottone indietro su iOS}
+		\label{fig:bottIndietro}
+	\end{figure} 
 	
 	\subsection{Menu}
 	
@@ -236,15 +265,15 @@
 
 	\subsection{Progressive disclosure}
 	
-	In generale, è una buona prassi non affollare le interfacce. Al fine di perseguire questo obiettivo si è utilizzato il principio della progressive disclosure:
+	In generale, è buona prassi non affollare le interfacce. Al fine di perseguire questo obiettivo si è utilizzato il principio della progressive disclosure (interfacce just-in-time):
 	\begin{itemize}
 		\item nella pagina \textit{Ordini} è possibile visualizzare le informazioni essenziali per poter identificare un ordine. Per accedere ai dettagli risulta necessario un ulteriore tap;
 		\item nella pagina \textit{Inventario} è possbile visualizzare le informazioni essenziali per poter identificare un articolo. Per accedere ai dettagli dello stesso, o per aggiungerlo al carrello, risulta necessario un ulteriore tap.
 	\end{itemize}
 	
-	\subsection{Uso della tastiera}
+	\subsection{Uso della tastiera} \label{tast}
 	
-	L'utilizzo della tastiera è necessario è stato limitato a tre casi:
+	L'utilizzo della tastiera è stato limitato a tre casi:
 	\begin{itemize}
 		\item inseriremento delle credenziali in fase di login;
 		\item ricerca di un articolo;
@@ -258,30 +287,36 @@
 	
 	\subsection{Elementi nativi}
 	
-	Gli elementi nativi dell'applicazione sono la fotocamera, per la scansione del codice a barre, e i dialog, per la visualizzazione di messaggi informativi o di conferma. Per rendere questi elementi nativi si sono utilizzati i seguenti plugin di PhoneGap:
+	Gli elementi nativi dell'applicazione sono la fotocamera, per la scansione del codice a barre, e i dialog, per la visualizzazione di messaggi informativi o di conferma. Inoltre, si è dovuta monitorare la rete del dispositivo. Per rendere questi elementi nativi si sono utilizzati i seguenti plugin di PhoneGap:
 	\begin{itemize}
 		\item dialogs: fornisce un'interfaccia per convertire gli alert e i confirm delle pagine web in dialog box nativi. In questo modo è stato possibile customizzare i titoli e le etichette dei pulsanti nei dialog;
-		\item barcodescanner: fornisce un'interfaccia per accedere nativamente alla fotocamera del dispositivo ed effettuare la scansione di un codice a barre.
+		\item barcodescanner: fornisce un'interfaccia per accedere nativamente alla fotocamera del dispositivo ed effettuare la scansione di un codice a barre;
+		\item network information: fornisce un'interfaccia per accedere alle informazioni relative alle connessioni Wi-Fi e cellulare del dispositivo.
 	\end{itemize}
 
-	\subsection{Considerazioni sulla versione iOS}
+	\subsection{Gesture}
 	
-	Nella versione iOS dell'applicazione è stato effettuato un solo cambiamento. Siccome sugli iPhone non esiste un tasto fisico o vistuale che permette di tornare indietro, si è dovuto aggiungere il classico pulsante indietro accanto al menu hamburger. È stata presa ispirazione per questa soluzione dall'applicazione di Amazon per iOS. Nel seguente screenshot è possibile vedere com'è stata implementata la soluzione.
+	Per l'applicazione è stata implementata una sola tipologia di gesture, ossia lo \textit{scroll} per scorrere all'interno delle varie pagine. Questa gesture è presente nella pagine \textit{Carrello}, \textit{Ordini}, \textit{Inventario} e per la descrizione nella pagina di aggiunta o modifica di un articolo in carrello.
+	Il gruppo non è riuscito ad implementare la gesture \textit{swipe right} per l'apertura del menu. Quest'ultima risulta difficilmente realizzabile tramite il solo utilizzo di JavaScript puro.
 	
 	\subsection{Considerazioni finali}
+	
 	Si ritiene che l'applicazione soddisfi i primi tre livelli della piramide di Maslow rimappata sui bisogni degli utenti, ovvero che sia funzionale, affidabile e usabile.
 	
 	\section{Backend}
+	
 	Per l'implementazione del backend si è deciso di appoggiarsi ad Amazon Web Services (AWS), in quanto tramite l'account universitario è possibile usufruire dei servizi offerti gratuitamente.
+	
 	\subsection{Architettura}
+	
 	Il backend della piattaforma presenta la seguente architettura:
 	\begin{itemize}
-		\item un server cloud Amazon AWS EC2 con installato Windows Server 2017;
-		\item un'instanza Amazon AWS RDS contenente un database Microsoft SQL Server.
+		\item un server cloud AWS EC2 configurato con Windows Server 2017;
+		\item un'instanza AWS RDS contenente un database Microsoft SQL Server.
 	\end{itemize}
 	All'interno dell'istanza AWS EC2 sono stati installati:
 	\begin{itemize}
-		\item un server web Apache Tomcat: esso permette di eseguire un web service scritto in linguaggio Java, il quale si occupa di captare le richieste HTTP che provengono dall'applicazione, di elaborarle e di inviare delle risposte costruite sulla base di query effettuate su un database;
+		\item un server web Apache Tomcat: esso permette di eseguire un web service scritto in linguaggio Java, il quale si occupa di captare le richieste HTTP che provengono dall'applicazione, di elaborarle e di rispondere ad esse tramite stringhe JSON costruite sulla base di query effettuate su database;
 		\item il linguaggio Java: necessario per il funzionamento di Apache Tomcat e per l'esecuzione del web service.
 	\end{itemize}
 
@@ -299,7 +334,7 @@
 	In questa sezione vengono descritte le classi servlet e per ognuna di esse vengono indicate le seguenti caratteristiche:
 	\begin{itemize}
 		\item \textbf{End-point}: end-point che identifica il servlet. L'end-point è utilizzabile per comunicare con lo specifico servlet all'interno del web service;
-		\item \textbf{Parametri}: lista dei parametri che devono essere inseriti nella richiesta HTTP per comunicare correttamente con il servlet;
+		\item \textbf{Parametri}: lista dei parametri che devono essere inseriti nella richiesta HTTP al fine di comunicare correttamente con il servlet;
 		\item \textbf{Funzionalità}: una breve descrizione delle operazioni eseguite dal servlet e della tipologia di risposta che restituisce.
 	\end{itemize}
 
@@ -312,7 +347,7 @@
 				\item codice azienda: è il codice che identifica univocamente il database del fornitore corrispondente all'utente loggato;
 				\item query: è la query di inserimento o modifica di un articolo nel carrello dell'utente loggato.
 			\end{itemize}
-			\item \textbf{Funzionalità}: il servlet si connette al database identificato dal codice azienda fornito ed effettua la query fornita su di esso. Se la query va a buon fine restituisce una stringa JSON contenente un messaggio positivo, altrimenti un messaggio negativo.
+			\item \textbf{Funzionalità}: il servlet si connette al database identificato dal codice azienda fornito ed effettua la query fornita su di esso. Se la query va a buon fine restituisce una stringa JSON contenente codice 1 (operazione andata a buon fine), altrimenti codice 0 (operazione fallita).
 		\end{itemize}
 	
 		\item \textbf{Autenticazione.java}
@@ -413,17 +448,19 @@
 	Il package \textit{utility} contiene le seguenti classi utilità:
 	\begin{itemize}
 		\item \textbf{GetDb}: classe contenente un metodo statico che restituisce la stringa di connessione dal database di autenticazione;
-		\item \textbf{SendMail}: classe che fornisce un'interfaccia per l'invio di e-mail tramite un server SMTP Amazon AWS.
+		\item \textbf{SendMail}: classe che fornisce un'interfaccia per l'invio di e-mail tramite un server SMTP di AWS.
 	\end{itemize}
 	
 	\subsection{Database}
-	Per la gestione degli ordini, degli utenti e degli articoli venduti dai vari fornitori sono stati utilizzati dei database Microsoft SQL Server. In questa sezione vengono descritti i seguenti database:
+	
+	Per la gestione di ordini, utenti e articoli venduti dai vari fornitori sono stati utilizzati dei database Microsoft SQL Server. In questa sezione vengono descritti i seguenti database:
 	\begin{itemize}
 		\item database di autenticazione;
 		\item database aziendale.
 	\end{itemize}
 	
 	\subsubsection{Database per l'autenticazione}
+	
 	Il database per l'autenticazione contiene le credenziali e le anagrafiche degli utenti registrati e le informazioni dei fornitori registrati all'applicazione. Questo database contiene le seguenti tabelle:
 	\begin{itemize}
 		\item aziende: contiene le informazioni delle aziende registrate a SmartOrder. La tabella contiene i seguenti attributi:
@@ -456,7 +493,8 @@
 	\end{itemize}
 	
 	\subsubsection{Database aziendale}
-	Il database aziendale contiene le informazioni relative agli articoli venduti e agli ordini effettuati presso uno specifico fornitore. Per cui nel server è presente un database di questa tipologia per ogni fornitore registrato all'applicazione. Questo database contiene le seguenti tabelle:
+	
+	Il database aziendale contiene le informazioni relative agli articoli venduti e agli ordini effettuati presso uno specifico fornitore. Per cui, nel server è presente un database di questa tipologia per ogni fornitore registrato all'applicazione. Questo database contiene le seguenti tabelle:
 	\begin{itemize}
 		\item articoli: contiene le informazioni relative agli articoli venduti dall'azienda. La tabella contiene i seguenti attributi:
 		\begin{itemize}
@@ -467,14 +505,14 @@
 		\end{itemize}
 		\item contenutoCarrelli: contiene le informazioni relative al contenuto dei carrelli degli utenti dell'azienda. La tabella contiene i seguenti attributi:
 		\begin{itemize}
-			\item idRiga (chiave primaria): è un identifico autoincrementante che funge unicamente da chiave primaria;
+			\item idRiga (chiave primaria): è un identificativo autoincrementante che funge unicamente da chiave primaria;
 			\item barCode: è il codice a barre dell'articolo in carrello;
 			\item quantità: è la quantità scelta dall'utente per l'articolo in carrello;
 			\item username: è lo username dell'utente che ha inserito in carrello l'articolo.
 		\end{itemize}
 		\item contenutoOrdini: contiene le informazioni relative al contenuto degli ordini effettuati presso l'azienda. La tabella contiene i seguenti campi:
 		\begin{itemize}
-			\item idRiga (chiave primaria): è un identifico autoincrementante che funge unicamente da chiave primaria;
+			\item idRiga (chiave primaria): è un identificativo autoincrementante che funge unicamente da chiave primaria;
 			\item codiceOrdine: è il codice dell'ordine in cui é presente l'articolo;
 			\item barCode: è il codice a barre dell'articolo all'interno dell'ordine;
 			\item quantità: è la quantità ordinata per l'articolo.
@@ -489,6 +527,15 @@
 	\end{itemize}
 	
 	\section{Conclusioni}
-	Vi è la consapevolezza che l'interfaccia grafica possa essere resa più accattivante per lo scopo dell'applicazione. L'implementazione della stessa poteva risultare più semplice tramite l'utilizzo di un altro framework, come ad esempio React Native. 
-	Il framework scelto ha comunque permesso di realizzare una buona interfaccia grafica in tempi ristretti. Vi è la consapevolezza che un framework ibrido non dovrebbe essere la prima scelta nel caso si utilizzino i sensori del dispositivo (fotocamera in questo caso). Per giustificare la scelta di PhoneGap si ritiene che il tempo necessario per l'apprendimento delle tecnologie richieste dagli altri framework sia di gran lunga superiore. Infatti erano stati presi in considerazione i framework \textit{Xamarin} e \textit{React Native}, i quali richiedevono l'apprendimento di \textit{C\#} e \textit{JSX}, rispettivamente, linguaggi totalmente sconosciuti dai membri del gruppo. Nonostante questo problema il gruppo ritiene di aver realizzato una buona applicazione, che potrebbe risultare utile ad aziende ed utenti nel contesto per cui è stata progettata e implementata.
+	
+	Vi è la consapevolezza che l'interfaccia grafica possa essere resa più accattivante. L'implementazione della stessa poteva risultare più semplice tramite l'utilizzo di un altro framework, come ad esempio React Native. Il framework scelto ha comunque permesso di realizzare un'interfaccia usabile in tempi ristretti. Il gruppo ritiene di aver realizzato una buona applicazione, che potrebbe risultare utile ad aziende ed utenti nel contesto per cui è stata progettata e implementata. Tra gli sviluppi futuri vi sono:
+	\begin{enumerate}
+		\item interfaccia grafica:
+		\begin{itemize}
+			\item 
+			\item 
+			\item
+		\end{itemize}
+		\item implementazione delle gesture per l'apertura del menu.
+	\end{enumerate} 
 \end{document}
