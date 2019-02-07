@@ -4,13 +4,15 @@ var codiceAzienda = url.searchParams.get("codiceAzienda");
 var username = url.searchParams.get("username");
 
 function logout() {
-    navigator.notification.confirm("Sicuro di voler effettuare il logout?", function () {
-        window.localStorage["loggedIn"] = "false";
-        window.plugins.nativepagetransitions.slide({
-            "direction" : "right",
-            "href" : "login.html"
-        });
-        //location.replace("login.html");
+    navigator.notification.confirm("Sicuro di voler effettuare il logout?", function (index) {
+        if(index == 1){
+            window.localStorage["loggedIn"] = "false";
+            window.plugins.nativepagetransitions.slide({
+                "direction" : "right",
+                "href" : "login.html"
+            });
+            //location.replace("login.html");
+        }
     },
     "Conferma", ["OK","Annulla"]);
 }

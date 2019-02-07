@@ -331,7 +331,7 @@ button:after {
 }
   
 button:focus:not(:active)::after {
-    animation: ripple 1s ease-out;
+    animation: ripple 0.5s ease-out;
 }
 
 .body-container button {

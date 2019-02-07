@@ -35,12 +35,14 @@ function addArticle(code) {
             }
             if(presente){
                 removeLoader();
-                navigator.notification.confirm("Articolo già presente in carrello, vuoi modificare l'articolo?", function() {
-                    window.plugins.nativepagetransitions.slide({
-                        "href" : "article.html?username="+username+"&codiceAzienda="+codiceAzienda+"&codiceArticolo="+code+"&mode=update&source=inventory"
-                    });
-                    //location.replace("article.html?username="+username+"&codiceAzienda="+
-                    //    codiceAzienda+"&codiceArticolo="+code+"&mode=update&source=inventory");
+                navigator.notification.confirm("Articolo già presente in carrello, vuoi modificare l'articolo?", function(index) {
+                    if(index == 1){
+                        window.plugins.nativepagetransitions.slide({
+                            "href" : "article.html?username="+username+"&codiceAzienda="+codiceAzienda+"&codiceArticolo="+code+"&mode=update&source=inventory"
+                        });
+                        //location.replace("article.html?username="+username+"&codiceAzienda="+
+                        //    codiceAzienda+"&codiceArticolo="+code+"&mode=update&source=inventory");
+                    }
                 },
                 "Conferma", ["OK", "Annulla"]);
             }else{
@@ -78,7 +80,7 @@ function changeList() {
             descr = document.createElement("div");
             descr.setAttribute("class", "info-article");
             h4 = document.createElement("h4");
-            h4.appendChild(document.createTextNode(tempList[i]["barCode"] + " - " + tempList[i]["nome"] + " - " + tempList[i]["prezzo"] + "EUR"));
+            h4.appendChild(document.createTextNode(tempList[i]["barCode"] + " - " + tempList[i]["nome"] + " - " + tempList[i]["prezzo"] + "€"));
             descr.appendChild(h4);
             buttons = document.createElement("div");
             buttons.setAttribute("class", "button-article");
