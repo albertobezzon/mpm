@@ -76,7 +76,7 @@
 	
 	\section{Introduzione}
 	
-	Il progetto consiste nello sviluppo di un'applicazione mobile, chiamata SmartOrder, progettata per permettere agli utenti registrati di effettuare ordini presso il proprio fornitore. L'applicazione è stata sviluppata esclusivamente per smartphone, al momento soltanto per l'ambiente Android, utilizzando il framework cross-platform PhoneGap. Per l'ambiente iOS non è stato possibile realizzare l'applicazione, non essendo il gruppo in possesso di un Mac. L'applicazione non prevede una registrazione esplicita, infatti le aziende che intendono acquistare il servizio devono comunicarlo al team di SmartOrder. Al momento della richiesta devono essere fornite le anagrafiche degli utenti che il fornitore intende registrare e, in questo modo verranno creati gli account per tutti gli utenti, compresi di credenziali. Inoltre devono essere forniti i dati relativi a tutti gli articoli che il fornitore desidera rendere disponibili per gli utenti. Una volta ricevute le credenziali via e-mail, gli utenti possono iniziare ad usufruire del servizio. Il tutto sarà perfettamente configurato per fare in modo che ogni utente possa visionare solamente gli articoli venduti dal proprio fornitore. Tramite l'applicazione sarà possibile:
+	Il progetto consiste nello sviluppo di un'applicazione mobile, chiamata SmartOrder, progettata per permettere agli utenti registrati di effettuare ordini presso il proprio fornitore. L'applicazione è stata sviluppata esclusivamente per smartphone, al momento soltanto per l'ambiente Android, utilizzando il framework cross-platform PhoneGap. Per l'ambiente iOS non è stato possibile realizzare l'applicazione, non essendo il gruppo in possesso di un Mac. L'applicazione non prevede una registrazione esplicita, infatti le aziende che intendono acquistare il servizio devono comunicarlo al team di SmartOrder. Al momento della richiesta devono essere fornite le anagrafiche degli utenti che il fornitore intende registrare e, in questo modo verranno creati gli account per tutti gli utenti, compresi di credenziali. Inoltre, devono essere forniti i dati relativi a tutti gli articoli che il fornitore desidera rendere disponibili per gli utenti. Una volta ricevute le credenziali via e-mail, gli utenti possono iniziare ad usufruire del servizio. Il tutto sarà perfettamente configurato per fare in modo che ogni utente possa visionare solamente gli articoli venduti dal proprio fornitore. Tramite l'applicazione sarà possibile:
 	\begin{itemize}
 		\item ricercare prodotti e aggiungerli al carrello;
 		\item scansionare il codice a barre di un prodotto che si ha già acquistato per aggiungerlo al carrello più velocemente;
@@ -90,7 +90,7 @@
 	
 	\section{La scelta del framework}
 	
-	Per lo sviluppo del progetto si è scelto il framework cross-platform PhoneGap, in quanto un membro del gruppo aveva già familiarità con le tecnologie offerte dallo stesso e il suo utilizzo non avrebbe richiesto l'apprendimento di nuove tecnologie. Altri framwork presi in considerazione, come \textit{Xamarin} e \textit{React Native}, avrebbero richiesto l'apprendimento di \textit{C\#} e \textit{JSX}, rispettivamente, linguaggi poco conosciuti da entrambi membri del gruppo e il quale apprendimento non avrebbe permesso di concentrarsi maggiormente sulle funzionalità offerte dall'applicazione. Il framework scelto ha permesso inoltre di:
+	Per lo sviluppo del progetto si è scelto il framework cross-platform PhoneGap, in quanto un membro del gruppo aveva già familiarità con le tecnologie offerte dallo stesso e il suo utilizzo non avrebbe richiesto l'apprendimento di nuove tecnologie. Altri framework presi in considerazione, come \textit{Xamarin} e \textit{React Native}, avrebbero richiesto l'apprendimento di \textit{C\#} e \textit{JSX}, rispettivamente, linguaggi poco conosciuti da entrambi membri del gruppo e il quale apprendimento non avrebbe permesso di concentrarsi maggiormente sulle funzionalità offerte dall'applicazione. Il framework scelto ha permesso inoltre di:
 	\begin{itemize}
 		\item implementare l'interfaccia grafica dell'applicazione una sola volta;
 		\item accedere ad alcune funzionalità native del dispositivo.
@@ -98,7 +98,7 @@
 	
 	\section{Scelta delle tecnologie web}
 	
-	Siccome è stato scelto il \textit{framework PhoneGap}, il gruppo ha utilizzato i linguaggi \textit{HTML5}, \textit{CSS3} e \textit{JavaScript}. In particolare, \textit{HTML5} è stato scelto perché include un insieme di funzionalità che permettono di valorizzare le interfacce \textit{mobile}. Alcune di queste evidenziano come \textit{HTML5} sia già per sua natura orientato al \textit{mobile}. In particolare \textit{HTML5} fornisce \textit{API} per la gestione degli eventi touch. Mentre i meccanismi di input nei PC consistono per lo più nella tastiera e nel mouse, nei dispositivi mobili quasi tutto passa per il \textit{touch screen}, e avere funzionalità comode per gestire questo strumento consente un'interazione più ricca e senza limitazioni per l'utente. Le gestualità da attuare su un \textit{display}, nel mondo \textit{mobile}, costituiscono un vero e proprio linguaggio fondamentale nella \textit{user experience}.
+	Siccome è stato scelto il \textit{framework PhoneGap}, il gruppo ha utilizzato i linguaggi \textit{HTML5}, \textit{CSS3} e \textit{JavaScript}. In particolare, \textit{HTML5} è stato scelto perché include un insieme di funzionalità che permettono di valorizzare le interfacce \textit{mobile}. Alcune di queste evidenziano come \textit{HTML5} sia già per sua natura orientato al \textit{mobile}. In particolare, \textit{HTML5} fornisce \textit{API} per la gestione degli eventi touch. Mentre i meccanismi di input nei PC consistono per lo più nella tastiera e nel mouse, nei dispositivi mobili quasi tutto passa per il \textit{touch screen}, e avere funzionalità comode per gestire questo strumento consente un'interazione più ricca e senza limitazioni per l'utente. Le gestualità da attuare su un \textit{display}, nel mondo \textit{mobile}, costituiscono un vero e proprio linguaggio fondamentale nella \textit{user experience}.
 	
 	Ciò che ha favorito la scelta di \textit{CSS3} sono state le \textit{media queries}. Esse permettono di definire regole stilistiche in base alla tipologia del mezzo di visualizzazione, delle sue dimensioni e della sua attuale disposizione (\textit{portrait} o \textit{landscape}). Ciò influisce non solo sull'aspetto esteriore degli elementi ma anche sul loro posizionamento e quindi sulla struttura stessa dell'interfaccia.
 	\medskip
@@ -170,7 +170,7 @@
 	È possibile aggiungere un articolo al carrello in due modi: 
 	\begin{enumerate}
 		\item tramite scansione del codice a barre in seguito alla pressione del bottone \textit{Scan} nella pagina \textit{Carrello}, accedibile dal menu dell'applicazione;
-		\item dalla pagina \textit{Inventario}, accedibile tramite il menu dell'applicazione, selezionando l'articolo che si desidera aggiungere e inserendone la quantità nella pagina di aggiunta dell'articolo. Una volta immessa la quantità desiderata, è necessario premere su ``Conferma'' affinché l'articolo venga inserito nel carrello, oppure su ``Annulla'' per annullare l'inserimento del nuovo articolo. Nella pagina \textit{Inventario} è inoltre possibile ricercare un'articolo, per nome o per codice, digitando la chiave di ricerca nella textbox disposta in alto.
+		\item dalla pagina \textit{Inventario}, accedibile tramite il menu dell'applicazione, selezionando l'articolo che si desidera aggiungere e inserendone la quantità nella pagina di aggiunta dell'articolo. Una volta immessa la quantità desiderata, è necessario premere su ``Conferma'' affinché l'articolo venga inserito nel carrello, oppure su ``Annulla'' per annullare l'inserimento del nuovo articolo. Nella pagina \textit{Inventario} è inoltre possibile ricercare un articolo, per nome o per codice, digitando la chiave di ricerca nella textbox disposta in alto.
 	\end{enumerate}
 	La pagina per l'aggiunta di un articolo, che presenta la stessa interfaccia grafica della pagina per la modifica di un articolo, contiene le seguenti informazioni:
 	\begin{itemize}
@@ -199,7 +199,7 @@
 	
 	\section{Mobile design}
 	
-	In questa sezione vengono descritte le scelte implementative effettuate ai fini di una corretta progettazione dell'interfaccia grafica. Questa sezione è suddivisa in varie sottosezioni e ognuna di esse descrive un'elemento dell'interfaccia e le motivazioni alla base della sua progettazione.
+	In questa sezione vengono descritte le scelte implementative effettuate ai fini di una corretta progettazione dell'interfaccia grafica. Questa sezione è suddivisa in varie sottosezioni e ognuna di esse descrive un elemento dell'interfaccia e le motivazioni alla base della sua progettazione.
 	\medskip
 	
 	\noindent La maggior parte delle pagine dell'applicazione sono progettate nel seguente modo:
@@ -275,7 +275,7 @@
 	
 	L'utilizzo della tastiera è stato limitato a tre casi:
 	\begin{itemize}
-		\item inseriremento delle credenziali in fase di login;
+		\item inserimento delle credenziali in fase di login;
 		\item ricerca di un articolo;
 		\item inserimento o modifica della quantità nelle pagine \textit{Aggiungi} e \textit{Modifica}, rispettivamente. In questo caso la tastiera permette un veloce inserimento di grandi quantità.
 	\end{itemize}
@@ -312,7 +312,7 @@
 	Il backend della piattaforma presenta la seguente architettura:
 	\begin{itemize}
 		\item un server cloud AWS EC2 configurato con Windows Server 2017;
-		\item un'instanza AWS RDS contenente un database Microsoft SQL Server.
+		\item un'istanza AWS RDS contenente un database Microsoft SQL Server.
 	\end{itemize}
 	All'interno dell'istanza AWS EC2 sono stati installati:
 	\begin{itemize}
@@ -468,7 +468,7 @@
 			\item codAzienda (chiave primaria): è un codice che identifica univocamente l'azienda. Esso viene fornito all'azienda in fase di registrazione all'applicazione;
 			\item nome: è il nome dell'azienda;
 			\item via: è la via dove è situata la sede principale dell'azienda;
-			\item civico: è il civivo dove è situtata la sede principale dell'azienda;
+			\item civico: è il civico dove è situtata la sede principale dell'azienda;
 			\item comune: è il comune dove è situata la sede principale dell'azienda;
 			\item provincia: è la provincia dove è situata la sede principale dell'azienda;
 			\item CAP: è il codice postale dove è situata la sede principale dell'azienda;
@@ -530,12 +530,10 @@
 	
 	Vi è la consapevolezza che l'interfaccia grafica possa essere resa più accattivante. L'implementazione della stessa poteva risultare più semplice tramite l'utilizzo di un altro framework, come ad esempio React Native. Il framework scelto ha comunque permesso di realizzare un'interfaccia usabile in tempi ristretti. Il gruppo ritiene di aver realizzato una buona applicazione, che potrebbe risultare utile ad aziende ed utenti nel contesto per cui è stata progettata e implementata. Tra gli sviluppi futuri vi sono:
 	\begin{enumerate}
-		\item interfaccia grafica:
-		\begin{itemize}
-			\item 
-			\item 
-			\item
-		\end{itemize}
-		\item implementazione delle gesture per l'apertura del menu.
+		\item utilizzo di icone personalizzate;
+		\item utilizzo di una palette di colori definita a priori;
+		\item implementazione di gesture swipe right e swipe left per l'eliminazione di articoli dal carrello;
+		\item implementazione della gesture long press per la modifica di un articolo in carrello;
+		\item implementazione della gesture swipe right per l'apertura del menu.
 	\end{enumerate} 
 \end{document}
