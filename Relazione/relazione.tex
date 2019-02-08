@@ -76,7 +76,7 @@
 	
 	\section{Introduzione}
 	
-	Il progetto consiste nello sviluppo di un'applicazione \textit{mobile}, chiamata \textit{SmartOrder}, progettata per permettere agli utenti registrati di effettuare ordini presso il proprio fornitore. L'applicazione è stata sviluppata esclusivamente per \textit{smartphone}, al momento soltanto per l'ambiente \textit{Android}, utilizzando il \textit{framework cross-platform PhoneGap}. Per l'ambiente \textit{iOS} non è stato possibile realizzare l'applicazione, non essendo il gruppo in possesso di un \textit{Mac}. L'applicazione non prevede una registrazione esplicita, infatti le aziende che intendono acquistare il servizio devono comunicarlo al team di \textit{SmartOrder}. Al momento della richiesta devono essere fornite le anagrafiche degli utenti che il fornitore intende registrare e, in questo modo verranno creati gli \textit{account} per tutti gli utenti, compresi di credenziali. Inoltre, devono essere forniti i dati relativi a tutti gli articoli che il fornitore desidera rendere disponibili per gli utenti. Una volta ricevute le credenziali via \textit{e-mail}, gli utenti possono iniziare ad usufruire del servizio. Il tutto sarà perfettamente configurato per fare in modo che ogni utente possa visionare solamente gli articoli venduti dal proprio fornitore. Tramite l'applicazione sarà possibile:
+	Il progetto consiste nello sviluppo di un'applicazione \textit{mobile}, chiamata \textit{SmartOrder}, progettata per permettere agli utenti registrati di effettuare ordini presso il proprio fornitore. L'applicazione è stata sviluppata esclusivamente per \textit{smartphone}, al momento soltanto per l'ambiente \textit{Android}, utilizzando il \textit{framework cross-platform PhoneGap}. Per l'ambiente \textit{iOS} non è stato possibile realizzare l'applicazione, non essendo il gruppo in possesso di un \textit{Mac}. L'applicazione non prevede una registrazione esplicita, infatti le aziende che intendono acquistare il servizio devono comunicarlo al \textit{team} di \textit{SmartOrder}. Al momento della richiesta devono essere fornite le anagrafiche degli utenti che il fornitore intende registrare e, in questo modo verranno creati gli \textit{account} per tutti gli utenti, compresi di credenziali. Inoltre, devono essere forniti i dati relativi a tutti gli articoli che il fornitore desidera rendere disponibili per gli utenti. Una volta ricevute le credenziali via \textit{e-mail}, gli utenti possono iniziare ad usufruire del servizio. Il tutto sarà perfettamente configurato per fare in modo che ogni utente possa visionare solamente gli articoli venduti dal proprio fornitore. Tramite l'applicazione sarà possibile:
 	\begin{itemize}
 		\item ricercare prodotti e aggiungerli al carrello;
 		\item scansionare il codice a barre di un prodotto che si ha già acquistato per aggiungerlo al carrello più velocemente;
@@ -99,7 +99,7 @@
 	
 	\section{Scelta delle tecnologie web}
 	
-	Siccome è stato scelto il \textit{framework PhoneGap}, il gruppo ha utilizzato i linguaggi \textit{HTML5}, \textit{CSS3} e \textit{JavaScript}. In particolare, \textit{HTML5} è stato scelto perché include un insieme di funzionalità che permettono di valorizzare le interfacce \textit{mobile}. Alcune di queste evidenziano come \textit{HTML5} sia già per sua natura orientato al \textit{mobile}. In particolare, \textit{HTML5} fornisce \textit{API} per la gestione degli eventi touch. Mentre i meccanismi di input nei PC consistono per lo più nella tastiera e nel mouse, nei dispositivi mobili quasi tutto passa per il \textit{touch screen}, e avere funzionalità comode per gestire questo strumento consente un'interazione più ricca e senza limitazioni per l'utente. Le gestualità da attuare su un \textit{display}, nel mondo \textit{mobile}, costituiscono un vero e proprio linguaggio fondamentale nella \textit{user experience}.
+	Siccome è stato scelto il \textit{framework PhoneGap}, il gruppo ha utilizzato i linguaggi \textit{HTML5}, \textit{CSS3} e \textit{JavaScript}. In particolare, \textit{HTML5} è stato scelto perché include un insieme di funzionalità che permettono di valorizzare le interfacce \textit{mobile}. Alcune di queste evidenziano come \textit{HTML5} sia già per sua natura orientato al \textit{mobile}. In particolare, \textit{HTML5} fornisce \textit{API} per la gestione degli eventi \textit{touch}. Mentre i meccanismi di \textit{input} nei PC consistono per lo più nella tastiera e nel \textit{mouse}, nei dispositivi mobili quasi tutto passa per il \textit{touch screen}, e avere funzionalità comode per gestire questo strumento consente un'interazione più ricca e senza limitazioni per l'utente. Le gestualità da attuare su un \textit{display}, nel mondo \textit{mobile}, costituiscono un vero e proprio linguaggio fondamentale nella \textit{user experience}.
 	\medskip
 	
 	\noindent Ciò che ha favorito la scelta di \textit{CSS3} sono state le \textit{media queries}. Esse permettono di definire regole stilistiche in base alla tipologia del mezzo di visualizzazione, delle sue dimensioni e della sua attuale disposizione (\textit{portrait} o \textit{landscape}). Ciò influisce non solo sull'aspetto esteriore degli elementi ma anche sul loro posizionamento e quindi sulla struttura stessa dell'interfaccia.
@@ -395,7 +395,7 @@
 			\item \textbf{Parametri}:
 			\begin{itemize}
 				\item \textit{username}: è la \textit{username} dell'utente loggato;
-				\item codice azienda: è il codice che identifica univocamente il database del fornitore corrispondente all'utente loggato;
+				\item codice azienda: è il codice che identifica univocamente il \textit{database} del fornitore corrispondente all'utente loggato;
 				\item totale: è il totale dell'ordine che l'utente ha deciso di inviare.
 			\end{itemize}
 			\item \textbf{Funzionalità}: il \textit{servlet} si connette al \textit{database} identificato dal codice azienda fornito e crea in \textit{database} un nuovo ordine contenente gli articoli presenti nel carrello dell'utente identificato dalla \textit{username} fornita. Infine invia un'\textit{e-mail} di notifica dell'ordine sia all'utente identificato dalla \textit{username} fornita che all'azienda identificata dal codice azienda fornito.
@@ -408,7 +408,7 @@
 			\begin{itemize}
 				\item codice azienda: è il codice che identifica univocamente il \textit{database} del fornitore corrispondente all'utente loggato;
 			\end{itemize}
-			\item \textbf{Funzionalità}: il \textit{servlet} si connette al database identificato dal codice azienda fornito e restituisce una stringa \textit{JSON} contenente le informazioni sugli articoli venduti dall'azienda.
+			\item \textbf{Funzionalità}: il \textit{servlet} si connette al \textit{database} identificato dal codice azienda fornito e restituisce una stringa \textit{JSON} contenente le informazioni sugli articoli venduti dall'azienda.
 		\end{itemize}
 	
 		\item \textbf{PrelevaDatiOrdine.java}
@@ -459,13 +459,13 @@
 	\subsubsection{Utility}
 	Il \textit{package} \textit{utility} contiene le seguenti classi utilità:
 	\begin{itemize}
-		\item \textbf{GetDb}: classe contenente un metodo statico che restituisce la stringa di connessione dal \textit{database} di autenticazione;
-		\item \textbf{SendMail}: classe che fornisce un'interfaccia per l'invio di \textit{e-mail} tramite un \textit{server SMTP} di \textit{AWS}.
+		\item \textit{\textbf{GetDb}}: classe contenente un metodo statico che restituisce la stringa di connessione dal \textit{database} di autenticazione;
+		\item \textit{\textbf{SendMail}}: classe che fornisce un'interfaccia per l'invio di \textit{e-mail} tramite un \textit{server SMTP} di \textit{AWS}.
 	\end{itemize}
 	
 	\subsection{Database}
 	
-	Per la gestione di ordini, utenti e articoli venduti dai vari fornitori sono stati utilizzati dei \textit{database Microsoft SQL Server}. In questa sezione vengono descritti i seguenti database:
+	Per la gestione di ordini, utenti e articoli venduti dai vari fornitori sono stati utilizzati dei \textit{database Microsoft SQL Server}. In questa sezione vengono descritti i seguenti \textit{database}:
 	\begin{itemize}
 		\item \textit{database} di autenticazione;
 		\item \textit{database} aziendale.
@@ -484,7 +484,7 @@
 			\item comune: è il comune dove è situata la sede principale dell'azienda;
 			\item provincia: è la provincia dove è situata la sede principale dell'azienda;
 			\item CAP: è il codice postale dove è situata la sede principale dell'azienda;
-			\item mail: è la mail che l'azienda ha fornito in fase di registrazione;
+			\item \textit{mail}: è la \textit{mail} che l'azienda ha fornito in fase di registrazione;
 			\item telefono: è il numero di telefono che l'azienda ha fornito in fase di registrazione.
 		\end{itemize}
 		\item \textit{users}: contiene le informazioni relative agli utenti registrati a \textit{SmartOrder}. La tabella contiene i seguenti attributi:
