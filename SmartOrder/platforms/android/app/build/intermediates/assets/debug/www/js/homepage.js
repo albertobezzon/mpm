@@ -264,7 +264,7 @@ function compute(xhttp) {
             descr.appendChild(prezzo);
             div.appendChild(article);
         }
-        document.getElementById("totale").innerHTML = total;
+        document.getElementById("totale").innerHTML = Number((total).toFixed(2));
     }
 }
 
