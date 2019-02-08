@@ -97,6 +97,7 @@ function scanner() {
                 };
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
                 xhttp.send("codice="+result.text+"&codiceAzienda="+codiceAzienda);
+                placeLoader();
             }
         },
         function (error) {

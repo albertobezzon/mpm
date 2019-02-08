@@ -76,7 +76,7 @@ function tryLogin() {
                         navigator.notification.alert("Password errata", alert, "Attenzione", "OK");
                         document.getElementById("input-password").value = "";
                     }else{
-                        navigator.notification.alert("Username insesistente", alert, "Attenzione", "OK");
+                        navigator.notification.alert("Username inesistente", alert, "Attenzione", "OK");
                         document.getElementById("input-user").value = "";
                         document.getElementById("input-password").value = "";
                         document.getElementById("input-user").focus();
