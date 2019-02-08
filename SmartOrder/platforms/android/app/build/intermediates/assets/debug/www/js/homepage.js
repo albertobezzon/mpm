@@ -97,6 +97,7 @@ function scanner() {
                 };
                 xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=UTF-8");
                 xhttp.send("codice="+result.text+"&codiceAzienda="+codiceAzienda);
+                placeLoader();
             }
         },
         function (error) {
@@ -215,7 +216,7 @@ function compute(xhttp) {
         var text = document.createTextNode("Nessun articolo in carrello");
         p.appendChild(text);
         div.appendChild(p);
-        document.getElementById("totale").innerHTML = total;
+        document.getElementById("totale").innerHTML = Number((total).toFixed(2));
         empty = true;
     }else {
         empty = false;
@@ -253,7 +254,7 @@ function compute(xhttp) {
             textH4 = document.createTextNode(risp.articoli[i]["nome"] + " (Qta: x" + risp.articoli[i]["quantita"] + ")");
             h4.appendChild(textH4);
             prezzo = document.createElement("span");
-            textPrezzo = document.createTextNode("P. parziale: " + (risp.articoli[i]["prezzo"] * risp.articoli[i]["quantita"]) + "€");
+            textPrezzo = document.createTextNode("P. parziale: " + Number((risp.articoli[i]["prezzo"] * risp.articoli[i]["quantita"]).toFixed(2)) + " €");
             total += risp.articoli[i]["prezzo"] * risp.articoli[i]["quantita"];
             prezzo.appendChild(textPrezzo);
             both = document.createElement("div");
