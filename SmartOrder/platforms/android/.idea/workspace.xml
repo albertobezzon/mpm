@@ -51,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="newpage.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="newpage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/www/newpage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="52" column="132" lean-forward="false" selection-start-line="52" selection-start-column="132" selection-end-line="52" selection-end-column="132" />
+            <state relative-caret-position="275">
+              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -71,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="homepage.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="homepage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/assets/www/js/homepage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="99" column="30" lean-forward="false" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
+            <state relative-caret-position="146">
+              <caret line="266" column="39" lean-forward="false" selection-start-line="266" selection-start-column="33" selection-end-line="266" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -159,9 +159,9 @@
       <find>1s</find>
       <find>confirm</find>
       <find>€</find>
-      <find>totale</find>
       <find>parz</find>
       <find>num</find>
+      <find>totale</find>
     </findStrings>
     <replaceStrings>
       <replace>€</replace>
@@ -3378,8 +3378,8 @@
         <option value="$PROJECT_DIR$/app/src/main/assets/www/css/general.css" />
         <option value="$PROJECT_DIR$/app/src/main/assets/www/js/inventory.js" />
         <option value="$PROJECT_DIR$/app/src/main/assets/www/js/login.js" />
-        <option value="$PROJECT_DIR$/app/src/main/assets/www/js/homepage.js" />
         <option value="$PROJECT_DIR$/app/src/main/assets/www/newpage.html" />
+        <option value="$PROJECT_DIR$/app/src/main/assets/www/js/homepage.js" />
       </list>
     </option>
   </component>
@@ -3430,7 +3430,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="88d3e8cb" />
+    <property name="device.picker.selection" value="Nexus_4_API_27" />
     <property name="android.profiler.active" value="true" />
   </component>
   <component name="RunDashboard">
@@ -3599,7 +3599,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.49135137" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3607,7 +3606,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297619" sideWeight="0.52594596" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297619" sideWeight="0.52594596" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.49783784" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297619" sideWeight="0.49783784" order="7" side_tool="false" content_ui="tabs" />
@@ -3987,14 +3986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/www/js/homepage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="99" column="30" lean-forward="false" selection-start-line="99" selection-start-column="30" selection-end-line="99" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/www/js/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-959">
@@ -4005,8 +3996,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/www/newpage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="52" column="132" lean-forward="false" selection-start-line="52" selection-start-column="132" selection-end-line="52" selection-end-column="132" />
+        <state relative-caret-position="275">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/www/js/homepage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="266" column="39" lean-forward="false" selection-start-line="266" selection-start-column="33" selection-end-line="266" selection-end-column="39" />
           <folding />
         </state>
       </provider>
