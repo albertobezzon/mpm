@@ -1,0 +1,70 @@
+% !TEX encoding = UTF-8
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2cm,right=2cm]{geometry}
+%\usepackage{simplemargins}
+
+%\usepackage[square]{natbib}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+%#######################################
+
+\hypersetup{
+	colorlinks=true,
+	urlcolor=blue,
+}
+
+%#######################################
+
+\begin{document}
+\pagenumbering{gobble}
+
+\Large
+ \begin{center}
+Il framework Flutter\\ 
+\medskip
+
+\end{center}
+
+\begin{flushleft}
+	\large
+	Studenti: Alberto Bezzon e Tommaso Carraro\\
+\end{flushleft}
+
+\normalsize
+
+Approccio scientifico (dati)
+Stato dell'arte del FW (quanto è diffuso, chi ne parla SO e altre community, clienti)
+
+\section*{Introduzione}
+\textbf{Flutter} è un framework cross-platform free ed open-source creato da Google che consente la creazione di applicazioni native per iOS e Android con una singola codebase\footnote{Codebase: indica l'intera collezione di codice sorgente usata per costruire un'applicazione}. Il codice sorgente viene compilato direttamente in codice ARM, utilizzando la GPU e può avere accesso alle API e ai servizi della piattaforma.
+Le tre principali caratteristiche che sono i punti forza di Flutter sono (da estendere nel dettaglio):
+\begin{itemize}
+	\item permette un rapido sviluppo, grazie a \textit{hot reload} dato che modificando il codice è possibile vedere in pochissimo tempo le modifiche apportate all'applicazione, senza perdere lo stato di quest'ultima. Inoltre, il bundle contiene dei widget personalizzabili nativi ed è possibile utilizzarlo con l'IDE preferito dallo sviluppatore;
+	\item UI espressiva e flessibile;
+	\item Performance native.
+\end{itemize}
+
+\section*{Architettura del framework}
+
+\section*{Chi sta utilizzando Flutter?}
+
+
+
+\section*{Fonti}
+\begin{enumerate}[label={[\arabic*]}]
+	\item Flutter. \url{https://flutter.dev/}
+	\item Profiling Flutter Applications Using the Timeline.\\ \url{https://medium.com/flutter-io/profiling-flutter-applications-using-the-timeline-a1a434964af3}
+	\item React Native vs Flutter, cross-platform mobile application frameworks. \\ \url{https://www.theseus.fi/bitstream/handle/10024/146232/thesis.pdf?sequence=1\&isAllowed=y}
+	\item How fast is Flutter? I built a stopwatch app to find out. \url{https://medium.freecodecamp.org/how-fast-is-flutter-i-built-a-stopwatch-app-to-find-out-9956fa0e40bd}
+	\item Youtube's video.
+\end{enumerate}
+
+\end{document}
